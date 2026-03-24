@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Conan日报 - 总览</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #f0f2f5; }
+  
+  .header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 25px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .header h1 { font-size: 24px; }
+  .header a { color: white; text-decoration: none; font-size: 14px; }
+  
+  .container { max-width: 1400px; margin: 0 auto; padding: 30px 40px; }
+  
+  .section {
+    background: white;
+    border-radius: 12px;
+    padding: 25px 30px;
+    margin-bottom: 25px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  }
+  
+  .section-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #667eea;
+  }
+  
+  .report-card {
+    display: inline-block;
+    width: calc(33.33% - 20px);
+    margin: 10px;
+    padding: 20px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .report-card:hover { transform: translateY(-3px); box-shadow: 0 8px 25px rgba(102,126,234,0.3); }
+  .report-card .date { font-size: 24px; font-weight: 600; }
+  .report-card .weekday { font-size: 14px; opacity: 0.9; margin-top: 5px; }
+  .report-card .status { font-size: 12px; margin-top: 15px; background: rgba(255,255,255,0.2); padding: 5px 12px; border-radius: 20px; display: inline-block; }
+  
+  table { width: 100%; border-collapse: collapse; }
+  th { background: #f8f9fa; color: #666; font-weight: 600; text-align: left; padding: 12px 15px; border-bottom: 2px solid #eee; }
+  td { padding: 12px 15px; border-bottom: 1px solid #eee; }
+  tr:hover { background: #f8f9fa; }
+  
+  .tag { display: inline-block; padding: 3px 10px; border-radius: 12px; font-size: 12px; }
+  .tag-red { background: #fff1f0; color: #ff4d4f; }
+  .tag-yellow { background: #fffbdd; color: #faad14; }
+  .tag-green { background: #f6ffed; color: #52c41a; }
+  
+  .empty { text-align: center; color: #999; padding: 40px; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>📊 Conan日报</h1>
+  <a href="https://github.com" target="_blank">GitHub Pages</a>
+</div>
+
+<div class="container">
+
+  <div class="section">
+    <div class="section-title">📅 日报列表</div>
+    <div class="report-card" href="2026-03-24.html">
+      <div class="date">03-24</div>
+      <div class="weekday">周二</div>
+      <div class="status">最新</div>
+    </div>
+    <div class="report-card" href="2026-03-23.html">
+      <div class="date">03-23</div>
+      <div class="weekday">周一</div>
+      <div class="status">暂无</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">📋 快速查看 - 最新日报摘要</div>
+    <table>
+      <tr>
+        <th width="15%">日期</th>
+        <th width="15%">重点关注</th>
+        <th width="40%">反馈内容</th>
+        <th width="15%">TODO进度</th>
+        <th width="15%">状态</th>
+      </tr>
+      <tr>
+        <td>2026-03-24</td>
+        <td>暂无未解决问题</td>
+        <td>日报应聚焦"答不上来的问题"和"学员反馈"</td>
+        <td>进行中 2项</td>
+        <td><span class="tag tag-green">已完成</span></td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="section">
+    <div class="section-title">🔴 待处理问题</div>
+    <table>
+      <tr>
+        <th width="20%">问题</th>
+        <th width="15%">来源</th>
+        <th width="15%">紧急度</th>
+        <th width="15%">状态</th>
+        <th width="35%">处理建议</th>
+      </tr>
+      <tr>
+        <td>钉钉消息推送宽度问题</td>
+        <td>安室透</td>
+        <td><span class="tag tag-yellow">中</span></td>
+        <td><span class="tag tag-yellow">进行中</span></td>
+        <td>改用GitHub Pages展示</td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="section">
+    <div class="section-title">📝 使用说明</div>
+    <p style="color: #666; line-height: 2;">
+      1. 点击上方日期卡片查看完整日报<br>
+      2. 密码验证保护，只有知道密码的人能访问<br>
+      3. 历史日报自动归档，随时可查<br>
+      4. 如需修改密码，编辑 index.html 中的 CORRECT_PASSWORD 变量
+    </p>
+  </div>
+
+</div>
+
+<script>
+document.querySelectorAll('.report-card').forEach(card => {
+  card.addEventListener('click', e => {
+    if (!card.getAttribute('href') || card.querySelector('.status').textContent === '暂无') {
+      e.preventDefault();
+    }
+  });
+});
+</script>
+
+</body>
+</html>
