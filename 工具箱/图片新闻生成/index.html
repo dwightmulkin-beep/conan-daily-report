@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🖼️ 文本转图片新闻 - 工具</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #f0f2f5; }
+  .header { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 20px 40px; display: flex; justify-content: space-between; align-items: center; }
+  .header h1 { font-size: 22px; }
+  .header a { color: white; text-decoration: none; font-size: 14px; }
+  .container { max-width: 1200px; margin: 0 auto; padding: 30px 40px; display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
+  
+  .panel { background: white; border-radius: 12px; padding: 25px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+  .panel-title { font-size: 16px; font-weight: 600; color: #333; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 2px solid #667eea; }
+  
+  .form-group { margin-bottom: 20px; }
+  .form-group label { display: block; font-size: 13px; color: #666; margin-bottom: 8px; font-weight: 500; }
+  .form-group input, .form-group textarea, .form-group select { width: 100%; padding: 10px 12px; border: 1px solid #ddd; border-radius: 8px; font-size: 14px; font-family: inherit; outline: none; }
+  .form-group input:focus, .form-group textarea:focus, .form-group select:focus { border-color: #667eea; }
+  .form-group textarea { min-height: 120px; resize: vertical; line-height: 1.6; }
+  
+  .btn { display: inline-block; padding: 10px 25px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border: none; border-radius: 8px; font-size: 14px; cursor: pointer; transition: transform 0.2s; }
+  .btn:hover { transform: translateY(-2px); }
+  .btn-outline { background: white; color: #667eea; border: 2px solid #667eea; }
+  .btn-outline:hover { background: #667eea; color: white; }
+  
+  .color-options { display: flex; gap: 10px; flex-wrap: wrap; }
+  .color-option { width: 36px; height: 36px; border-radius: 50%; cursor: pointer; border: 3px solid transparent; transition: all 0.2s; }
+  .color-option:hover, .color-option.active { border-color: #333; transform: scale(1.1); }
+  
+  /* 图片预览区 */
+  #preview { width: 100%; aspect-ratio: 16/9; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 12px; display: flex; flex-direction: column; justify-content: space-between; padding: 40px; position: relative; overflow: hidden; }
+  #preview .preview-header { display: flex; justify-content: space-between; align-items: center; }
+  #preview .preview-logo { font-size: 18px; font-weight: 600; color: white; }
+  #preview .preview-time { font-size: 13px; color: rgba(255,255,255,0.8); }
+  #preview .preview-title { font-size: 28px; font-weight: 700; color: white; line-height: 1.3; margin: 20px 0; }
+  #preview .preview-content { font-size: 16px; color: rgba(255,255,255,0.95); line-height: 1.8; display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden; }
+  #preview .preview-footer { display: flex; justify-content: space-between; align-items: center; }
+  #preview .preview-source { font-size: 12px; color: rgba(255,255,255,0.7); }
+  #preview .preview-tag { font-size: 12px; color: white; background: rgba(255,255,255,0.2); padding: 4px 12px; border-radius: 20px; }
+  
+  .preview-hint { text-align: center; color: #999; font-size: 13px; margin-top: 15px; }
+  .preview-hint span { color: #667eea; cursor: pointer; text-decoration: underline; }
+  
+  .tips { background: #f8f9fa; border-radius: 8px; padding: 15px; margin-top: 20px; }
+  .tips h4 { font-size: 13px; color: #666; margin-bottom: 8px; }
+  .tips ul { font-size: 12px; color: #999; padding-left: 15px; line-height: 1.8; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>🖼️ 文本转图片新闻</h1>
+  <a href="../index.html">← 返回首页</a>
+</div>
+
+<div class="container">
+
+  <div class="panel">
+    <div class="panel-title">📝 输入内容</div>
+    
+    <div class="form-group">
+      <label>新闻标题</label>
+      <input type="text" id="inputTitle" placeholder="输入新闻标题，最多50字" maxlength="50" value="亚马逊推出新卖家保护政策，多账号运营环境生变">
+    </div>
+    
+    <div class="form-group">
+      <label>新闻内容</label>
+      <textarea id="inputContent" placeholder="输入新闻详情内容，建议100-200字" maxlength="300">亚马逊美国站近日宣布针对多账号卖家的新保护政策，平台将加强对账号关联的检测力度。业内分析认为，此举将进一步推动指纹浏览器和防关联工具的市场需求。多账号卖家需提前做好防关联准备，确保各账号使用独立IP和环境。</textarea>
+    </div>
+    
+    <div class="form-group">
+      <label>来源/平台</label>
+      <input type="text" id="inputSource" placeholder="如：电商派、亚马逊卖家中心" value="跨境电商资讯">
+    </div>
+    
+    <div class="form-group">
+      <label>标签</label>
+      <input type="text" id="inputTag" placeholder="如：电商平台、行业动态" value="电商平台">
+    </div>
+    
+    <div class="form-group">
+      <label>背景颜色</label>
+      <div class="color-options">
+        <div class="color-option active" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);" data-color="purple" onclick="selectColor(this)"></div>
+        <div class="color-option" style="background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);" data-color="green" onclick="selectColor(this)"></div>
+        <div class="color-option" style="background: linear-gradient(135deg, #fc4a1a 0%, #f7b733 100%);" data-color="orange" onclick="selectColor(this)"></div>
+        <div class="color-option" style="background: linear-gradient(135deg, #0f2027 0%, #203a43 100%);" data-color="dark" onclick="selectColor(this)"></div>
+        <div class="color-option" style="background: linear-gradient(135deg, #0093e9 0%, #80d0c7 100%);" data-color="blue" onclick="selectColor(this)"></div>
+        <div class="color-option" style="background: linear-gradient(135deg, #ff0844 0%, #ffb199 100%);" data-color="red" onclick="selectColor(this)"></div>
+      </div>
+    </div>
+    
+    <div style="display:flex;gap:10px;">
+      <button class="btn" onclick="generatePreview()">🔄 生成预览</button>
+      <button class="btn btn-outline" onclick="copyToClipboard()">📋 复制内容</button>
+    </div>
+    
+    <div class="tips">
+      <h4>💡 使用说明</h4>
+      <ul>
+        <li>输入标题、内容、来源等信息</li>
+        <li>点击"生成预览"查看效果</li>
+        <li>使用浏览器截图功能截取预览区</li>
+        <li>或使用 Windows自带截图工具 Snip & Sketch</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="panel">
+    <div class="panel-title">👀 预览效果（截图获取图片）</div>
+    
+    <div id="preview">
+      <div class="preview-header">
+        <div class="preview-logo">📊 Conan资讯</div>
+        <div class="preview-time" id="previewTime">2026-03-24</div>
+      </div>
+      <div class="preview-title" id="previewTitle">亚马逊推出新卖家保护政策，多账号运营环境生变</div>
+      <div class="preview-content" id="previewContent">亚马逊美国站近日宣布针对多账号卖家的新保护政策，平台将加强对账号关联的检测力度。业内分析认为，此举将进一步推动指纹浏览器和防关联工具的市场需求...</div>
+      <div class="preview-footer">
+        <div class="preview-source" id="previewSource">来源：跨境电商资讯</div>
+        <div class="preview-tag" id="previewTag">电商平台</div>
+      </div>
+    </div>
+    
+    <div class="preview-hint">
+      按 <span>Win+Shift+S</span> 截图，或使用截图工具截取上方预览区
+    </div>
+    
+    <div style="margin-top:20px;">
+      <label style="display:block;font-size:13px;color:#666;margin-bottom:8px;">📐 建议尺寸</label>
+      <div style="font-size:13px;color:#999;background:#f8f9fa;padding:12px;border-radius:8px;">
+        宽度：1200px · 高度：675px（16:9比例）<br>
+        适用：微信朋友圈、小红书、微博、Twitter等社交平台
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+function generatePreview() {
+  const title = document.getElementById('inputTitle').value || '请输入标题';
+  const content = document.getElementById('inputContent').value || '请输入内容';
+  const source = document.getElementById('inputSource').value || '';
+  const tag = document.getElementById('inputTag').value || '';
+  
+  document.getElementById('previewTitle').textContent = title;
+  document.getElementById('previewContent').textContent = content;
+  document.getElementById('previewSource').textContent = source ? '来源：' + source : '';
+  document.getElementById('previewTag').textContent = tag;
+  document.getElementById('previewTime').textContent = new Date().toLocaleDateString('zh-CN');
+}
+
+function selectColor(el) {
+  document.querySelectorAll('.color-option').forEach(e => e.classList.remove('active'));
+  el.classList.add('active');
+  
+  const color = el.dataset.color;
+  const preview = document.getElementById('preview');
+  
+  const colors = {
+    purple: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+    green: 'linear-gradient(135deg, #11998e 0%, #38ef7d 100%)',
+    orange: 'linear-gradient(135deg, #fc4a1a 0%, #f7b733 100%)',
+    dark: 'linear-gradient(135deg, #0f2027 0%, #203a43 100%)',
+    blue: 'linear-gradient(135deg, #0093e9 0%, #80d0c7 100%)',
+    red: 'linear-gradient(135deg, #ff0844 0%, #ffb199 100%)'
+  };
+  
+  preview.style.background = colors[color];
+}
+
+function copyToClipboard() {
+  const title = document.getElementById('inputTitle').value;
+  const content = document.getElementById('inputContent').value;
+  const source = document.getElementById('inputSource').value;
+  const text = `【${title}】\n\n${content}\n\n来源：${source}`;
+  
+  navigator.clipboard.writeText(text).then(() => {
+    alert('已复制到剪贴板！');
+  });
+}
+
+// 初始化
+generatePreview();
+</script>
+
+</body>
+</html>

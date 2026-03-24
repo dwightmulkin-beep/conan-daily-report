@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>📊 日报生成器 - 工具</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #f0f2f5; }
+  .header { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 20px 40px; display: flex; justify-content: space-between; align-items: center; }
+  .header h1 { font-size: 22px; }
+  .header a { color: white; text-decoration: none; font-size: 14px; }
+  .container { max-width: 900px; margin: 0 auto; padding: 30px 40px; }
+  
+  .panel { background: white; border-radius: 12px; padding: 25px 30px; margin-bottom: 25px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+  .panel-title { font-size: 16px; font-weight: 600; color: #333; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 2px solid #667eea; }
+  
+  .form-group { margin-bottom: 18px; }
+  .form-group label { display: block; font-size: 13px; color: #666; margin-bottom: 6px; font-weight: 500; }
+  .form-group input, .form-group textarea, .form-group select { width: 100%; padding: 10px 12px; border: 1px solid #ddd; border-radius: 8px; font-size: 14px; font-family: inherit; outline: none; }
+  .form-group input:focus, .form-group textarea:focus { border-color: #667eea; }
+  .form-group textarea { min-height: 100px; resize: vertical; line-height: 1.6; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+  
+  .btn { display: inline-block; padding: 10px 25px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border: none; border-radius: 8px; font-size: 14px; cursor: pointer; transition: transform 0.2s; margin-right: 10px; }
+  .btn:hover { transform: translateY(-2px); }
+  .btn-outline { background: white; color: #667eea; border: 2px solid #667eea; }
+  
+  .output { background: #1a1a2e; color: #eee; border-radius: 12px; padding: 30px; font-family: 'Consolas', monospace; font-size: 14px; line-height: 1.8; white-space: pre-wrap; min-height: 400px; }
+  .output .label { color: #667eea; }
+  .output .value { color: #fff; }
+  .output .section { color: #f7b733; }
+  
+  .copy-hint { text-align: center; color: #999; font-size: 12px; margin-top: 10px; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>📊 日报生成器</h1>
+  <a href="../index.html">← 返回首页</a>
+</div>
+
+<div class="container">
+
+  <div class="panel">
+    <div class="panel-title">📝 填写今日工作内容</div>
+    
+    <div class="form-row">
+      <div class="form-group">
+        <label>日期</label>
+        <input type="date" id="inputDate" value="">
+      </div>
+      <div class="form-group">
+        <label>姓名</label>
+        <input type="text" id="inputName" placeholder="输入你的名字">
+      </div>
+    </div>
+    
+    <div class="form-group">
+      <label>今日完成的工作（每条一行）</label>
+      <textarea id="inputDone" placeholder="1. 完成了xxx&#10;2. 优化了xxx&#10;3. 解决了xxx问题"></textarea>
+    </div>
+    
+    <div class="form-group">
+      <label>明日计划（每条一行）</label>
+      <textarea id="inputPlan" placeholder="1. 继续xxx&#10;2. 优化xxx&#10;3. 准备xxx"></textarea>
+    </div>
+    
+    <div class="form-group">
+      <label>遇到的问题/需要协助</label>
+      <textarea id="inputProblem" placeholder="无（如果没有问题）"></textarea>
+    </div>
+    
+    <div class="form-group">
+      <label>学习心得/总结</label>
+      <textarea id="inputSummary" placeholder="今日学习到了xxx技能，掌握了xxx知识"></textarea>
+    </div>
+    
+    <button class="btn" onclick="generateReport()">🔄 生成日报</button>
+    <button class="btn btn-outline" onclick="copyReport()">📋 复制日报</button>
+  </div>
+
+  <div class="panel">
+    <div class="panel-title">👀 生成的日报</div>
+    <div class="output" id="output">
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 工作日报
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+<span class="label">日期：</span><span class="value" id="outDate">2026-03-24</span>
+<span class="label">姓名：</span><span class="value" id="outName">安室透</span>
+
+<span class="section">【今日完成】</span>
+<span class="value" id="outDone">1. 完善日报推送机制
+2. 更新培训课程内容
+3. 解决历史遗留问题</span>
+
+<span class="section">【明日计划】</span>
+<span class="value" id="outPlan">1. 继续完善培训系统
+2. 录入新学员资料
+3. 死磕技术难点</span>
+
+<span class="section">【问题/协助】</span>
+<span class="value" id="outProblem">无</span>
+
+<span class="section">【学习心得】</span>
+<span class="value" id="outSummary">今日学习了新的话术技巧，掌握了客户挖需的核心方法。</span>
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+    </div>
+    <div class="copy-hint">点击上方"复制日报"按钮，或手动选中内容复制</div>
+  </div>
+
+</div>
+
+<script>
+document.getElementById('inputDate').value = new Date().toISOString().split('T')[0];
+
+function generateReport() {
+  const date = document.getElementById('inputDate').value;
+  const name = document.getElementById('inputName').value || '未填写';
+  const done = document.getElementById('inputDone').value || '无';
+  const plan = document.getElementById('inputPlan').value || '无';
+  const problem = document.getElementById('inputProblem').value || '无';
+  const summary = document.getElementById('inputSummary').value || '无';
+  
+  document.getElementById('outDate').textContent = date;
+  document.getElementById('outName').textContent = name;
+  document.getElementById('outDone').textContent = done;
+  document.getElementById('outPlan').textContent = plan;
+  document.getElementById('outProblem').textContent = problem;
+  document.getElementById('outSummary').textContent = summary;
+}
+
+function copyReport() {
+  const date = document.getElementById('inputDate').value;
+  const name = document.getElementById('inputName').value || '未填写';
+  const done = document.getElementById('inputDone').value || '无';
+  const plan = document.getElementById('inputPlan').value || '无';
+  const problem = document.getElementById('inputProblem').value || '无';
+  const summary = document.getElementById('inputSummary').value || '无';
+  
+  const text = `━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 工作日报
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+日期：${date}
+姓名：${name}
+
+【今日完成】
+${done}
+
+【明日计划】
+${plan}
+
+【问题/协助】
+${problem}
+
+【学习心得】
+${summary}
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━`;
+  
+  navigator.clipboard.writeText(text).then(() => {
+    alert('日报已复制到剪贴板！');
+  });
+}
+
+// 初始化
+generateReport();
+</script>
+
+</body>
+</html>
