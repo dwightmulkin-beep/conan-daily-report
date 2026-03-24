@@ -3,83 +3,151 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Conan日报 - 密码验证</title>
+<title>Conan信息站 - 总览</title>
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { 
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  .login-container {
-    background: white;
-    padding: 50px;
-    border-radius: 20px;
-    box-shadow: 0 20px 60px rgba(0,0,0,0.3);
-    text-align: center;
-    max-width: 400px;
-    width: 90%;
-  }
-  h1 { color: #333; margin-bottom: 10px; font-size: 28px; }
-  p { color: #666; margin-bottom: 30px; font-size: 14px; }
-  input[type="password"] {
-    width: 100%;
-    padding: 15px 20px;
-    font-size: 16px;
-    border: 2px solid #ddd;
-    border-radius: 10px;
-    outline: none;
-    transition: border-color 0.3s;
-    margin-bottom: 15px;
-  }
-  input[type="password"]:focus { border-color: #667eea; }
-  button {
-    width: 100%;
-    padding: 15px;
-    font-size: 16px;
-    font-weight: 600;
-    color: white;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: transform 0.2s, box-shadow 0.2s;
-  }
-  button:hover { transform: translateY(-2px); box-shadow: 0 5px 20px rgba(102,126,234,0.4); }
-  .error { color: #ff4d4f; margin-top: 15px; font-size: 14px; display: none; }
-  .hint { color: #999; font-size: 12px; margin-top: 20px; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #f0f2f5; }
+  .header { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 25px 40px; display: flex; justify-content: space-between; align-items: center; }
+  .header h1 { font-size: 24px; }
+  .header a { color: white; text-decoration: none; font-size: 14px; }
+  .container { max-width: 1400px; margin: 0 auto; padding: 30px 40px; }
+  .section { background: white; border-radius: 12px; padding: 25px 30px; margin-bottom: 25px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+  .section-title { font-size: 18px; font-weight: 600; color: #333; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 2px solid #667eea; }
+  .module-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+  .module-card { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 25px; border-radius: 12px; text-decoration: none; transition: transform 0.2s, box-shadow 0.2s; display: block; }
+  .module-card:hover { transform: translateY(-3px); box-shadow: 0 8px 25px rgba(102,126,234,0.3); }
+  .module-card .icon { font-size: 32px; margin-bottom: 10px; }
+  .module-card .name { font-size: 18px; font-weight: 600; }
+  .module-card .desc { font-size: 12px; opacity: 0.9; margin-top: 5px; }
+  .module-card .count { font-size: 12px; margin-top: 10px; background: rgba(255,255,255,0.2); padding: 3px 10px; border-radius: 10px; display: inline-block; }
+  table { width: 100%; border-collapse: collapse; }
+  th { background: #f8f9fa; color: #666; font-weight: 600; text-align: left; padding: 12px 15px; border-bottom: 2px solid #eee; }
+  td { padding: 12px 15px; border-bottom: 1px solid #eee; }
+  tr:hover { background: #f8f9fa; }
+  .tag { display: inline-block; padding: 3px 10px; border-radius: 12px; font-size: 12px; }
+  .tag-blue { background: #e6f7ff; color: #1890ff; }
+  .tag-green { background: #f6ffed; color: #52c41a; }
+  .tag-yellow { background: #fffbdd; color: #faad14; }
+  .tag-red { background: #fff1f0; color: #ff4d4f; }
+  .date { color: #999; font-size: 12px; }
 </style>
 </head>
 <body>
-<div class="login-container">
-  <h1>🔐 Conan日报</h1>
-  <p>请输入访问密码</p>
-  <input type="password" id="password" placeholder="输入密码后按回车..." onkeypress="handleEnter(event)">
-  <button onclick="checkPassword()">进入日报</button>
-  <div class="error" id="error">密码错误，请重试</div>
-  <div class="hint">密码请联系Conan获取</div>
+
+<div class="header">
+  <h1>📊 Conan信息站</h1>
+  <a href="https://github.com/dwightmulkin-beep/conan-daily-report" target="_blank">GitHub</a>
 </div>
 
-<script>
-const CORRECT_PASSWORD = 'conan2026'; // 可修改密码
+<div class="container">
 
-function checkPassword() {
-  const pwd = document.getElementById('password').value;
-  const error = document.getElementById('error');
-  if (pwd === CORRECT_PASSWORD) {
-    window.location.href = 'dashboard.html';
-  } else {
-    error.style.display = 'block';
-    document.getElementById('password').value = '';
-  }
-}
+  <div class="section">
+    <div class="section-title">📂 信息模块</div>
+    <div class="module-grid">
+      <a class="module-card" href="日报/">
+        <div class="icon">📝</div>
+        <div class="name">日报</div>
+        <div class="desc">Conan每日汇报</div>
+        <div class="count">每日22:00更新</div>
+      </a>
+      <a class="module-card" href="早报/">
+        <div class="icon">🌅</div>
+        <div class="name">早报</div>
+        <div class="desc">今日任务与建议</div>
+        <div class="count">每日10:00更新</div>
+      </a>
+      <a class="module-card" href="资讯/">
+        <div class="icon">📰</div>
+        <div class="name">行业资讯</div>
+        <div class="desc">跨境电商新闻</div>
+        <div class="count">每日更新</div>
+      </a>
+      <a class="module-card" href="培训/">
+        <div class="icon">📚</div>
+        <div class="name">培训资料</div>
+        <div class="desc">产品知识与话术</div>
+        <div class="count">持续更新</div>
+      </a>
+      <a class="module-card" href="FAQ/">
+        <div class="icon">❓</div>
+        <div class="name">FAQ</div>
+        <div class="desc">常见问题解答</div>
+        <div class="count">按需更新</div>
+      </a>
+      <a class="module-card" href="产品更新/">
+        <div class="icon">🚀</div>
+        <div class="name">产品更新</div>
+        <div class="desc">云登新功能公告</div>
+        <div class="count">按版本更新</div>
+      </a>
+      <a class="module-card" href="会议纪要/">
+        <div class="icon">📋</div>
+        <div class="name">会议纪要</div>
+        <div class="desc">重要会议结论</div>
+        <div class="count">按会议更新</div>
+      </a>
+      <a class="module-card" href="TODO/">
+        <div class="icon">🎯</div>
+        <div class="name">我的TODO</div>
+        <div class="desc">自我进化清单</div>
+        <div class="count">持续更新</div>
+      </a>
+    </div>
+  </div>
 
-function handleEnter(e) {
-  if (e.key === 'Enter') checkPassword();
-}
-</script>
+  <div class="section">
+    <div class="section-title">📰 最新资讯</div>
+    <table>
+      <tr>
+        <th width="15%">日期</th>
+        <th width="60%">标题</th>
+        <th width="25%">来源/分类</th>
+      </tr>
+      <tr>
+        <td class="date">2026-03-24</td>
+        <td>亚马逊推出新卖家保护政策，多账号运营环境生变</td>
+        <td><span class="tag tag-blue">电商平台</span></td>
+      </tr>
+      <tr>
+        <td class="date">2026-03-23</td>
+        <td>TikTok Shop美国市场扩张，本土化运营成关键</td>
+        <td><span class="tag tag-blue">社媒电商</span></td>
+      </tr>
+      <tr>
+        <td class="date">2026-03-23</td>
+        <td>指纹浏览器行业动态：账号防关联需求持续增长</td>
+        <td><span class="tag tag-green">行业观察</span></td>
+      </tr>
+      <tr>
+        <td class="date">2026-03-22</td>
+        <td>跨境支付通道调整，PayPal新政策影响分析</td>
+        <td><span class="tag tag-yellow">支付</span></td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="section">
+    <div class="section-title">📋 最近更新</div>
+    <table>
+      <tr>
+        <th width="15%">日期</th>
+        <th width="25%">模块</th>
+        <th width="60%">更新内容</th>
+      </tr>
+      <tr>
+        <td class="date">2026-03-24</td>
+        <td><span class="tag tag-blue">日报</span></td>
+        <td>Conan日报v2.0上线，重点聚焦问题追踪与反馈</td>
+      </tr>
+      <tr>
+        <td class="date">2026-03-24</td>
+        <td><span class="tag tag-green">网站</span></td>
+        <td>Conan信息站上线，支持多模块信息聚合</td>
+      </tr>
+    </table>
+  </div>
+
+</div>
+
 </body>
 </html>

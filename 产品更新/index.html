@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>产品更新</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #f0f2f5; }
+  .header { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 20px 40px; display: flex; justify-content: space-between; align-items: center; }
+  .header h1 { font-size: 22px; }
+  .header a { color: white; text-decoration: none; font-size: 14px; }
+  .container { max-width: 1400px; margin: 0 auto; padding: 30px 40px; }
+  .section { background: white; border-radius: 12px; padding: 25px 30px; margin-bottom: 25px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+  .section-title { font-size: 18px; font-weight: 600; color: #333; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 2px solid #667eea; }
+  .update-item { padding: 20px 0; border-bottom: 1px solid #eee; }
+  .update-item:last-child { border-bottom: none; }
+  .update-meta { font-size: 12px; color: #999; margin-bottom: 8px; }
+  .update-title { font-size: 16px; font-weight: 600; color: #333; margin-bottom: 8px; }
+  .update-content { font-size: 14px; color: #666; line-height: 1.8; }
+  .tag { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 12px; margin-right: 10px; }
+  .tag-red { background: #fff1f0; color: #ff4d4f; }
+  .tag-blue { background: #e6f7ff; color: #1890ff; }
+  .tag-green { background: #f6ffed; color: #52c41a; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>🚀 产品更新日志</h1>
+  <a href="../index.html">← 返回总览</a>
+</div>
+
+<div class="container">
+
+  <div class="section">
+    <div class="section-title">最新更新</div>
+
+    <div class="update-item">
+      <div class="update-meta"><span class="tag tag-red">新功能</span> 2026-03 版本 3.x</div>
+      <div class="update-title">新增浏览器插件商店</div>
+      <div class="update-content">支持1000+浏览器插件在线安装，涵盖电商运营、社媒营销、数据分析等多场景。新增一键批量安装功能，提升配置效率。</div>
+    </div>
+
+    <div class="update-item">
+      <div class="update-meta"><span class="tag tag-blue">优化</span> 2026-03 版本 3.x</div>
+      <div class="update-title">窗口同步性能优化</div>
+      <div class="update-content">窗口同步响应速度提升50%，支持更大规模批量操作（单次最高100个窗口同步）。新增同步任务队列管理。</div>
+    </div>
+
+    <div class="update-item">
+      <div class="update-meta"><span class="tag tag-green">修复</span> 2026-03 版本 3.x</div>
+      <div class="update-title">已知问题修复</div>
+      <div class="update-content">修复部分Windows系统下启动环境闪退问题；修复macOS自动强刷问题；优化127内核兼容性。</div>
+    </div>
+
+  </div>
+
+</div>
+
+</body>
+</html>
