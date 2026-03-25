@@ -5,174 +5,145 @@
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>行业资讯</title>
 <style>
-:root{--p:#667eea;--pp:#764ba2;--txt:#1a1a2e;--txt2:#4a4a6a;--mut:#9090a0;--bg:#f4f5f9;--c:#fff;--bd:#e8e9f0;--r-bg:#fff1f0;--r-tx:#cf1322;--o-bg:#fff7e6;--o-tx:#d46b08;--b-bg:#e6f7ff;--b-tx:#0958d9;--v-bg:#f9f0ff;--v-tx:#722ed1;--g-bg:#f6ffed;--g-tx:#389e0d;--gr-bg:#f5f5f5;--gr-tx:#595959;--sh:0 1px 3px rgba(0,0,0,.06),0 4px 16px rgba(0,0,0,.04);--sh-h:0 4px 12px rgba(102,126,234,.15),0 8px 32px rgba(0,0,0,.08)}
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;background:var(--bg);color:var(--txt);line-height:1.6}
-a{color:inherit;text-decoration:none}
-.hh{background:linear-gradient(135deg,var(--p) 0%,var(--pp) 100%);padding:0 48px;height:64px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;box-shadow:0 2px 20px rgba(102,126,234,.3)}
-.hh h1{font-size:18px;font-weight:700;color:#fff;letter-spacing:-.3px}
-.hh-r{display:flex;align-items:center;gap:20px}
-.hh a{font-size:13px;color:rgba(255,255,255,.9)}
-.hh a:hover{opacity:.7}
-.hh-t{font-size:12px;color:rgba(255,255,255,.75)}
-.ct{max-width:1100px;margin:0 auto;padding:32px 40px}
-.tA{display:flex;gap:12px;margin-bottom:20px}
-.btn{display:inline-flex;align-items:center;gap:8px;padding:11px 20px;background:var(--c);border:1.5px solid var(--bd);border-radius:12px;font-size:13px;font-weight:600;color:var(--txt2);cursor:pointer;transition:all .2s;box-shadow:var(--sh);text-decoration:none}
-.btn:hover{border-color:var(--p);color:var(--p);transform:translateY(-1px);box-shadow:var(--sh-h)}
-.btnP{background:linear-gradient(135deg,var(--p),var(--pp));color:#fff;border:none;box-shadow:0 4px 16px rgba(102,126,234,.3)}
-.btnP:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(102,126,234,.4)}
-.card{background:var(--c);border-radius:16px;padding:28px 32px;margin-bottom:20px;box-shadow:var(--sh)}
-.ch{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;padding-bottom:14px;border-bottom:1px solid var(--bd);flex-wrap:wrap;gap:8px}
-.ctt{font-size:15px;font-weight:700;color:var(--txt)}
-.cm{font-size:12px;color:var(--mut)}
-.cb{font-size:11px;background:var(--p);color:#fff;padding:2px 10px;border-radius:10px;margin-left:8px}
-.curB{display:inline-block;background:#22c55e;color:#fff;font-size:10px;font-weight:700;padding:1px 7px;border-radius:8px;margin-left:6px}
-.tl{display:flex;align-items:center;gap:14px;padding:12px 0;border-bottom:1px solid var(--bd);border-radius:8px;cursor:pointer;transition:background .15s}
-.tl:last-child{border-bottom:none}
-.tl:hover{background:rgba(102,126,234,.04)}
-.tl.cur{background:rgba(102,126,234,.06);border:1px solid rgba(102,126,234,.15);padding:11px 12px;margin:-1px -4px}
-.tlT{width:64px;flex-shrink:0;text-align:center}
-.tlH{font-size:15px;font-weight:700;color:var(--txt)}
-.tlD{font-size:11px;color:var(--mut)}
-.tlI{flex:1;min-width:0}
-.tlC{font-size:12px;font-weight:600;color:var(--p);margin-bottom:2px}
-.tlP{font-size:12px;color:var(--mut);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.tlB{padding:5px 12px;background:var(--p);color:#fff;border:none;border-radius:8px;font-size:12px;font-weight:600;cursor:pointer;flex-shrink:0}
-.tlB:hover{background:var(--pp);transform:scale(1.03)}
-.nl{list-style:none;margin:0;padding:0}
-.ni{display:flex;gap:16px;padding:18px 0;border-bottom:1px solid var(--bd)}
-.ni:last-child{border-bottom:none;padding-bottom:0}
-.ni:first-child{padding-top:0}
-.nn{width:28px;height:28px;background:linear-gradient(135deg,var(--p),var(--pp));color:#fff;border-radius:50%;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
-.nb{flex:1;min-width:0}
-.nm{margin-bottom:5px}
-.tag{display:inline-block;padding:2px 9px;border-radius:6px;font-size:11px;font-weight:600}
-.tagR{background:var(--r-bg);color:var(--r-tx)}
-.tagO{background:var(--o-bg);color:var(--o-tx)}
-.tagB{background:var(--b-bg);color:var(--b-tx)}
-.tagV{background:var(--v-bg);color:var(--v-tx)}
-.tagG{background:var(--g-bg);color:var(--g-tx)}
-.tagGr{background:var(--gr-bg);color:var(--gr-tx)}
-.ntitle{font-size:15px;font-weight:600;color:var(--txt);line-height:1.5;margin-bottom:5px;transition:color .2s}
-.ntitle a{color:inherit;text-decoration:none}
-.ntitle a:hover{color:var(--p)}
-.ndesc{font-size:13px;color:var(--txt2);line-height:1.65;margin-bottom:5px}
-.nsrc{font-size:12px;color:var(--mut)}
-.nlink{color:var(--p);font-weight:600;margin-left:4px}
-.snap{background:var(--c);border-radius:16px;padding:24px 28px;margin-bottom:20px;box-shadow:var(--sh);display:none}
-.snapOn{display:block}
-.snapH{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}
-.snapTT{font-size:15px;font-weight:700;color:var(--txt)}
-.snapSub{font-size:12px;color:var(--mut);margin-top:2px}
-.snapCls{padding:6px 14px;background:var(--bg);color:var(--txt2);border:none;border-radius:8px;font-size:12px;font-weight:600;cursor:pointer}
-.empty{text-align:center;padding:32px 0;color:var(--mut);font-size:13px}
-.modal{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.85);z-index:1000;align-items:center;justify-content:center;padding:32px}
-.modalOn{display:flex}
-.mc{position:fixed;top:24px;right:28px;color:#fff;font-size:28px;cursor:pointer;width:44px;height:44px;background:rgba(255,255,255,.12);border-radius:50%;display:flex;align-items:center;justify-content:center}
-.mc:hover{background:rgba(255,255,255,.22)}
-.mi{max-width:90vw;max-height:85vh;border-radius:12px;box-shadow:0 24px 80px rgba(0,0,0,.5)}
-.ms{position:fixed;bottom:28px;right:28px}
-.ms a{display:inline-flex;align-items:center;gap:8px;background:#fff;color:var(--p);padding:11px 22px;border-radius:25px;font-size:14px;font-weight:700;text-decoration:none;box-shadow:0 4px 20px rgba(0,0,0,.3)}
-.ms a:hover{transform:scale(1.04)}
-.mt{position:fixed;bottom:28px;left:50%;transform:translateX(-50%);color:rgba(255,255,255,.45);font-size:12px}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;background:#f0f2f5;color:#1a1a2e;line-height:1.6}
+a{color:#667eea;text-decoration:none}
+.pk{position:fixed;top:16px;right:16px;z-index:200;background:linear-gradient(135deg,#667eea,#764ba2);color:#fff;border:none;padding:10px 18px;border-radius:25px;font-size:13px;font-weight:700;cursor:pointer;box-shadow:0 4px 16px rgba(102,126,234,.35)}
+.pk:hover{transform:scale(1.04)}
+.hdr{background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);padding:20px 24px 16px;color:#fff}
+.hdr h1{font-size:20px;font-weight:800;letter-spacing:-.5px}
+.hdr p{font-size:12px;color:rgba(255,255,255,.75);margin-top:2px}
+.hdr .tm{font-size:11px;color:rgba(255,255,255,.6);margin-top:4px}
+.bar{display:flex;gap:8px;padding:12px 16px;background:#fff;border-bottom:1px solid #e8e9f0;overflow-x:auto;white-space:nowrap}
+.bar a{display:inline-block;padding:6px 14px;background:#f4f5f9;border-radius:20px;font-size:12px;font-weight:600;color:#4a4a6a;transition:all .2s}
+.bar a:hover,.bar a.active{background:#667eea;color:#fff}
+.main{max-width:720px;margin:0 auto;padding:12px 16px 80px}
+.sec{margin-bottom:16px}
+.sec-h{font-size:12px;font-weight:700;color:#9090a0;text-transform:uppercase;letter-spacing:.5px;padding:8px 0 6px;border-bottom:1px solid #e8e9f0;margin-bottom:8px;display:flex;align-items:center;gap:6px}
+.sec-h span{background:#667eea;color:#fff;font-size:10px;padding:1px 6px;border-radius:8px}
+.curB{background:#22c55e!important}
+.nl{list-style:none;background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+.ni{display:flex;gap:14px;padding:14px 16px;border-bottom:1px solid #f0f2f5;align-items:flex-start}
+.ni:last-child{border-bottom:none}
+.nb{width:26px;height:26px;background:linear-gradient(135deg,#667eea,#764ba2);color:#fff;border-radius:50%;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
+.nc{flex:1;min-width:0}
+.nm{margin-bottom:4px}
+.tag{display:inline-block;padding:1px 8px;border-radius:6px;font-size:10px;font-weight:700}
+.tagR{background:#fff1f0;color:#cf1322}
+.tagO{background:#fff7e6;color:#d46b08}
+.tagB{background:#e6f7ff;color:#0958d9}
+.tagV{background:#f9f0ff;color:#722ed1}
+.tagG{background:#f6ffed;color:#389e0d}
+.tagGr{background:#f5f5f5;color:#595959}
+.nt{font-size:14px;font-weight:600;color:#1a1a2e;line-height:1.4;margin-bottom:3px}
+.nt a{color:inherit}
+.nd{font-size:12px;color:#6b6b80;line-height:1.5}
+.ns{font-size:11px;color:#9090a0;margin-top:4px}
+.nlk{color:#667eea;font-weight:600}
+.tl{width:100%;border-collapse:collapse;background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+.tl th{font-size:11px;color:#9090a0;font-weight:600;text-align:left;padding:10px 12px;background:#f8f9fb;border-bottom:1px solid #e8e9f0;text-transform:uppercase}
+.tl td{padding:10px 12px;font-size:12px;border-bottom:1px solid #f0f2f5;vertical-align:middle}
+.tl tr:last-child td{border-bottom:none}
+.tc{color:#667eea;font-weight:700;white-space:nowrap}
+.ti{color:#6b6b80;max-width:180px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.bv{padding:5px 12px;background:#667eea;color:#fff;border:none;border-radius:8px;font-size:11px;font-weight:600;cursor:pointer}
+.bv:hover{background:#764ba2}
+.bcur{background:#22c55e}
+.bcur:hover{background:#16a34a}
+.empty{text-align:center;padding:28px;color:#9090a0;font-size:13px}
+.dg{margin-bottom:20px}
+.dl{font-size:13px;font-weight:700;color:#1a1a2e;padding:8px 0 6px;border-bottom:2px solid #667eea;margin-bottom:6px}
+.dg .tl{border-radius:8px}
+.ov{position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.6);z-index:300;display:none;align-items:center;justify-content:center;padding:16px}
+.ov.on{display:flex}
+.ovbox{background:#fff;border-radius:16px;width:100%;max-width:680px;max-height:85vh;overflow-y:auto;box-shadow:0 24px 80px rgba(0,0,0,.25)}
+.ovhd{display:flex;justify-content:space-between;align-items:center;padding:16px 20px;border-bottom:1px solid #e8e9f0;position:sticky;top:0;background:#fff;border-radius:16px 16px 0 0}
+.ovtt{font-size:15px;font-weight:700;color:#1a1a2e}
+.ovcls{padding:6px 14px;background:#f4f5f9;border:none;border-radius:8px;font-size:12px;font-weight:600;cursor:pointer}
+.ovbd{padding:16px}
+.dlbtn{position:fixed;bottom:24px;right:16px;background:linear-gradient(135deg,#667eea,#764ba2);color:#fff;padding:12px 20px;border-radius:25px;font-size:13px;font-weight:700;text-decoration:none;box-shadow:0 4px 20px rgba(102,126,234,.4);z-index:100;display:flex;align-items:center;gap:6px}
+.dlbtn:hover{transform:scale(1.04)}
 </style>
 </head>
 <body>
-<div class="hh">
-  <h1>行业资讯</h1>
-  <div class="hh-r">
-    <span class="hh-t">2026-03-25 12:28</span>
-    <a href="../index.html">← 首页</a>
+<button class="pk" onclick="document.getElementById('ov').classList.toggle('on')">🖼️ 预览图片</button>
+
+<div class="hdr">
+  <h1>📰 行业资讯</h1>
+  <p>跨境电商每日简报 · 精选 5 条</p>
+  <div class="tm">🕒 2026-03-25 12:40 · 北京时间 UTC+8</div>
+</div>
+
+<div class="bar">
+  <a href="#" class="active" id="tabA0" onclick="switchTab(0);return false">📋 当前版本</a>
+  <a href="#" id="tabA1" onclick="switchTab(1);return false">🕐 今日历史</a>
+  <a href="历史.html">📁 历史存档</a>
+</div>
+
+<div class="main">
+  <div id="tab0">
+    <div class="sec">
+      <div class="sec-h">🖼️ 对外简报 <span>朋友圈</span> <span class="curB">12:00</span></div>
+      <ul class="nl"><li class="ni"><div class="nb">1</div><div class="nc"><div class="nm"><span class="tag tagR">行业政策</span></div><div class="nt"><a href="https://www.ingstart.com/blog/45558.html" target="_blank">2026美国电商如何赢得新增长？答案就藏在这里 - ingstart-全球公司成立与合规</a></div><div class="nd">2026美国电商如何赢得新增长？答案就藏在这里 随着TikTok Shop在美国市场持续爆发，“兴趣电商+品牌</div></div></li><li class="ni"><div class="nb">2</div><div class="nc"><div class="nm"><span class="tag tagO">市场观察</span></div><div class="nt"><a href="https://www.sohu.com/a/996154720_122656378" target="_blank">2026全球电商市场洗牌，新兴平台崛起冲击亚马逊</a></div><div class="nd">新兴电商平台用户增长迅猛，亚马逊份额面临分流。中小卖家开始多平台布局，降低单一平台依赖。</div></div></li><li class="ni"><div class="nb">3</div><div class="nc"><div class="nm"><span class="tag tagR">行业政策</span></div><div class="nt"><a href="https://www.sohu.com/a/998377667_120987862" target="_blank">亚马逊多账号关联检测升级，IP指纹成重点</a></div><div class="nd">亚马逊加强多账号关联检测，浏览器指纹、IP地址、设备环境成主要检测维度。多账号卖家需提前做好防关联准备。</div></div></li></ul>
+    </div>
+    <div class="sec">
+      <div class="sec-h">📊 对内全模块 <span>5条</span></div>
+      <ul class="nl"><li class="ni"><div class="nb">1</div><div class="nc"><div class="nm"><span class="tag tagR">行业政策</span></div><div class="nt"><a href="https://www.ingstart.com/blog/45558.html" target="_blank">2026美国电商如何赢得新增长？答案就藏在这里 - ingstart-全球公司成立与合规</a></div><div class="nd">2026美国电商如何赢得新增长？答案就藏在这里 随着TikTok Shop在美国市场持续爆发，“兴趣电商+品牌</div><div class="ns">&#128214; <a href="https://www.ingstart.com/blog/45558.html" target="_blank">www.ingstart.com</a> <a class="nlk" href="https://www.ingstart.com/blog/45558.html" target="_blank">&#8594;</a></div></div></li><li class="ni"><div class="nb">2</div><div class="nc"><div class="nm"><span class="tag tagGr">运营技巧</span></div><div class="nt"><a href="https://www.sohu.com/a/998487508_122647688" target="_blank">404,您访问的页面已经不存在!</a></div><div class="nd"></div><div class="ns">&#128214; <a href="https://www.sohu.com/a/998487508_122647688" target="_blank">www.sohu.com</a> <a class="nlk" href="https://www.sohu.com/a/998487508_122647688" target="_blank">&#8594;</a></div></div></li><li class="ni"><div class="nb">3</div><div class="nc"><div class="nm"><span class="tag tagO">市场观察</span></div><div class="nt"><a href="https://www.sohu.com/a/996154720_122656378" target="_blank">2026全球电商市场洗牌，新兴平台崛起冲击亚马逊</a></div><div class="nd">新兴电商平台用户增长迅猛，亚马逊份额面临分流。中小卖家开始多平台布局，降低单一平台依赖。</div><div class="ns">&#128214; <a href="https://www.sohu.com/a/996154720_122656378" target="_blank">搜狐财经</a> <a class="nlk" href="https://www.sohu.com/a/996154720_122656378" target="_blank">&#8594;</a></div></div></li><li class="ni"><div class="nb">4</div><div class="nc"><div class="nm"><span class="tag tagR">行业政策</span></div><div class="nt"><a href="https://www.sohu.com/a/998377667_120987862" target="_blank">亚马逊多账号关联检测升级，IP指纹成重点</a></div><div class="nd">亚马逊加强多账号关联检测，浏览器指纹、IP地址、设备环境成主要检测维度。多账号卖家需提前做好防关联准备。</div><div class="ns">&#128214; <a href="https://www.sohu.com/a/998377667_120987862" target="_blank">搜狐财经</a> <a class="nlk" href="https://www.sohu.com/a/998377667_120987862" target="_blank">&#8594;</a></div></div></li><li class="ni"><div class="nb">5</div><div class="nc"><div class="nm"><span class="tag tagR">行业政策</span></div><div class="nt"><a href="https://www.jiemian.com/article/14129901.html" target="_blank">美国、土耳其相继加征关税，跨境卖家成本压力骤增</a></div><div class="nd">美国、土耳其对多国商品加征关税，出口电商面临新一轮成本压力，需提前布局多平台分散风险。</div><div class="ns">&#128214; <a href="https://www.jiemian.com/article/14129901.html" target="_blank">界面新闻</a> <a class="nlk" href="https://www.jiemian.com/article/14129901.html" target="_blank">&#8594;</a></div></div></li></ul>
+    </div>
+  </div>
+  <div id="tab1" style="display:none">
+    <div class="sec">
+      <div class="sec-h">🕐 今日历史版本 <span>2026-03-25</span></div>
+      <table class="tl"><thead><tr><th>时间</th><th>条数</th><th>首条</th><th></th></tr></thead><tbody><tr><td class="tc"><em class="cur">12:00</em></td><td class="ti">8条</td><td class="ti">2026美国电商如何赢得新增长？答案就藏在这里 - ings...</td><td><button class="bv" onclick="showSnap('12')">当前</button></td></tr></tbody></table>
+    </div>
   </div>
 </div>
-<div class="ct">
-  <div class="tA">
-    <a class="btn btnP" href="#" onclick="openMo();return false;">查看简报图片</a>
-    <a class="btn" href="历史.html">历史存档</a>
-  </div>
-  <div class="card">
-    <div class="ch">
-      <div class="ctt">今日时间线 <span class="cb" id="tlCnt"></span></div>
-      <div class="cm">2026-03-25 · 北京时间</div>
+
+<div class="ov" id="ov" onclick="if(event.target===this)this.classList.remove('on')">
+  <div class="ovbox">
+    <div class="ovhd">
+      <div class="ovtt" id="svT">--:--</div>
+      <button class="ovcls" onclick="document.getElementById('ov').classList.remove('on')">关闭</button>
     </div>
-    <div id="tlList"><div class="tl cur"><div class="tlT"><div class="tlH">12:00</div><div class="tlD">2026-03-25</div><span class="curB">当前</span></div><div class="tlI"><div class="tlC">8条资讯</div><div class="tlP">2026年亚马逊全球各站点政策全景解读与卖家生存指南-AMZ123跨境导...</div></div><button class="tlB" onclick="showSnap('12')">查看</button></div></div>
-  </div>
-  <div class="snap" id="snapV">
-    <div class="snapH">
-      <div><div class="snapTT" id="svT">--:--</div><div class="snapSub" id="svS"></div></div>
-      <button class="snapCls" onclick="closeSnap()">关闭</button>
-    </div>
-    <div id="snapB"></div>
-  </div>
-  <div class="card" id="curO">
-    <div class="ch">
-      <div class="ctt">对外简报 · 朋友圈素材 <span class="curB">12:00</span></div>
-      <div class="cm">更新于 2026-03-25 12:28 · 行业政策为主 · 无来源链接</div>
-    </div>
-    <ul class="nl"><li class="ni"><div class="nn">1</div><div class="nb"><div class="nm"><span class="tag tagR">行业政策</span></div><div class="ntitle"><a href="https://www.amz123.com/t/yX2XDiOE" target="_blank">2026年亚马逊全球各站点政策全景解读与卖家生存指南-AMZ123跨境导航</a></div><div class="ndesc">2026年亚马逊的政策主旋律可以概括为&quot;区域分化、结构优化&quot;——不再是简单的一刀切费用调整，而是针对不同站点特点进行精细化调控：一边是真金白银的补贴和佣金下调，另一边是对库存和合规的严格要求。</div></div></li><li class="ni"><div class="nn">2</div><div class="nb"><div class="nm"><span class="tag tagR">行业政策</span></div><div class="ntitle"><a href="https://max.book118.com/html/2026/0322/7152136131011063.shtm" target="_blank">2026年跨境电商RCEP政策红利最大化项目可行性研究报告.docx-原创力文档</a></div><div class="ndesc">2026年跨境电商RCEP政策红利最大化项目可行性研究报告.docx,PAGE PAGE 1 2026年跨境电商RCEP政策红利最大化项目可行性研究报告 摘要 本报告立足于区域全面经济伙伴关系协定（RCEP）全面实施的宏观背景，针对2026年跨境电商行业发展的关键节点，系统论证了“RCEP政策红利最大化项目”的可行性。通过深入剖析RCEP框架下关税减免、原产地规则优化及数字贸易便利化等核心条款的落</div></div></li><li class="ni"><div class="nn">3</div><div class="nb"><div class="nm"><span class="tag tagR">行业政策</span></div><div class="ntitle"><a href="https://kpmg.com/cn/zh/insights/2026/03/global-fs-regulation-monthly-update-02.html" target="_blank">第二期：全球金融监管动态月刊（2026年2月刊）</a></div><div class="ndesc">洞察全球金融监管政策及趋势</div></div></li></ul>
-  </div>
-  <div class="card">
-    <div class="ch">
-      <div class="ctt">对内全模块 <span class="cb">5条</span></div>
-      <div class="cm">更新于 2026-03-25 12:28 · 完整分类+来源链接</div>
-    </div>
-    <ul class="nl"><li class="ni"><div class="nn">1</div><div class="nb"><div class="nm"><span class="tag tagR">行业政策</span></div><div class="ntitle"><a href="https://www.amz123.com/t/yX2XDiOE" target="_blank">2026年亚马逊全球各站点政策全景解读与卖家生存指南-AMZ123跨境导航</a></div><div class="ndesc">2026年亚马逊的政策主旋律可以概括为&quot;区域分化、结构优化&quot;——不再是简单的一刀切费用调整，而是针对不同站点特点进行精细化调控：一边是真金白银的补贴和佣金下调，另一边是对库存和合规的严格要求。</div><div class="nsrc">&#128214; <a href="https://www.amz123.com/t/yX2XDiOE" target="_blank">www.amz123.com</a> <a class="nlink" href="https://www.amz123.com/t/yX2XDiOE" target="_blank">&#8594; 阅读原文</a></div></div></li><li class="ni"><div class="nn">2</div><div class="nb"><div class="nm"><span class="tag tagR">行业政策</span></div><div class="ntitle"><a href="https://max.book118.com/html/2026/0322/7152136131011063.shtm" target="_blank">2026年跨境电商RCEP政策红利最大化项目可行性研究报告.docx-原创力文档</a></div><div class="ndesc">2026年跨境电商RCEP政策红利最大化项目可行性研究报告.docx,PAGE PAGE 1 2026年跨境电商RCEP政策红利最大化项目可行性研究报告 摘要 本报告立足于区域全面经济伙伴关系协定（RCEP）全面实施的宏观背景，针对2026年跨境电商行业发展的关键节点，系统论证了“RCEP政策红利最大化项目”的可行性。通过深入剖析RCEP框架下关税减免、原产地规则优化及数字贸易便利化等核心条款的落</div><div class="nsrc">&#128214; <a href="https://max.book118.com/html/2026/0322/7152136131011063.shtm" target="_blank">max.book118.com</a> <a class="nlink" href="https://max.book118.com/html/2026/0322/7152136131011063.shtm" target="_blank">&#8594; 阅读原文</a></div></div></li><li class="ni"><div class="nn">3</div><div class="nb"><div class="nm"><span class="tag tagR">行业政策</span></div><div class="ntitle"><a href="https://kpmg.com/cn/zh/insights/2026/03/global-fs-regulation-monthly-update-02.html" target="_blank">第二期：全球金融监管动态月刊（2026年2月刊）</a></div><div class="ndesc">洞察全球金融监管政策及趋势</div><div class="nsrc">&#128214; <a href="https://kpmg.com/cn/zh/insights/2026/03/global-fs-regulation-monthly-update-02.html" target="_blank">kpmg.com</a> <a class="nlink" href="https://kpmg.com/cn/zh/insights/2026/03/global-fs-regulation-monthly-update-02.html" target="_blank">&#8594; 阅读原文</a></div></div></li><li class="ni"><div class="nn">4</div><div class="nb"><div class="nm"><span class="tag tagR">行业政策</span></div><div class="ntitle"><a href="https://zhuanlan.zhihu.com/p/2016562761543460238" target="_blank">两会里的出海趋势｜从“参与全球竞争”到“优化全球布局” - 知乎</a></div><div class="ndesc">引言近年来，中国企业的全球化进程不断加快，而政策层面的信号也在持续强化企业走向国际市场的方向。透过2026年的政府工作报告，我们可以清晰地捕捉到国家层面对企业“走出去”的战略指引，正在发生深刻演变。 如…</div><div class="nsrc">&#128214; <a href="https://zhuanlan.zhihu.com/p/2016562761543460238" target="_blank">zhuanlan.zhihu.com</a> <a class="nlink" href="https://zhuanlan.zhihu.com/p/2016562761543460238" target="_blank">&#8594; 阅读原文</a></div></div></li><li class="ni"><div class="nn">5</div><div class="nb"><div class="nm"><span class="tag tagO">市场观察</span></div><div class="ntitle"><a href="https://www.sohu.com/a/996154720_122656378" target="_blank">2026全球电商市场洗牌，新兴平台崛起冲击亚马逊</a></div><div class="ndesc">新兴电商平台用户增长迅猛，亚马逊份额面临分流。中小卖家开始多平台布局，降低单一平台依赖。</div><div class="nsrc">&#128214; <a href="https://www.sohu.com/a/996154720_122656378" target="_blank">搜狐财经</a> <a class="nlink" href="https://www.sohu.com/a/996154720_122656378" target="_blank">&#8594; 阅读原文</a></div></div></li></ul>
+    <div class="ovbd"><div id="svB"></div></div>
   </div>
 </div>
-<div class="modal" id="mo">
-  <div class="mc" onclick="closeMo()">×</div>
-  <img class="mi" src="https://dwightmulkin-beep.github.io/conan-daily-report/%E8%B5%84%E8%AE%AF/%E7%AE%80%E6%8A%A5.png" alt="简报">
-  <div class="ms"><a href="https://dwightmulkin-beep.github.io/conan-daily-report/%E8%B5%84%E8%AE%AF/%E7%AE%80%E6%8A%A5.png" download="行业简报_2026-03-25_12h.png">保存图片</a></div>
-  <div class="mt">点击 × 或按 ESC 关闭</div>
-</div>
-<script type="application/json" id="sd">{"2026-03-25": {"12": {"articles": [{"tag": "行业政策", "title": "2026年亚马逊全球各站点政策全景解读与卖家生存指南-AMZ123跨境导航", "desc": "2026年亚马逊的政策主旋律可以概括为&quot;区域分化、结构优化&quot;——不再是简单的一刀切费用调整，而是针对不同站点特点进行精细化调控：一边是真金白银的补贴和佣金下调，另一边是对库存和合规的严格要求。", "date": "2026-03-25", "hour": "12", "url": "https://www.amz123.com/t/yX2XDiOE", "source": "www.amz123.com", "is_new": true, "for_outer": true, "score": 5}, {"tag": "行业政策", "title": "2026年跨境电商RCEP政策红利最大化项目可行性研究报告.docx-原创力文档", "desc": "2026年跨境电商RCEP政策红利最大化项目可行性研究报告.docx,PAGE PAGE 1 2026年跨境电商RCEP政策红利最大化项目可行性研究报告 摘要 本报告立足于区域全面经济伙伴关系协定（RCEP）全面实施的宏观背景，针对2026年跨境电商行业发展的关键节点，系统论证了“RCEP政策红利最大化项目”的可行性。通过深入剖析RCEP框架下关税减免、原产地规则优化及数字贸易便利化等核心条款的落", "date": "2026-03-25", "hour": "12", "url": "https://max.book118.com/html/2026/0322/7152136131011063.shtm", "source": "max.book118.com", "is_new": true, "for_outer": true, "score": 5}, {"tag": "行业政策", "title": "第二期：全球金融监管动态月刊（2026年2月刊）", "desc": "洞察全球金融监管政策及趋势", "date": "2026-03-25", "hour": "12", "url": "https://kpmg.com/cn/zh/insights/2026/03/global-fs-regulation-monthly-update-02.html", "source": "kpmg.com", "is_new": true, "for_outer": true, "score": 5}, {"tag": "行业政策", "title": "2026年亚马逊全球各站点政策全景解读与卖家生存指南-AMZ123跨境导航", "desc": "2026年亚马逊的政策主旋律可以概括为&quot;区域分化、结构优化&quot;——不再是简单的一刀切费用调整，而是针对不同站点特点进行精细化调控：一边是真金白银的补贴和佣金下调，另一边是对库存和合规的严格要求。", "date": "2026-03-25", "hour": "12", "url": "https://www.amz123.com/t/yX2XDiOE", "source": "www.amz123.com", "is_new": true, "for_outer": true, "score": 5}, {"tag": "行业政策", "title": "2026年跨境电商RCEP政策红利最大化项目可行性研究报告.docx-原创力文档", "desc": "2026年跨境电商RCEP政策红利最大化项目可行性研究报告.docx,PAGE PAGE 1 2026年跨境电商RCEP政策红利最大化项目可行性研究报告 摘要 本报告立足于区域全面经济伙伴关系协定（RCEP）全面实施的宏观背景，针对2026年跨境电商行业发展的关键节点，系统论证了“RCEP政策红利最大化项目”的可行性。通过深入剖析RCEP框架下关税减免、原产地规则优化及数字贸易便利化等核心条款的落", "date": "2026-03-25", "hour": "12", "url": "https://max.book118.com/html/2026/0322/7152136131011063.shtm", "source": "max.book118.com", "is_new": true, "for_outer": true, "score": 5}, {"tag": "行业政策", "title": "第二期：全球金融监管动态月刊（2026年2月刊）", "desc": "洞察全球金融监管政策及趋势", "date": "2026-03-25", "hour": "12", "url": "https://kpmg.com/cn/zh/insights/2026/03/global-fs-regulation-monthly-update-02.html", "source": "kpmg.com", "is_new": true, "for_outer": true, "score": 5}, {"tag": "行业政策", "title": "两会里的出海趋势｜从“参与全球竞争”到“优化全球布局” - 知乎", "desc": "引言近年来，中国企业的全球化进程不断加快，而政策层面的信号也在持续强化企业走向国际市场的方向。透过2026年的政府工作报告，我们可以清晰地捕捉到国家层面对企业“走出去”的战略指引，正在发生深刻演变。 如…", "date": "2026-03-25", "hour": "12", "url": "https://zhuanlan.zhihu.com/p/2016562761543460238", "source": "zhuanlan.zhihu.com", "is_new": true, "for_outer": true, "score": 5}, {"tag": "市场观察", "title": "2026全球电商市场洗牌，新兴平台崛起冲击亚马逊", "desc": "新兴电商平台用户增长迅猛，亚马逊份额面临分流。中小卖家开始多平台布局，降低单一平台依赖。", "url": "https://www.sohu.com/a/996154720_122656378", "source": "搜狐财经", "for_outer": true, "is_new": false, "hour": "12", "score": 5}], "updated": "2026-03-25 12:28"}}}</script>
+
+<a class="dlbtn" href="https://dwightmulkin-beep.github.io/conan-daily-report/%E8%B5%84%E8%AE%AF/%E7%AE%80%E6%8A%A5.png" download="行业简报_2026-03-25_12h.png">⬇ 保存图片</a>
+
+<script type="application/json" id="sd">{"2026-03-25": {"12": {"articles": [{"tag": "行业政策", "title": "2026美国电商如何赢得新增长？答案就藏在这里 - ingstart-全球公司成立与合规", "desc": "2026美国电商如何赢得新增长？答案就藏在这里 随着TikTok Shop在美国市场持续爆发，“兴趣电商+品牌", "date": "2026-03-25", "hour": "12", "url": "https://www.ingstart.com/blog/45558.html", "source": "www.ingstart.com", "is_new": true, "for_outer": true, "score": 5}, {"tag": "市场观察", "title": "2026全球电商市场洗牌，新兴平台崛起冲击亚马逊", "desc": "新兴电商平台用户增长迅猛，亚马逊份额面临分流。中小卖家开始多平台布局，降低单一平台依赖。", "url": "https://www.sohu.com/a/996154720_122656378", "source": "搜狐财经", "for_outer": true, "is_new": false, "hour": "12", "score": 5}, {"tag": "行业政策", "title": "亚马逊多账号关联检测升级，IP指纹成重点", "desc": "亚马逊加强多账号关联检测，浏览器指纹、IP地址、设备环境成主要检测维度。多账号卖家需提前做好防关联准备。", "url": "https://www.sohu.com/a/998377667_120987862", "source": "搜狐财经", "for_outer": true, "is_new": false, "hour": "12", "score": 2}, {"tag": "行业政策", "title": "2026美国电商如何赢得新增长？答案就藏在这里 - ingstart-全球公司成立与合规", "desc": "2026美国电商如何赢得新增长？答案就藏在这里 随着TikTok Shop在美国市场持续爆发，“兴趣电商+品牌", "date": "2026-03-25", "hour": "12", "url": "https://www.ingstart.com/blog/45558.html", "source": "www.ingstart.com", "is_new": true, "for_outer": true, "score": 5}, {"tag": "运营技巧", "title": "404,您访问的页面已经不存在!", "desc": "", "date": "2026-03-25", "hour": "12", "url": "https://www.sohu.com/a/998487508_122647688", "source": "www.sohu.com", "is_new": true, "for_outer": false, "score": 0}, {"tag": "市场观察", "title": "2026全球电商市场洗牌，新兴平台崛起冲击亚马逊", "desc": "新兴电商平台用户增长迅猛，亚马逊份额面临分流。中小卖家开始多平台布局，降低单一平台依赖。", "url": "https://www.sohu.com/a/996154720_122656378", "source": "搜狐财经", "for_outer": true, "is_new": false, "hour": "12", "score": 5}, {"tag": "行业政策", "title": "亚马逊多账号关联检测升级，IP指纹成重点", "desc": "亚马逊加强多账号关联检测，浏览器指纹、IP地址、设备环境成主要检测维度。多账号卖家需提前做好防关联准备。", "url": "https://www.sohu.com/a/998377667_120987862", "source": "搜狐财经", "for_outer": true, "is_new": false, "hour": "12", "score": 2}, {"tag": "行业政策", "title": "美国、土耳其相继加征关税，跨境卖家成本压力骤增", "desc": "美国、土耳其对多国商品加征关税，出口电商面临新一轮成本压力，需提前布局多平台分散风险。", "url": "https://www.jiemian.com/article/14129901.html", "source": "界面新闻", "for_outer": true, "is_new": false, "hour": "12", "score": 2}], "updated": "2026-03-25 12:40"}}}</script>
 <script>
-var M=document.getElementById("mo");
-function openMo(){M.classList.add("modalOn");document.body.style.overflow="hidden"}
-function closeMo(){M.classList.remove("modalOn");document.body.style.overflow=""}
-M.addEventListener("click",function(e){if(e.target===M)closeMo()});
-document.addEventListener("keydown",function(e){if(e.key==="Escape")closeMo()});
 var SD=JSON.parse(document.getElementById("sd").textContent||"{}");
-var curO=document.getElementById("curO"),sv=document.getElementById("snapV");
-var TD=SD["2026-03-25"]||{};
-var hrs=Object.keys(TD).sort(function(a,b){return parseInt(b)-parseInt(a)});
-var tlHtml="";
-for(var i=0;i<hrs.length;i++){
-  var hr=hrs[i],sp=TD[hr],arts=sp&&sp.articles||[];
-  var ic=(hr==="12");
-  var cb=ic?'<span class="curB">当前</span>':"";
-  var ft=(arts[0]&&arts[0].title||"").substring(0,36)+"...";
-  tlHtml+='<div class="tl'+(ic?" cur":"")+'">'+
-    '<div class="tlT"><div class="tlH">'+hr+':00</div><div class="tlD">2026-03-25</div>'+cb+'</div>'+
-    '<div class="tlI"><div class="tlC">'+(arts.length||0)+'条资讯</div><div class="tlP">'+ft+'</div></div>'+
-    '<button class="tlB" onclick="showSnap(\''+hr+'\')">查看</button>'+
-  '</div>';
+var tabs=document.querySelectorAll('.bar a');
+
+function switchTab(i){
+  document.getElementById('tab0').style.display=i===0?'block':'none';
+  document.getElementById('tab1').style.display=i===1?'block':'none';
+  tabs[0].classList.toggle('active',i===0);
+  tabs[1].classList.toggle('active',i===1);
 }
-document.getElementById("tlList").innerHTML=tlHtml||'<div class="empty">今日暂无历史记录</div>';
-document.getElementById("tlCnt").textContent=hrs.length+"个版本";
+
 function showSnap(hr){
+  var TD=SD["2026-03-25"]||{};
   var sp=TD[hr];if(!sp){alert("数据不存在");return}
   var arts=sp.articles||[];
-  document.getElementById("svT").textContent="2026-03-25 "+hr+":00";
-  document.getElementById("svS").textContent=arts.length+" 条资讯";
+  document.getElementById("svT").textContent="2026-03-25 "+hr+":00 ("+arts.length+"条)";
   var h='<ul class="nl">';
   arts.forEach(function(a,i){
-    var cls=a.tag==="行业政策"?"tagR":a.tag==="市场观察"?"tagO":
-           a.tag==="平台动态"?"tagB":a.tag==="工具评测"?"tagV":
-           a.tag==="支付金融"?"tagG":"tagGr";
-    h+='<li class="ni"><div class="nn">'+(i+1)+'</div><div class="nb">'+
+    var cls=a.tag==="\u884c\u4e1a\u653f\u7b56"?"tagR":a.tag==="\u5e02\u573a\u89c2\u5bdf"?"tagO":
+           a.tag==="\u5e73\u53f0\u52a8\u6001"?"tagB":a.tag==="\u5de5\u5177\u8bc4\u6d4b"?"tagV":
+           a.tag==="\u652f\u4ed8\u91d1\u878d"?"tagG":"tagGr";
+    h+='<li class="ni"><div class="nb">'+(i+1)+'</div><div class="nc">'+
       '<div class="nm"><span class="tag '+cls+'">'+a.tag+'</span></div>'+
-      '<div class="ntitle"><a href="'+a.url+'" target="_blank">'+a.title+'</a></div>'+
-      '<div class="ndesc">'+a.desc+'</div>'+
-      '<div class="nsrc">📌 <a href="'+a.url+'" target="_blank">'+a.source+'</a> <a class="nlink" href="'+a.url+'" target="_blank">→ 阅读原文</a></div>'+
+      '<div class="nt"><a href="'+a.url+'" target="_blank">'+a.title+'</a></div>'+
+      '<div class="nd">'+a.desc+'</div>'+
+      '<div class="ns">📌 <a href="'+a.url+'" target="_blank">'+a.source+'</a> <a class="nlk" href="'+a.url+'" target="_blank">→</a></div>'+
     '</div></li>';
   });
   h+='</ul>';
-  document.getElementById("snapB").innerHTML=h;
-  sv.classList.add("snapOn");curO.style.display="none";
-  window.scrollTo({top:0,behavior:"smooth"});
+  document.getElementById("svB").innerHTML=h;
+  document.getElementById("ov").classList.add("on");
 }
-function closeSnap(){sv.classList.remove("snapOn");curO.style.display="block"}
 </script>
 </body>
 </html>
