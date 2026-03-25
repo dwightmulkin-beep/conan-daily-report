@@ -7,14 +7,14 @@
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #f0f2f5; }
-  .header { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 20px 40px; display: flex; justify-content: space-between; align-items: center; }
+  .header { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 20px 40px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; }
   .header h1 { font-size: 22px; }
   .header a { color: white; text-decoration: none; font-size: 14px; }
-  .header .last-check { font-size: 12px; opacity: 0.8; margin-right: 15px; }
+  .header .last-check { font-size: 12px; opacity: 0.8; }
   .container { max-width: 1200px; margin: 0 auto; padding: 30px 40px; }
   .section { background: white; border-radius: 12px; padding: 25px 30px; margin-bottom: 25px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
-  .section-title { font-size: 16px; font-weight: 600; color: #333; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 2px solid #667eea; display: flex; justify-content: space-between; align-items: center; }
-  .section-title .badge { font-size: 11px; background: #52c41a; color: white; padding: 2px 8px; border-radius: 10px; margin-left: 10px; }
+  .section-title { font-size: 16px; font-weight: 600; color: #333; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 2px solid #667eea; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; }
+  .section-title .badge { font-size: 11px; background: #52c41a; color: white; padding: 2px 8px; border-radius: 10px; }
   .news-item { padding: 20px 0; border-bottom: 1px solid #f0f0f0; }
   .news-item:last-child { border-bottom: none; }
   .news-meta { font-size: 12px; color: #999; margin-bottom: 8px; }
@@ -34,19 +34,23 @@
   .filter-btn { padding: 6px 15px; border: 1px solid #ddd; border-radius: 20px; background: white; color: #666; font-size: 13px; cursor: pointer; text-decoration: none; transition: all 0.2s; }
   .filter-btn:hover, .filter-btn.active { background: #667eea; color: white; border-color: #667eea; }
   .news-item.hidden { display: none; }
+  .read-link { color: #1890ff; font-size: 11px; margin-left: 8px; }
 </style>
 </head>
 <body>
 <div class="header">
   <h1>📰 行业资讯</h1>
   <div>
-    <span class="last-check">北京时间 (UTC+8) | 最后检查 2026-03-25 10:15</span>
-    <a href="../index.html">← 返回首页</a>
+    <span class="last-check">🕒 北京时间 (UTC+8) | 2026-03-25 10:30</span>
+    <a href="../index.html" style="margin-left:15px;">← 返回首页</a>
   </div>
 </div>
 <div class="container">
   <div class="section">
-    <div class="section-title">筛选</div>
+    <div class="section-title">
+      筛选
+      <span class="badge">🕒 每整点自动更新</span>
+    </div>
     <div class="filter">
       <a href="#" class="filter-btn active" data-filter="all">全部</a>
       <a href="#" class="filter-btn" data-filter="电商平台">电商平台</a>
@@ -57,66 +61,80 @@
     </div>
   </div>
   <div class="section">
-    <div class="section-title">📌 最新资讯 <span class="badge">每小时自动检查更新</span></div>
-    <div class="news-item" data-category="电商平台">
+    <div class="section-title">
+      📌 今日简报 · 2026-03-25
+      <span class="badge">5 条重要资讯</span>
+    </div>
+
+    <div class="news-item" data-category="工具评测">
       <div class="news-meta">
-        <span class="tag tag-blue">电商平台</span>
+        <span class="tag tag-purple">工具评测</span>
         2026-03-25
-        <span class="update-time">更新时间 2026-03-25 10:15</span>
+        <span class="update-time">🕒 更新时间 2026-03-25 10:30</span><span style="color:#52c41a;font-size:11px;"> NEW</span>
       </div>
       <div class="news-title">
-        <a href="https://www.sohu.com/a/998377667_120987862" target="_blank">月活超6.5亿！亚马逊仍是出海主航道，这几点卖家们要避坑</a>
+        <a href="https://www.bitbrowser.cn/blog/multilogin-vs-moreLogin-2026" target="_blank">Multilogin vs MoreLogin：2026年指纹浏览器真实对比</a>
       </div>
-      <div class="news-summary">Similarweb数据显示亚马逊以6.517亿月活稳居全球电商第一。平台合规与风控要求严苛，文章总结了三类常见踩坑及应对方案。</div>
-      <div class="news-source">来源：<a href="https://www.sohu.com/a/998377667_120987862" target="_blank">搜狐财经·跨境电商</a></div>
+      <div class="news-summary">在2026年的多账号管理市场中，防关联和隐私保护依然是数字营销、跨境电商和社交媒体运营的核心需求。无论是为了规避平台的反欺诈检测，还是为了建立安全的测试环境，选择合适的指纹浏览器直接关系到账号的存活率与业务稳定性。</div>
+      <div class="news-source">📌 来源：<a href="https://www.bitbrowser.cn/blog/multilogin-vs-moreLogin-2026" target="_blank">www.bitbrowser.cn</a>
+        <span class="read-link">→ 阅读原文</span>
+      </div>
     </div>
     <div class="news-item" data-category="电商平台">
       <div class="news-meta">
         <span class="tag tag-blue">电商平台</span>
         2026-03-25
-        <span class="update-time">更新时间 2026-03-25 10:15</span>
+        <span class="update-time">🕒 更新时间 2026-03-25 10:30</span><span style="color:#52c41a;font-size:11px;"> NEW</span>
       </div>
       <div class="news-title">
-        <a href="https://www.sohu.com/a/996154720_122656378" target="_blank">eBay更新卖家评级体系，账号表现更受重视</a>
+        <a href="https://www.upkuajing.com/knowledge/zixun/25181" target="_blank">亚马逊跨境2026：最新政策解读与精细化运营实战指南_跨境魔方</a>
       </div>
-      <div class="news-summary">eBay宣布更新卖家评级体系，账号表现和服务质量权重提升。稳定的环境和IP资源将成为卖家运营的重要保障。</div>
-      <div class="news-source">来源：<a href="https://www.sohu.com/a/996154720_122656378" target="_blank">搜狐财经·eBay动态</a></div>
+      <div class="news-summary">亚马逊跨境2026：最新政策解读与精细化运营实战指南</div>
+      <div class="news-source">📌 来源：<a href="https://www.upkuajing.com/knowledge/zixun/25181" target="_blank">www.upkuajing.com</a>
+        <span class="read-link">→ 阅读原文</span>
+      </div>
+    </div>
+    <div class="news-item" data-category="电商平台">
+      <div class="news-meta">
+        <span class="tag tag-blue">电商平台</span>
+        2026-03-25
+        <span class="update-time">🕒 更新时间 2026-03-25 10:30</span><span style="color:#52c41a;font-size:11px;"> NEW</span>
+      </div>
+      <div class="news-title">
+        <a href="https://www.sohu.com/a/998377667_120987862" target="_blank">亚马逊平台多账号关联检测收紧，卖家如何应对？</a>
+      </div>
+      <div class="news-summary">亚马逊加强多账号关联检测，重点关注IP、环境、设备指纹等维度。多账号卖家需提前做好防关联准备。</div>
+      <div class="news-source">📌 来源：<a href="https://www.sohu.com/a/998377667_120987862" target="_blank">搜狐财经</a>
+        <span class="read-link">→ 阅读原文</span>
+      </div>
     </div>
     <div class="news-item" data-category="社媒电商">
       <div class="news-meta">
         <span class="tag tag-green">社媒电商</span>
         2026-03-25
-        <span class="update-time">更新时间 2026-03-25 10:15</span>
+        <span class="update-time">🕒 更新时间 2026-03-25 10:30</span><span style="color:#52c41a;font-size:11px;"> NEW</span>
       </div>
       <div class="news-title">
-        <a href="https://www.shoplazza.cn/blog/tiktok-shop-policy-update" target="_blank">TikTok Shop政策更新：2026美国市场本土化运营实操指南</a>
+        <a href="https://www.163.com/dy/article/KNR7BJI40517K27V.html" target="_blank">2026年TikTok Shop运营全景解析：从新手入门到流量爆单实用指南</a>
       </div>
-      <div class="news-summary">TikTok Shop美国站正在加速扩张，平台政策向本土化运营倾斜，多账号矩阵运营和IP隔离需求持续增长。</div>
-      <div class="news-source">来源：<a href="https://www.shoplazza.cn/blog/tiktok-shop-policy-update" target="_blank">Shoplazza·店小秘</a></div>
+      <div class="news-summary">2026年TikTok Shop运营全景解析：从新手入门到流量爆单实用指南,运营,流量,选品,商家可,shop,实用指南,tiktok</div>
+      <div class="news-source">📌 来源：<a href="https://www.163.com/dy/article/KNR7BJI40517K27V.html" target="_blank">www.163.com</a>
+        <span class="read-link">→ 阅读原文</span>
+      </div>
     </div>
     <div class="news-item" data-category="工具评测">
       <div class="news-meta">
         <span class="tag tag-purple">工具评测</span>
         2026-03-25
-        <span class="update-time">更新时间 2026-03-25 10:15</span>
+        <span class="update-time">🕒 更新时间 2026-03-25 10:30</span><span style="color:#52c41a;font-size:11px;"> NEW</span>
       </div>
       <div class="news-title">
-        <a href="https://www.bitbrowser.cn/blog/fingerprint-browser-security-evaluation-ranking" target="_blank">2026指纹浏览器安全评测排行榜：哪款工具防关联效果最好？</a>
+        <a href="https://www.sohu.com/a/973166193_122531638" target="_blank">2026年如何找到最适合你的那一款防关联指纹浏览器？深度评测与选型指南_账号_管理_市场</a>
       </div>
-      <div class="news-summary">主流指纹浏览器横评，云登、adsPower、hubbrowser等产品的核心功能测评，批量管理与RPA集成能力对比。</div>
-      <div class="news-source">来源：<a href="https://www.bitbrowser.cn/blog/fingerprint-browser-security-evaluation-ranking" target="_blank">比特浏览器·行业评测</a></div>
-    </div>
-    <div class="news-item" data-category="行业观察">
-      <div class="news-meta">
-        <span class="tag tag-green">行业观察</span>
-        2026-03-25
-        <span class="update-time">更新时间 2026-03-25 10:15</span>
+      <div class="news-summary">工具案例参考：可关注那些提供免费版或低价基础版的防关联浏览器，并测试其环境创建的稳定性和代理兼容性。 工具案例参考：比特浏览器在其官方资料中展示了多级权限管理和员工操作审计的功能；Incogniton、Cl…</div>
+      <div class="news-source">📌 来源：<a href="https://www.sohu.com/a/973166193_122531638" target="_blank">www.sohu.com</a>
+        <span class="read-link">→ 阅读原文</span>
       </div>
-      <div class="news-title">
-        <a href="https://www.jiemian.com/article/14129901.html" target="_blank">2026跨境电商生存指南：如何在变局中守住增长基本盘？</a>
-      </div>
-      <div class="news-summary">2025年跨境电商经历全球经济增长乏力、地缘政治冲突频发，2026年如何守住增长基本盘？生存指南解读。</div>
-      <div class="news-source">来源：<a href="https://www.jiemian.com/article/14129901.html" target="_blank">界面新闻·商业观察</a></div>
     </div>
   </div>
 </div>
