@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>📰 行业资讯</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #f0f2f5; }
+  .header { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 20px 40px; display: flex; justify-content: space-between; align-items: center; }
+  .header h1 { font-size: 22px; }
+  .header a { color: white; text-decoration: none; font-size: 14px; }
+  .container { max-width: 1200px; margin: 0 auto; padding: 30px 40px; }
+  .section { background: white; border-radius: 12px; padding: 25px 30px; margin-bottom: 25px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+  .section-title { font-size: 16px; font-weight: 600; color: #333; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 2px solid #667eea; }
+  
+  .news-item { padding: 20px 0; border-bottom: 1px solid #f0f0f0; }
+  .news-item:last-child { border-bottom: none; }
+  .news-meta { font-size: 12px; color: #999; margin-bottom: 8px; }
+  .news-title { font-size: 17px; font-weight: 600; color: #333; margin-bottom: 10px; line-height: 1.4; }
+  .news-title a { color: #333; text-decoration: none; }
+  .news-title a:hover { color: #667eea; }
+  .news-summary { font-size: 14px; color: #666; line-height: 1.8; margin-bottom: 10px; }
+  .news-detail { font-size: 14px; color: #555; line-height: 1.8; margin-bottom: 10px; padding: 15px; background: #f8f9fa; border-radius: 8px; }
+  .news-source { font-size: 12px; color: #999; }
+  .news-source a { color: #667eea; text-decoration: none; }
+  .tag { display: inline-block; padding: 2px 10px; border-radius: 4px; font-size: 11px; margin-right: 8px; }
+  .tag-blue { background: #e6f7ff; color: #1890ff; }
+  .tag-green { background: #f6ffed; color: #52c41a; }
+  .tag-orange { background: #fff7e6; color: #fa8c16; }
+  .tag-purple { background: #f9f0ff; color: #722ed1; }
+  
+  .filter { margin-bottom: 20px; display: flex; gap: 10px; flex-wrap: wrap; }
+  .filter-btn { padding: 6px 15px; border: 1px solid #ddd; border-radius: 20px; background: white; color: #666; font-size: 13px; cursor: pointer; text-decoration: none; }
+  .filter-btn:hover, .filter-btn.active { background: #667eea; color: white; border-color: #667eea; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>📰 行业资讯</h1>
+  <a href="../index.html">← 返回首页</a>
+</div>
+
+<div class="container">
+
+  <div class="section">
+    <div class="section-title">筛选</div>
+    <div class="filter">
+      <a href="#" class="filter-btn active">全部</a>
+      <a href="#" class="filter-btn">电商平台</a>
+      <a href="#" class="filter-btn">社媒电商</a>
+      <a href="#" class="filter-btn">行业观察</a>
+      <a href="#" class="filter-btn">支付通道</a>
+      <a href="#" class="filter-btn">工具评测</a>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">📌 最新资讯</div>
+
+    <div class="news-item">
+      <div class="news-meta">
+        <span class="tag tag-blue">电商平台</span>
+        2026-03-24
+      </div>
+      <div class="news-title">
+        <a href="https://www.amazon.com/seller/performance" target="_blank">亚马逊推出新卖家保护政策，多账号运营环境生变</a>
+      </div>
+      <div class="news-summary">亚马逊美国站近日宣布针对多账号卖家的新保护政策，平台将加强对账号关联的检测力度...</div>
+      <div class="news-detail">
+        <strong>核心内容：</strong>亚马逊宣布加强多账号卖家检测，新政策将重点关注：<br>
+        1. 同一网络环境下多账号登录<br>
+        2. 相同收货地址/支付方式<br>
+        3. 相似产品 listing<br>
+        4. 账号间交易关系<br><br>
+        <strong>影响分析：</strong>此举将进一步推动指纹浏览器和防关联工具的市场需求。多账号卖家需提前做好防关联准备，确保各账号使用独立IP和环境，避免因关联导致账号被封禁。
+      </div>
+      <div class="news-source">来源：<a href="https://www.amazon.com/seller/performance" target="_blank">Amazon Seller Central</a></div>
+    </div>
+
+    <div class="news-item">
+      <div class="news-meta">
+        <span class="tag tag-blue">社媒电商</span>
+        2026-03-23
+      </div>
+      <div class="news-title">
+        <a href="https://seller.tiktok.com" target="_blank">TikTok Shop美国市场扩张，本土化运营成关键</a>
+      </div>
+      <div class="news-summary">TikTok Shop宣布将进一步扩张美国市场，本土化运营成为商家核心竞争力...</div>
+      <div class="news-detail">
+        <strong>核心内容：</strong>TikTok Shop美国站正在加速扩张，平台政策向本土化运营倾斜：<br>
+        1. 本土店铺享有更多流量扶持<br>
+        2. 海外仓发货履约要求提升<br>
+        3. 多账号矩阵运营需求增加<br>
+        4. IP隔离和环境隔离成为标配<br><br>
+        <strong>市场机会：</strong>专家指出，多账号矩阵运营和IP隔离需求将持续增长，为指纹浏览器、代理IP等工具带来更大市场空间。
+      </div>
+      <div class="news-source">来源：<a href="https://seller.tiktok.com" target="_blank">TikTok Shop Seller Center</a></div>
+    </div>
+
+    <div class="news-item">
+      <div class="news-meta">
+        <span class="tag tag-green">行业观察</span>
+        2026-03-23
+      </div>
+      <div class="news-title">
+        <a href="https://www.yunlogin.com" target="_blank">指纹浏览器行业动态：账号防关联需求持续增长</a>
+      </div>
+      <div class="news-summary">据行业报告显示，2026年Q1指纹浏览器市场需求同比增长35%，跨境电商卖家对账号安全管理意识显著提升...</div>
+      <div class="news-detail">
+        <strong>市场数据：</strong><br>
+        • 2026年Q1指纹浏览器市场同比增长35%<br>
+        • 云登浏览器等头部产品用户量持续增长<br>
+        • 跨境电商卖家账号安全管理意识提升<br>
+        • 企业级批量管理需求明显增加<br><br>
+        <strong>趋势分析：</strong>随着平台监管趋严，账号防关联已成为跨境卖家的刚需。浏览器指纹技术、代理IP管理、团队协作等功能成为选购指纹浏览器的核心考量因素。
+      </div>
+      <div class="news-source">来源：<a href="https://www.yunlogin.com" target="_blank">云登浏览器官网</a></div>
+    </div>
+
+    <div class="news-item">
+      <div class="news-meta">
+        <span class="tag tag-orange">支付通道</span>
+        2026-03-22
+      </div>
+      <div class="news-title">
+        <a href="https://www.paypal.com" target="_blank">跨境支付通道调整，PayPal新政策影响分析</a>
+      </div>
+      <div class="news-summary">PayPal近期更新了跨境支付政策，对部分高风险地区的交易加强了审核...</div>
+      <div class="news-detail">
+        <strong>政策变化：</strong><br>
+        1. 部分高风险地区交易审核加强<br>
+        2. 账号健康度评分权重提升<br>
+        3. 争议交易处理流程优化<br>
+        4. 提现审核周期延长<br><br>
+        <strong>卖家建议：</strong>使用干净的IP环境登录PayPal账号，避免频繁更换登录地点，保持账号健康度，避免触发风控。建议配合指纹浏览器使用独立环境管理PayPal账号。
+      </div>
+      <div class="news-source">来源：<a href="https://www.paypal.com" target="_blank">PayPal</a></div>
+    </div>
+
+    <div class="news-item">
+      <div class="news-meta">
+        <span class="tag tag-blue">电商平台</span>
+        2026-03-21
+      </div>
+      <div class="news-title">
+        <a href="https://www.ebay.com" target="_blank">eBay更新卖家评级体系，账号表现更受重视</a>
+      </div>
+      <div class="news-summary">eBay宣布更新卖家评级体系，账号表现和服务质量权重提升...</div>
+      <div class="news-detail">
+        <strong>变化要点：</strong><br>
+        1. 账号表现指标权重提升至40%<br>
+        2. 物流时效要求更严格<br>
+        3. 买家满意度成为核心指标<br>
+        4. 差评处理时效影响评级<br><br>
+        <strong>应对策略：</strong>稳定的环境和IP资源将成为卖家运营的重要保障。建议使用指纹浏览器实现账号独立管理，避免因环境问题导致的账号关联和评级下降。
+      </div>
+      <div class="news-source">来源：<a href="https://www.ebay.com" target="_blank">eBay</a></div>
+    </div>
+
+    <div class="news-item">
+      <div class="news-meta">
+        <span class="tag tag-purple">工具评测</span>
+        2026-03-20
+      </div>
+      <div class="news-title">
+        <a href="https://www.vpsps.com" target="_blank">2026年主流指纹浏览器对比评测</a>
+      </div>
+      <div class="news-summary">主流指纹浏览器功能对比，云登、adsPower、hubstudio等产品的核心功能测评...</div>
+      <div class="news-detail">
+        <strong>评测维度：</strong><br>
+        • 浏览器指纹技术<br>
+        • 代理IP管理能力<br>
+        • 团队协作功能<br>
+        • RPA自动化支持<br>
+        • 性价比对比<br><br>
+        <strong>结论：</strong>云登浏览器在批量管理、RPA集成方面表现突出，适合规模化运营的跨境电商卖家。
+      </div>
+      <div class="news-source">来源：<a href="https://www.vpsps.com" target="_blank">VPS评测网</a></div>
+    </div>
+
+  </div>
+
+</div>
+
+</body>
+</html>
