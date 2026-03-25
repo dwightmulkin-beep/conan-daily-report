@@ -1,206 +1,299 @@
 <!DOCTYPE html>
-<html><head>
+<html>
+<head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>📰 行业资讯</title>
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:#f0f2f5}
-.hh{background:linear-gradient(135deg,#667eea,#764ba2);color:#fff;padding:20px 40px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
-.hh h1{font-size:22px}
-.hh a{color:#fff;text-decoration:none;font-size:14px}
-.hh .tz{font-size:12px;opacity:.8;margin-right:15px}
-.ct{max-width:1100px;margin:0 auto;padding:30px 40px}
-.top-links{display:flex;gap:12px;margin-bottom:20px;flex-wrap:wrap}
-.top-links a{display:inline-flex;align-items:center;gap:8px;padding:10px 18px;background:#fff;border-radius:10px;text-decoration:none;font-size:13px;font-weight:600;color:#333;box-shadow:0 2px 8px rgba(0,0,0,.08);transition:all .2s}
-.top-links a:hover{transform:translateY(-2px);box-shadow:0 4px 16px rgba(0,0,0,.12)}
-.crd{background:#fff;border-radius:16px;padding:24px 28px;box-shadow:0 4px 16px rgba(0,0,0,.08);margin-bottom:25px}
-.poster-inner{display:flex;align-items:center;gap:20px;cursor:pointer;border:2px solid transparent;border-radius:14px;padding:22px 26px;transition:all .25s}
-.poster-inner:hover{border-color:#667eea;transform:translateY(-3px);box-shadow:0 10px 30px rgba(102,126,234,.2)}
-.pi{width:60px;height:60px;background:linear-gradient(135deg,#667eea,#764ba2);border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:28px;flex-shrink:0}
-.pinf{flex:1}
-.pt{font-size:17px;font-weight:700;color:#222;margin-bottom:4px}
-.pd{font-size:13px;color:#666}
-.pr{display:flex;align-items:center;gap:10px}
-.ptag{background:linear-gradient(135deg,#667eea,#764ba2);color:#fff;font-size:12px;padding:5px 14px;border-radius:20px;font-weight:600}
-.par{font-size:22px;color:#667eea}
-.bh{display:flex;justify-content:space-between;align-items:center;margin-bottom:22px;padding-bottom:14px;border-bottom:2px solid #f0f0f5;flex-wrap:wrap;gap:8px}
-.bht{font-size:17px;font-weight:700;color:#222}
-.bhm{font-size:12px;color:#999}
-.badge{background:#52c41a;color:#fff;font-size:11px;padding:3px 10px;border-radius:10px;margin-left:8px}
-.curbadge{display:inline-block;background:#52c41a;color:#fff;font-size:10px;padding:1px 6px;border-radius:8px;margin-left:5px}
-.bi{display:flex;gap:14px;padding:16px 0;border-bottom:1px solid #f5f5f5}
-.bi:last-child{border-bottom:none;padding-bottom:0}
-.bn{width:26px;height:26px;background:linear-gradient(135deg,#667eea,#764ba2);color:#fff;border-radius:50%;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:3px}
-.bc{flex:1}
-.bc .tag{display:inline-block;padding:2px 8px;border-radius:4px;font-size:11px;margin-bottom:5px}
-.tag-blue{background:#e6f7ff;color:#1890ff}.tag-green{background:#f6ffed;color:#52c41a}
-.tag-orange{background:#fff7e6;color:#fa8c16}.tag-purple{background:#f9f0ff;color:#722ed1}
-.bt{font-size:15px;font-weight:600;color:#222;margin-bottom:5px;line-height:1.5}
-.bt a{color:#222;text-decoration:none}.bt a:hover{color:#667eea}
-.bds{font-size:13px;color:#555;line-height:1.7;margin-bottom:5px}
-.bsrc{font-size:12px;color:#999}
-.bl a{color:#667eea;text-decoration:none}.bl a:hover{text-decoration:underline}
-.tl-item{display:flex;gap:14px;padding:12px 0;border-bottom:1px solid #f5f5f5;align-items:center}
-.tl-item:last-child{border-bottom:none}
-.tl-item.cur{background:#f8f9ff;border-radius:10px;padding:12px 14px;border:1px solid #e6edff}
-.tlw{width:76px;flex-shrink:0;text-align:center}
-.tlhr{font-size:17px;font-weight:700;color:#333}.tldt{font-size:11px;color:#999}
-.tlpre{flex:1}.tln{font-size:12px;color:#667eea;font-weight:600;margin-bottom:3px}.tlpre ul{font-size:12px;color:#888;list-style:none;margin:0;padding:0}
-.tlpre li{margin-bottom:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.tlbtn{padding:6px 14px;background:#667eea;color:#fff;border:none;border-radius:6px;font-size:12px;cursor:pointer;flex-shrink:0}
-.tlbtn:hover{background:#764ba2}
-.snap{display:none}.snap.show{display:block}
-.sv-hd{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}
-.sv-ttl{font-size:16px;font-weight:700;color:#222}.sv-time{font-size:12px;color:#999}
-.sv-cls{padding:6px 14px;background:#f0f0f5;color:#666;border:none;border-radius:6px;font-size:12px;cursor:pointer}
-.mo{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.88);z-index:9999;align-items:center;justify-content:center;padding:20px}
-.mo.on{display:flex}
-.mc{position:fixed;top:20px;right:30px;color:#fff;font-size:32px;cursor:pointer;z-index:10001;background:rgba(255,255,255,.15);width:44px;height:44px;border-radius:50%;text-align:center;line-height:44px}
-.mc:hover{background:rgba(255,255,255,.3)}
-.miw{max-width:95vw;max-height:90vh;display:flex;align-items:center;justify-content:center}
-.miw img{max-width:100%;max-height:88vh;border-radius:12px;box-shadow:0 24px 80px rgba(0,0,0,.6)}
-.msv{position:fixed;bottom:30px;right:30px;z-index:10001}
-.msv a{display:inline-block;background:#fff;color:#667eea;padding:12px 24px;border-radius:25px;font-size:14px;font-weight:700;text-decoration:none;box-shadow:0 4px 16px rgba(0,0,0,.3)}
-.mti{position:fixed;bottom:30px;left:50%;transform:translateX(-50%);color:rgba(255,255,255,.5);font-size:12px;z-index:10001}
+  :root {
+    --primary: #667eea;
+    --primary-dark: #5a6fd6;
+    --purple: #764ba2;
+    --text: #1a1a2e;
+    --text-secondary: #4a4a6a;
+    --text-muted: #9090a0;
+    --bg: #f4f5f9;
+    --card: #ffffff;
+    --border: #e8e9f0;
+    --tag-blue-bg: #e8f4ff; --tag-blue-text: #2b7cd6;
+    --tag-green-bg: #edfben; --tag-green-text: #2a9d3a;
+    --tag-orange-bg: #fff3e8; --tag-orange-text: #d4700a;
+    --tag-purple-bg: #f3eeff; --tag-purple-text: #7c3aed;
+    --shadow: 0 1px 3px rgba(0,0,0,.06), 0 4px 16px rgba(0,0,0,.04);
+    --shadow-hover: 0 4px 12px rgba(102,126,234,.15), 0 8px 32px rgba(0,0,0,.08);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+  a{color:inherit;text-decoration:none}
+
+  /* Header */
+  .header{background:linear-gradient(135deg,var(--primary) 0%,var(--purple) 100%);padding:0 48px;height:64px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;box-shadow:0 2px 20px rgba(102,126,234,.3)}
+  .header h1{font-size:18px;font-weight:700;color:#fff;letter-spacing:-.3px}
+  .header-right{display:flex;align-items:center;gap:20px}
+  .header-time{font-size:12px;color:rgba(255,255,255,.75)}
+  .header-link{font-size:13px;color:rgba(255,255,255,.9);transition:opacity .2s}
+  .header-link:hover{opacity:.7}
+
+  /* Container */
+  .container{max-width:900px;margin:0 auto;padding:32px 24px}
+
+  /* Top Actions */
+  .top-actions{display:flex;gap:12px;margin-bottom:24px}
+  .action-btn{display:inline-flex;align-items:center;gap:8px;padding:11px 20px;background:var(--card);border:1.5px solid var(--border);border-radius:12px;font-size:13px;font-weight:600;color:var(--text-secondary);cursor:pointer;transition:all .2s;box-shadow:var(--shadow)}
+  .action-btn:hover{border-color:var(--primary);color:var(--primary);transform:translateY(-1px);box-shadow:var(--shadow-hover)}
+  .action-btn.primary{background:linear-gradient(135deg,var(--primary),var(--purple));color:#fff;border:none;box-shadow:0 4px 16px rgba(102,126,234,.3)}
+  .action-btn.primary:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(102,126,234,.4)}
+
+  /* Cards */
+  .card{background:var(--card);border-radius:16px;padding:28px 32px;margin-bottom:20px;box-shadow:var(--shadow)}
+
+  /* Poster Card */
+  .poster-card{cursor:pointer;display:flex;align-items:center;gap:24px;transition:all .25s;padding:24px 32px}
+  .poster-card:hover{transform:translateY(-2px);box-shadow:var(--shadow-hover)}
+  .poster-icon{width:56px;height:56px;background:linear-gradient(135deg,var(--primary),var(--purple));border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:26px;flex-shrink:0}
+  .poster-info{flex:1}
+  .poster-title{font-size:16px;font-weight:700;color:var(--text);margin-bottom:4px}
+  .poster-sub{font-size:13px;color:var(--text-muted)}
+  .poster-badge{background:linear-gradient(135deg,var(--primary),var(--purple));color:#fff;font-size:12px;font-weight:700;padding:5px 14px;border-radius:20px;white-space:nowrap}
+  .poster-arrow{font-size:20px;color:var(--primary);flex-shrink:0}
+
+  /* Card Header */
+  .card-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;padding-bottom:14px;border-bottom:1px solid var(--border)}
+  .card-title{font-size:15px;font-weight:700;color:var(--text)}
+  .card-meta{font-size:12px;color:var(--text-muted)}
+  .card-badge{font-size:11px;background:var(--primary);color:#fff;padding:2px 10px;border-radius:10px;margin-left:8px}
+
+  /* Timeline */
+  .timeline-list{list-style:none;margin:0;padding:0}
+  .timeline-item{display:flex;align-items:center;gap:14px;padding:12px 0;border-bottom:1px solid var(--border);transition:background .15s;border-radius:8px;cursor:pointer}
+  .timeline-item:last-child{border-bottom:none}
+  .timeline-item:hover{background:rgba(102,126,234,.04)}
+  .timeline-item.current{background:rgba(102,126,234,.06);border:1px solid rgba(102,126,234,.15);padding:11px 12px;margin:-1px -4px}
+  .tl-time{width:64px;flex-shrink:0;text-align:center}
+  .tl-hour{font-size:15px;font-weight:700;color:var(--text)}
+  .tl-date{font-size:11px;color:var(--text-muted)}
+  .tl-info{flex:1;min-width:0}
+  .tl-count{font-size:12px;font-weight:600;color:var(--primary);margin-bottom:2px}
+  .tl-preview{font-size:12px;color:var(--text-muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .tl-btn{padding:5px 12px;background:var(--primary);color:#fff;border:none;border-radius:8px;font-size:12px;font-weight:600;cursor:pointer;transition:all .2s;flex-shrink:0}
+  .tl-btn:hover{background:var(--primary-dark);transform:scale(1.03)}
+
+  /* News List */
+  .news-list{list-style:none;margin:0;padding:0}
+  .news-item{display:flex;gap:16px;padding:20px 0;border-bottom:1px solid var(--border)}
+  .news-item:last-child{border-bottom:none;padding-bottom:0}
+  .news-item:first-child{padding-top:0}
+  .news-num{width:28px;height:28px;background:linear-gradient(135deg,var(--primary),var(--purple));color:#fff;border-radius:50%;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
+  .news-body{flex:1;min-width:0}
+  .news-meta{display:flex;align-items:center;gap:8px;margin-bottom:6px}
+  .tag{display:inline-block;padding:2px 9px;border-radius:6px;font-size:11px;font-weight:600}
+  .tag-blue{background:var(--tag-blue-bg);color:var(--tag-blue-text)}
+  .tag-green{background:var(--tag-green-bg);color:var(--tag-green-text)}
+  .tag-orange{background:var(--tag-orange-bg);color:var(--tag-orange-text)}
+  .tag-purple{background:var(--tag-purple-bg);color:var(--tag-purple-text)}
+  .news-title{font-size:15px;font-weight:600;color:var(--text);line-height:1.5;margin-bottom:6px;transition:color .2s}
+  .news-title:hover{color:var(--primary)}
+  .news-title a{color:inherit;text-decoration:none}
+  .news-title a:hover{color:var(--primary)}
+  .news-desc{font-size:13px;color:var(--text-secondary);line-height:1.65;margin-bottom:6px}
+  .news-source{font-size:12px;color:var(--text-muted)}
+  .news-link{color:var(--primary);font-weight:600;margin-left:4px}
+  .cur-badge{display:inline-block;background:#22c55e;color:#fff;font-size:10px;font-weight:700;padding:1px 7px;border-radius:8px;margin-left:6px}
+
+  /* Snapshot Viewer */
+  .snapshot{background:var(--card);border-radius:16px;padding:24px 28px;margin-bottom:20px;box-shadow:var(--shadow);display:none}
+  .snapshot.show{display:block}
+  .snapshot-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px}
+  .snapshot-title{font-size:15px;font-weight:700;color:var(--text)}
+  .snapshot-sub{font-size:12px;color:var(--text-muted);margin-top:2px}
+  .snapshot-close{padding:6px 14px;background:var(--bg);color:var(--text-secondary);border:none;border-radius:8px;font-size:12px;font-weight:600;cursor:pointer}
+
+  /* Modal */
+  .modal{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.85);z-index:1000;align-items:center;justify-content:center;padding:32px}
+  .modal.on{display:flex}
+  .modal-close{position:fixed;top:24px;right:28px;color:#fff;font-size:28px;cursor:pointer;width:44px;height:44px;background:rgba(255,255,255,.12);border-radius:50%;display:flex;align-items:center;justify-content:center;transition:background .2s}
+  .modal-close:hover{background:rgba(255,255,255,.22)}
+  .modal-img{max-width:90vw;max-height:85vh;border-radius:12px;box-shadow:0 24px 80px rgba(0,0,0,.5)}
+  .modal-save{position:fixed;bottom:28px;right:28px}
+  .modal-save a{display:inline-flex;align-items:center;gap:8px;background:#fff;color:var(--primary);padding:11px 22px;border-radius:25px;font-size:14px;font-weight:700;text-decoration:none;box-shadow:0 4px 20px rgba(0,0,0,.3);transition:transform .2s}
+  .modal-save a:hover{transform:scale(1.04)}
+  .modal-tip{position:fixed;bottom:28px;left:50%;transform:translateX(-50%);color:rgba(255,255,255,.45);font-size:12px}
+
+  /* Empty state */
+  .empty{text-align:center;padding:32px 0;color:var(--text-muted);font-size:13px}
 </style>
 </head>
 <body>
-<div class="hh">
+
+<div class="header">
   <h1>📰 行业资讯</h1>
-  <div><span class="tz">2026-03-25 11:41</span><a href="../index.html">← 返回首页</a></div>
+  <div class="header-right">
+    <span class="header-time">2026-03-25 11:54</span>
+    <a class="header-link" href="../index.html">← 首页</a>
+  </div>
 </div>
-<div class="ct">
-  <div class="top-links">
-    <a href="#" onclick="openMo();return false;"><span>🖼️</span> 查看简报图片</a>
-    <a href="历史.html"><span>📁</span> 历史存档</a>
+
+<div class="container">
+
+  <!-- 快捷操作 -->
+  <div class="top-actions">
+    <a class="action-btn primary" href="#" onclick="openMo();return false;">
+      🖼️ 查看简报图片
+    </a>
+    <a class="action-btn" href="历史.html">
+      📁 历史存档
+    </a>
   </div>
 
   <!-- 简报图片入口 -->
-  <div class="crd">
-    <div class="poster-inner" onclick="openMo()">
-      <div class="pi">🖼️</div>
-      <div class="pinf"><div class="pt">📰 今日简报图片</div><div class="pd">点击预览，支持右键/长按保存图片</div></div>
-      <div class="pr"><span class="ptag">11:00</span><span class="par">→</span></div>
+  <div class="card poster-card" onclick="openMo()">
+    <div class="poster-icon">🖼️</div>
+    <div class="poster-info">
+      <div class="poster-title">今日简报图片</div>
+      <div class="poster-sub">点击预览，长按或右键保存图片</div>
     </div>
+    <div class="poster-badge">11:00</div>
+    <div class="poster-arrow">→</div>
   </div>
 
   <!-- 今日时间线 -->
-  <div class="crd">
-    <div class="bh">
-      <div class="bht">📋 今日简报时间线 <span style="font-size:12px;color:#999;font-weight:normal">共 1 个版本</span></div>
-      <div class="bhm">2026-03-25</div>
+  <div class="card">
+    <div class="card-header">
+      <div class="card-title">📋 今日简报 <span class="card-badge">1个版本</span></div>
+      <div class="card-meta">2026-03-25 · 北京时间</div>
     </div>
-    <div class="tl-item cur>
-  <div class="tlw"><div class="tlhr">11:00</div><div class="tldt">2026-03-25</div><span class="curbadge">当前</span></div>
-  <div class="tlpre"><div class="tln">5条</div><ul><li>[社媒电商] 2026年TikTok Shop入驻全解析：门槛、周期与...</li><li>[电商平台] 防关联指纹浏览器-2026年指纹浏览器推荐 - 高级品牌...</li></ul></div>
-  <button class="tlbtn" onclick="showSnap('11')">查看</button>
+    <div class="timeline-item current>
+  <div class="tl-time">
+    <div class="tl-hour">11:00</div>
+    <div class="tl-date">2026-03-25</div>
+    <span class="cur-badge">当前</span>
+  </div>
+  <div class="tl-info">
+    <div class="tl-count">5 条资讯</div>
+    <div class="tl-preview">卖家注意！亚马逊2026年战略要点，我们帮你捋清楚了-雨果网...</div>
+  </div>
+  <button class="tl-btn" onclick="showSnap('11')">查看</button>
 </div>
   </div>
 
   <!-- 快照查看器 -->
-  <div class="crd snap" id="snapViewer">
-    <div class="sv-hd">
-      <div><div class="sv-ttl" id="svTtl">--:--</div><div class="sv-time" id="svTime"></div></div>
-      <button class="sv-cls" onclick="closeSnap()">关闭</button>
+  <div class="snapshot" id="snapViewer">
+    <div class="snapshot-header">
+      <div>
+        <div class="snapshot-title" id="svTtl">--:--</div>
+        <div class="snapshot-sub" id="svSub"></div>
+      </div>
+      <button class="snapshot-close" onclick="closeSnap()">关闭</button>
     </div>
     <div id="snapBody"></div>
   </div>
 
   <!-- 当前简报 -->
-  <div class="crd" id="curBrief">
-    <div class="bh">
-      <div class="bht">📋 今日要闻 · 2026-03-25 <span class="badge">5条</span> <span class="curbadge">当前11:00</span></div>
-      <div class="bhm">🕒 更新于 2026-03-25 11:41 · 每整点自动更新</div>
+  <div class="card" id="curBrief">
+    <div class="card-header">
+      <div class="card-title">
+        📋 今日要闻 · 2026-03-25
+        <span class="card-badge cur-badge">当前11:00</span>
+      </div>
+      <div class="card-meta">🕒 更新于 2026-03-25 11:54</div>
     </div>
-    <div class="bi">
-  <div class="bn">1</div>
-  <div class="bc">
-    <span class="tag tag-green">社媒电商</span>
-    <div class="bt"><a href="https://news.pedaily.cn/20260303/124582.shtml" target="_blank">2026年TikTok Shop入驻全解析：门槛、周期与补贴政策背后的跨境电商新机遇_行业动态_投资界</a></div>
-    <div class="bds">近年来，全球电商格局发生深刻变化，内容电商与兴趣电商的崛起为众多商家打开了全新的增长通道。作为全球领 先的短视频与直播平台，TikTok 将...</div>
-    <div class="bsrc">📌 news.pedaily.cn <span class="bl">→ <a href="https://news.pedaily.cn/20260303/124582.shtml" target="_blank">阅读原文</a></span></div>
+    <ul class="news-list">
+    <li class="news-item">
+  <div class="news-num">1</div>
+  <div class="news-body">
+    <div class="news-meta">
+      <span class="tag tag-blue">电商平台</span>
+    </div>
+    <div class="news-title"><a href="https://www.cifnews.com/article/181436" target="_blank">卖家注意！亚马逊2026年战略要点，我们帮你捋清楚了-雨果网</a></div>
+    <div class="news-desc">亚马逊发布2026年四大业务战略。</div>
+    <div class="news-source">📌 www.cifnews.com <a class="news-link" href="https://www.cifnews.com/article/181436" target="_blank">→ 阅读原文</a></div>
   </div>
-</div>
-    <div class="bi">
-  <div class="bn">2</div>
-  <div class="bc">
-    <span class="tag tag-blue">电商平台</span>
-    <div class="bt"><a href="https://www.cnblogs.com/siyetian/p/19472450" target="_blank">防关联指纹浏览器-2026年指纹浏览器推荐 - 高级品牌推荐官 - 企业博客</a></div>
-    <div class="bds">2026年防关联指纹浏览器选型指南：深度解析内核隔离技术与多账号安全管理 行业背景与市场趋势 跨入2026年，全球主流互联网平台（如Amazon、Facebook、TikTok、Google等）的风控算法已全面迈入“超维度识别”阶段。传统的账号管理方式由于无法解决硬件环境关联问题，正面临极高的封号风</div>
-    <div class="bsrc">📌 www.cnblogs.com <span class="bl">→ <a href="https://www.cnblogs.com/siyetian/p/19472450" target="_blank">阅读原文</a></span></div>
+</li>
+    <li class="news-item">
+  <div class="news-num">2</div>
+  <div class="news-body">
+    <div class="news-meta">
+      <span class="tag tag-green">社媒电商</span>
+    </div>
+    <div class="news-title"><a href="https://www.feikua.net/doc/3635.html" target="_blank">2026年TikTok Shop开店全攻略-飞跨浏览器</a></div>
+    <div class="news-desc">2026年TikTok全球月活超30亿（Statista），TikTok Shop成中国卖家海外布局关键。本文拆解开店全流程，分享飞跨浏览器解决网络/安全痛点，助高效开启TikTok电商掘金之旅。</div>
+    <div class="news-source">📌 www.feikua.net <a class="news-link" href="https://www.feikua.net/doc/3635.html" target="_blank">→ 阅读原文</a></div>
   </div>
-</div>
-    <div class="bi">
-  <div class="bn">3</div>
-  <div class="bc">
-    <span class="tag tag-blue">电商平台</span>
-    <div class="bt"><a href="https://baijiahao.baidu.com/s?id=1857984085704386684" target="_blank">2026年eBay卖家入驻全指南：资质要求与开店流程详解</a></div>
-    <div class="bds"></div>
-    <div class="bsrc">📌 baijiahao.baidu.com <span class="bl">→ <a href="https://baijiahao.baidu.com/s?id=1857984085704386684" target="_blank">阅读原文</a></span></div>
+</li>
+    <li class="news-item">
+  <div class="news-num">3</div>
+  <div class="news-body">
+    <div class="news-meta">
+      <span class="tag tag-orange">支付通道</span>
+    </div>
+    <div class="news-title"><a href="https://www.xtransfer.cn/c/LABBxM" target="_blank">3月23日外贸早报—XTransfer</a></div>
+    <div class="news-desc">XTransfer作为一站式外贸企业跨境金融和风控服务公司，为从事跨境电商B2B的中小微出口企业提供跨境收款平台服务。XTransfer提供的外贸收款方式，让中小微企业享受到和大型跨国集团企业同等水平的跨境金融服务！</div>
+    <div class="news-source">📌 www.xtransfer.cn <a class="news-link" href="https://www.xtransfer.cn/c/LABBxM" target="_blank">→ 阅读原文</a></div>
   </div>
-</div>
-    <div class="bi">
-  <div class="bn">4</div>
-  <div class="bc">
-    <span class="tag tag-blue">电商平台</span>
-    <div class="bt"><a href="https://thunderbit.com/zh-Hans/blog/ebay-statistics" target="_blank">2026 年 eBay 数据全解：卖家、买家与平台趋势深度剖析</a></div>
-    <div class="bds">获取 2026 年最新 eBay 数据，了解 Thunderbit AI 工具如何助力卖家用数据驱动产品调研与竞品分析。</div>
-    <div class="bsrc">📌 thunderbit.com <span class="bl">→ <a href="https://thunderbit.com/zh-Hans/blog/ebay-statistics" target="_blank">阅读原文</a></span></div>
+</li>
+    <li class="news-item">
+  <div class="news-num">4</div>
+  <div class="news-body">
+    <div class="news-meta">
+      <span class="tag tag-green">社媒电商</span>
+    </div>
+    <div class="news-title"><a href="https://www.shoplazza.cn/blog/tiktok-shop-policy-update" target="_blank">TikTok Shop政策更新：2026美国市场本土化运营实操指南</a></div>
+    <div class="news-desc">TikTok Shop美国站正在加速扩张，平台政策向本土化运营倾斜，多账号矩阵运营和IP隔离需求持续增长。</div>
+    <div class="news-source">📌 Shoplazza·店小秘 <a class="news-link" href="https://www.shoplazza.cn/blog/tiktok-shop-policy-update" target="_blank">→ 阅读原文</a></div>
   </div>
-</div>
-    <div class="bi">
-  <div class="bn">5</div>
-  <div class="bc">
-    <span class="tag tag-purple">工具评测</span>
-    <div class="bt"><a href="https://www.bitbrowser.cn/blog/multilogin-vs-moreLogin-2026" target="_blank">Multilogin vs MoreLogin：2026年指纹浏览器真实对比-比特指纹浏览器</a></div>
-    <div class="bds">在2026年的多账号管理市场中，防关联和隐私保护依然是数字营销、跨境电商和社交媒体运营的核心需求。无论是为了规避平台的反欺诈检测，还是为了建立安全的测试环境，选择合适的指纹浏览器直接关系到账号的存活率与业务稳定性。</div>
-    <div class="bsrc">📌 www.bitbrowser.cn <span class="bl">→ <a href="https://www.bitbrowser.cn/blog/multilogin-vs-moreLogin-2026" target="_blank">阅读原文</a></span></div>
+</li>
+    <li class="news-item">
+  <div class="news-num">5</div>
+  <div class="news-body">
+    <div class="news-meta">
+      <span class="tag tag-blue">电商平台</span>
+    </div>
+    <div class="news-title"><a href="https://www.sohu.com/a/998377667_120987862" target="_blank">月活超6.5亿！亚马逊仍是出海主航道，这几点卖家们要避坑</a></div>
+    <div class="news-desc">Similarweb数据显示亚马逊以6.517亿月活稳居全球电商第一。平台合规与风控要求严苛，文章总结了三类常见踩坑及应对方案。</div>
+    <div class="news-source">📌 搜狐财经 <a class="news-link" href="https://www.sohu.com/a/998377667_120987862" target="_blank">→ 阅读原文</a></div>
   </div>
-</div>
+</li>
+    </ul>
   </div>
+
 </div>
 
 <!-- 弹窗 -->
-<div class="mo" id="mo">
-  <div class="mc" onclick="closeMo()">×</div>
-  <div class="miw"><img src="https://dwightmulkin-beep.github.io/conan-daily-report/%E8%B5%84%E8%AE%AF/%E7%AE%80%E6%8A%A5.png" alt="简报"></div>
-  <div class="msv"><a href="https://dwightmulkin-beep.github.io/conan-daily-report/%E8%B5%84%E8%AE%AF/%E7%AE%80%E6%8A%A5.png" download="行业简报_2026-03-25_11h.png">⬇ 保存图片</a></div>
-  <div class="mti">点击 × 或 ESC 关闭</div>
+<div class="modal" id="mo">
+  <div class="modal-close" onclick="closeMo()">×</div>
+  <img class="modal-img" src="https://dwightmulkin-beep.github.io/conan-daily-report/%E8%B5%84%E8%AE%AF/%E7%AE%80%E6%8A%A5.png" alt="简报图片">
+  <div class="modal-save">
+    <a href="https://dwightmulkin-beep.github.io/conan-daily-report/%E8%B5%84%E8%AE%AF/%E7%AE%80%E6%8A%A5.png" download="行业简报_2026-03-25_11h.png">⬇ 保存图片</a>
+  </div>
+  <div class="modal-tip">点击 × 或按 ESC 关闭</div>
 </div>
 
-<script type="application/json" id="snapData">{"2026-03-25": {"11": {"articles": [{"tag": "社媒电商", "title": "2026年TikTok Shop入驻全解析：门槛、周期与补贴政策背后的跨境电商新机遇_行业动态_投资界", "desc": "近年来，全球电商格局发生深刻变化，内容电商与兴趣电商的崛起为众多商家打开了全新的增长通道。作为全球领 先的短视频与直播平台，TikTok 将...", "date": "2026-03-25", "hour": "11", "url": "https://news.pedaily.cn/20260303/124582.shtml", "source": "news.pedaily.cn", "is_new": true, "score": 7}, {"tag": "电商平台", "title": "防关联指纹浏览器-2026年指纹浏览器推荐 - 高级品牌推荐官 - 企业博客", "desc": "2026年防关联指纹浏览器选型指南：深度解析内核隔离技术与多账号安全管理 行业背景与市场趋势 跨入2026年，全球主流互联网平台（如Amazon、Facebook、TikTok、Google等）的风控算法已全面迈入“超维度识别”阶段。传统的账号管理方式由于无法解决硬件环境关联问题，正面临极高的封号风", "date": "2026-03-25", "hour": "11", "url": "https://www.cnblogs.com/siyetian/p/19472450", "source": "www.cnblogs.com", "is_new": true, "score": 7}, {"tag": "电商平台", "title": "2026年eBay卖家入驻全指南：资质要求与开店流程详解", "desc": "", "date": "2026-03-25", "hour": "11", "url": "https://baijiahao.baidu.com/s?id=1857984085704386684", "source": "baijiahao.baidu.com", "is_new": true, "score": 5}, {"tag": "电商平台", "title": "2026 年 eBay 数据全解：卖家、买家与平台趋势深度剖析", "desc": "获取 2026 年最新 eBay 数据，了解 Thunderbit AI 工具如何助力卖家用数据驱动产品调研与竞品分析。", "date": "2026-03-25", "hour": "11", "url": "https://thunderbit.com/zh-Hans/blog/ebay-statistics", "source": "thunderbit.com", "is_new": true, "score": 5}, {"tag": "工具评测", "title": "Multilogin vs MoreLogin：2026年指纹浏览器真实对比-比特指纹浏览器", "desc": "在2026年的多账号管理市场中，防关联和隐私保护依然是数字营销、跨境电商和社交媒体运营的核心需求。无论是为了规避平台的反欺诈检测，还是为了建立安全的测试环境，选择合适的指纹浏览器直接关系到账号的存活率与业务稳定性。", "date": "2026-03-25", "hour": "11", "url": "https://www.bitbrowser.cn/blog/multilogin-vs-moreLogin-2026", "source": "www.bitbrowser.cn", "is_new": true, "score": 3}], "updated": "2026-03-25 11:41"}}}</script>
-
+<script type="application/json" id="snapData">{"2026-03-25": {"11": {"articles": [{"tag": "电商平台", "title": "卖家注意！亚马逊2026年战略要点，我们帮你捋清楚了-雨果网", "desc": "亚马逊发布2026年四大业务战略。", "date": "2026-03-25", "hour": "11", "url": "https://www.cifnews.com/article/181436", "source": "www.cifnews.com", "is_new": true, "score": 5}, {"tag": "社媒电商", "title": "2026年TikTok Shop开店全攻略-飞跨浏览器", "desc": "2026年TikTok全球月活超30亿（Statista），TikTok Shop成中国卖家海外布局关键。本文拆解开店全流程，分享飞跨浏览器解决网络/安全痛点，助高效开启TikTok电商掘金之旅。", "date": "2026-03-25", "hour": "11", "url": "https://www.feikua.net/doc/3635.html", "source": "www.feikua.net", "is_new": true, "score": 5}, {"tag": "支付通道", "title": "3月23日外贸早报—XTransfer", "desc": "XTransfer作为一站式外贸企业跨境金融和风控服务公司，为从事跨境电商B2B的中小微出口企业提供跨境收款平台服务。XTransfer提供的外贸收款方式，让中小微企业享受到和大型跨国集团企业同等水平的跨境金融服务！", "date": "2026-03-25", "hour": "11", "url": "https://www.xtransfer.cn/c/LABBxM", "source": "www.xtransfer.cn", "is_new": true, "score": 2}, {"tag": "社媒电商", "title": "TikTok Shop政策更新：2026美国市场本土化运营实操指南", "desc": "TikTok Shop美国站正在加速扩张，平台政策向本土化运营倾斜，多账号矩阵运营和IP隔离需求持续增长。", "date": "2026-03-25", "url": "https://www.shoplazza.cn/blog/tiktok-shop-policy-update", "source": "Shoplazza·店小秘", "is_new": false, "hour": "11", "score": 7}, {"tag": "电商平台", "title": "月活超6.5亿！亚马逊仍是出海主航道，这几点卖家们要避坑", "desc": "Similarweb数据显示亚马逊以6.517亿月活稳居全球电商第一。平台合规与风控要求严苛，文章总结了三类常见踩坑及应对方案。", "date": "2026-03-25", "url": "https://www.sohu.com/a/998377667_120987862", "source": "搜狐财经", "is_new": false, "hour": "11", "score": 4}], "updated": "2026-03-25 11:54"}}}</script>
 <script>
 var modal=document.getElementById('mo');
 function openMo(){modal.classList.add('on');document.body.style.overflow='hidden'}
 function closeMo(){modal.classList.remove('on');document.body.style.overflow=''}
 modal.addEventListener('click',function(e){if(e.target===modal)closeMo()});
 document.addEventListener('keydown',function(e){if(e.key==='Escape')closeMo()});
-
 var allSnaps=JSON.parse(document.getElementById('snapData').textContent||'{}');
 var curBrief=document.getElementById('curBrief');
 var viewer=document.getElementById('snapViewer');
-
 function showSnap(h){
   var day=allSnaps['2026-03-25'];
   if(!day||!day[h]){alert('数据不存在');return}
   var snap=day[h];
-  document.getElementById('svTtl').textContent=h+':00 简报';
-  document.getElementById('svTime').textContent='2026-03-25 '+h+':00 · '+snap.articles.length+' 条资讯';
-  var html='';
+  document.getElementById('svTtl').textContent='2026-03-25 '+h+':00';
+  document.getElementById('svSub').textContent=snap.articles.length+' 条资讯';
+  var html='<ul class="news-list">';
   snap.articles.forEach(function(a,i){
     var cls=a.tag==='电商平台'?'tag-blue':a.tag==='社媒电商'||a.tag==='行业观察'?'tag-green':a.tag==='支付通道'?'tag-orange':'tag-purple';
-    html+='<div class="bi"><div class="bn">'+(i+1)+'</div><div class="bc"><span class="tag '+cls+'">'+a.tag+'</span><div class="bt"><a href="'+a.url+'" target="_blank">'+a.title+'</a></div><div class="bds">'+a.desc+'</div><div class="bsrc">📌 '+a.source+' <span class="bl">→ <a href="'+a.url+'" target="_blank">阅读原文</a></span></div></div></div>';
+    html+='<li class="news-item"><div class="news-num">'+(i+1)+'</div><div class="news-body"><div class="news-meta"><span class="tag '+cls+'">'+a.tag+'</span></div><div class="news-title"><a href="'+a.url+'" target="_blank">'+a.title+'</a></div><div class="news-desc">'+a.desc+'</div><div class="news-source">📌 '+a.source+' <a class="news-link" href="'+a.url+'" target="_blank">→ 阅读原文</a></div></div></li>';
   });
+  html+='</ul>';
   document.getElementById('snapBody').innerHTML=html;
-  viewer.classList.add('show');
-  curBrief.style.display='none';
-  window.scrollTo({top:0,behavior:'smooth'});
+  viewer.classList.add('show');curBrief.style.display='none';window.scrollTo({top:0,behavior:'smooth'});
 }
-function closeSnap(){
-  viewer.classList.remove('show');
-  curBrief.style.display='block';
-}
+function closeSnap(){viewer.classList.remove('show');curBrief.style.display='block'}
 </script>
-</body></html>
+</body>
+</html>
