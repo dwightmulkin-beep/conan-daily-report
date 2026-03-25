@@ -10,12 +10,11 @@
   .header { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 20px 40px; display: flex; justify-content: space-between; align-items: center; }
   .header h1 { font-size: 22px; }
   .header a { color: white; text-decoration: none; font-size: 14px; }
-  .header .timezone { font-size: 12px; opacity: 0.8; margin-right: 15px; }
+  .header .last-check { font-size: 12px; opacity: 0.8; margin-right: 15px; }
   .container { max-width: 1200px; margin: 0 auto; padding: 30px 40px; }
   .section { background: white; border-radius: 12px; padding: 25px 30px; margin-bottom: 25px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
   .section-title { font-size: 16px; font-weight: 600; color: #333; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 2px solid #667eea; display: flex; justify-content: space-between; align-items: center; }
   .section-title .badge { font-size: 11px; background: #52c41a; color: white; padding: 2px 8px; border-radius: 10px; margin-left: 10px; }
-
   .news-item { padding: 20px 0; border-bottom: 1px solid #f0f0f0; }
   .news-item:last-child { border-bottom: none; }
   .news-meta { font-size: 12px; color: #999; margin-bottom: 8px; }
@@ -31,7 +30,6 @@
   .tag-orange { background: #fff7e6; color: #fa8c16; }
   .tag-purple { background: #f9f0ff; color: #722ed1; }
   .update-time { color: #52c41a; margin-left: 10px; font-size: 11px; }
-
   .filter { margin-bottom: 20px; display: flex; gap: 10px; flex-wrap: wrap; }
   .filter-btn { padding: 6px 15px; border: 1px solid #ddd; border-radius: 20px; background: white; color: #666; font-size: 13px; cursor: pointer; text-decoration: none; transition: all 0.2s; }
   .filter-btn:hover, .filter-btn.active { background: #667eea; color: white; border-color: #667eea; }
@@ -39,17 +37,14 @@
 </style>
 </head>
 <body>
-
 <div class="header">
   <h1>📰 行业资讯</h1>
   <div>
-    <span class="timezone">🕒 北京时间 (UTC+8)</span>
+    <span class="last-check">北京时间 (UTC+8) | 最后检查 2026-03-25 10:15</span>
     <a href="../index.html">← 返回首页</a>
   </div>
 </div>
-
 <div class="container">
-
   <div class="section">
     <div class="section-title">筛选</div>
     <div class="filter">
@@ -61,82 +56,70 @@
       <a href="#" class="filter-btn" data-filter="工具评测">工具评测</a>
     </div>
   </div>
-
   <div class="section">
-    <div class="section-title">
-      📌 最新资讯
-      <span class="badge">🕒 每整点自动更新</span>
-    </div>
-
+    <div class="section-title">📌 最新资讯 <span class="badge">每小时自动检查更新</span></div>
     <div class="news-item" data-category="电商平台">
       <div class="news-meta">
         <span class="tag tag-blue">电商平台</span>
-        2026-03-24
-        <span class="update-time">更新于 2026-03-25 09:00</span>
+        2026-03-25
+        <span class="update-time">更新时间 2026-03-25 10:15</span>
       </div>
       <div class="news-title">
-        <a href="https://www.cifnews.com/article/amazon-multi-account-policy" target="_blank">亚马逊推出新卖家保护政策，多账号运营环境生变</a>
+        <a href="https://www.sohu.com/a/998377667_120987862" target="_blank">月活超6.5亿！亚马逊仍是出海主航道，这几点卖家们要避坑</a>
       </div>
-      <div class="news-summary">亚马逊美国站近日宣布针对多账号卖家的新保护政策，平台将加强对账号关联的检测力度...</div>
-      <div class="news-source">来源：<a href="https://www.cifnews.com" target="_blank">雨果网·跨境电商前沿</a></div>
+      <div class="news-summary">Similarweb数据显示亚马逊以6.517亿月活稳居全球电商第一。平台合规与风控要求严苛，文章总结了三类常见踩坑及应对方案。</div>
+      <div class="news-source">来源：<a href="https://www.sohu.com/a/998377667_120987862" target="_blank">搜狐财经·跨境电商</a></div>
     </div>
-
+    <div class="news-item" data-category="电商平台">
+      <div class="news-meta">
+        <span class="tag tag-blue">电商平台</span>
+        2026-03-25
+        <span class="update-time">更新时间 2026-03-25 10:15</span>
+      </div>
+      <div class="news-title">
+        <a href="https://www.sohu.com/a/996154720_122656378" target="_blank">eBay更新卖家评级体系，账号表现更受重视</a>
+      </div>
+      <div class="news-summary">eBay宣布更新卖家评级体系，账号表现和服务质量权重提升。稳定的环境和IP资源将成为卖家运营的重要保障。</div>
+      <div class="news-source">来源：<a href="https://www.sohu.com/a/996154720_122656378" target="_blank">搜狐财经·eBay动态</a></div>
+    </div>
     <div class="news-item" data-category="社媒电商">
       <div class="news-meta">
         <span class="tag tag-green">社媒电商</span>
-        2026-03-23
-        <span class="update-time">更新于 2026-03-25 09:00</span>
+        2026-03-25
+        <span class="update-time">更新时间 2026-03-25 10:15</span>
       </div>
       <div class="news-title">
-        <a href="https://www.jingbridge.com/article/tiktok-shop-us-expansion" target="_blank">TikTok Shop美国市场扩张，本土化运营成关键</a>
+        <a href="https://www.shoplazza.cn/blog/tiktok-shop-policy-update" target="_blank">TikTok Shop政策更新：2026美国市场本土化运营实操指南</a>
       </div>
-      <div class="news-summary">TikTok Shop宣布将进一步扩张美国市场，本土化运营成为商家核心竞争力...</div>
-      <div class="news-source">来源：<a href="https://www.jingbridge.com" target="_blank">京蛙社区·TK电商观察</a></div>
+      <div class="news-summary">TikTok Shop美国站正在加速扩张，平台政策向本土化运营倾斜，多账号矩阵运营和IP隔离需求持续增长。</div>
+      <div class="news-source">来源：<a href="https://www.shoplazza.cn/blog/tiktok-shop-policy-update" target="_blank">Shoplazza·店小秘</a></div>
     </div>
-
+    <div class="news-item" data-category="工具评测">
+      <div class="news-meta">
+        <span class="tag tag-purple">工具评测</span>
+        2026-03-25
+        <span class="update-time">更新时间 2026-03-25 10:15</span>
+      </div>
+      <div class="news-title">
+        <a href="https://www.bitbrowser.cn/blog/fingerprint-browser-security-evaluation-ranking" target="_blank">2026指纹浏览器安全评测排行榜：哪款工具防关联效果最好？</a>
+      </div>
+      <div class="news-summary">主流指纹浏览器横评，云登、adsPower、hubbrowser等产品的核心功能测评，批量管理与RPA集成能力对比。</div>
+      <div class="news-source">来源：<a href="https://www.bitbrowser.cn/blog/fingerprint-browser-security-evaluation-ranking" target="_blank">比特浏览器·行业评测</a></div>
+    </div>
     <div class="news-item" data-category="行业观察">
       <div class="news-meta">
         <span class="tag tag-green">行业观察</span>
-        2026-03-23
-        <span class="update-time">更新于 2026-03-25 09:00</span>
+        2026-03-25
+        <span class="update-time">更新时间 2026-03-25 10:15</span>
       </div>
       <div class="news-title">
-        <a href="https://www.yunlogin.com/news/market-report-2026-q1" target="_blank">指纹浏览器行业动态：账号防关联需求持续增长</a>
+        <a href="https://www.jiemian.com/article/14129901.html" target="_blank">2026跨境电商生存指南：如何在变局中守住增长基本盘？</a>
       </div>
-      <div class="news-summary">据行业报告显示，2026年Q1指纹浏览器市场需求同比增长35%，跨境电商卖家对账号安全管理意识显著提升...</div>
-      <div class="news-source">来源：<a href="https://www.yunlogin.com" target="_blank">云登浏览器官网·行业报告</a></div>
+      <div class="news-summary">2025年跨境电商经历全球经济增长乏力、地缘政治冲突频发，2026年如何守住增长基本盘？生存指南解读。</div>
+      <div class="news-source">来源：<a href="https://www.jiemian.com/article/14129901.html" target="_blank">界面新闻·商业观察</a></div>
     </div>
-
-    <div class="news-item" data-category="支付通道">
-      <div class="news-meta">
-        <span class="tag tag-orange">支付通道</span>
-        2026-03-22
-        <span class="update-time">更新于 2026-03-25 09:00</span>
-      </div>
-      <div class="news-title">
-        <a href="https://www.kuajingyan.com/article/paypal-policy-update-2026" target="_blank">跨境支付通道调整，PayPal新政策影响分析</a>
-      </div>
-      <div class="news-summary">PayPal近期更新了跨境支付政策，对部分高风险地区的交易加强了审核...</div>
-      <div class="news-source">来源：<a href="https://www.kuajingyan.com" target="_blank">跨境派·支付情报站</a></div>
-    </div>
-
-    <div class="news-item" data-category="电商平台">
-      <div class="news-meta">
-        <span class="tag tag-blue">电商平台</span>
-        2026-03-21
-        <span class="update-time">更新于 2026-03-25 09:00</span>
-      </div>
-      <div class="news-title">
-        <a href="https://www.ennews.com/article/ebay-seller-review-system" target="_blank">eBay更新卖家评级体系，账号表现更受重视</a>
-      </div>
-      <div class="news-summary">eBay宣布更新卖家评级体系，账号表现和服务质量权重提升...</div>
-      <div class="news-source">来源：<a href="https://www.ennews.com" target="_blank">亿恩网·电商动态</a></div>
-    </div>
-
   </div>
-
 </div>
-
 <script>
 document.querySelectorAll('.filter-btn').forEach(function(btn) {
   btn.addEventListener('click', function(e) {
@@ -154,6 +137,5 @@ document.querySelectorAll('.filter-btn').forEach(function(btn) {
   });
 });
 </script>
-
 </body>
 </html>
