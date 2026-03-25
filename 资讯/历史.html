@@ -8,38 +8,47 @@
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;background:#f0f2f5;color:#1a1a2e;line-height:1.6}
 a{color:#667eea;text-decoration:none}
-.hdr{background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);padding:20px 24px 16px;color:#fff}
-.hdr h1{font-size:20px;font-weight:800}
-.hdr p{font-size:12px;color:rgba(255,255,255,.75);margin-top:2px}
-.bar{display:flex;gap:8px;padding:12px 16px;background:#fff;border-bottom:1px solid #e8e9f0}
-.bar a{display:inline-block;padding:6px 14px;background:#f4f5f9;border-radius:20px;font-size:12px;font-weight:600;color:#4a4a6a}
-.bar a:hover,.bar a.active{background:#667eea;color:#fff}
-.main{max-width:720px;margin:0 auto;padding:12px 16px 32px}
-.dg{margin-bottom:20px}
-.dl{font-size:13px;font-weight:700;color:#1a1a2e;padding:8px 0 6px;border-bottom:2px solid #667eea;margin-bottom:6px}
-.tl{width:100%;border-collapse:collapse;background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,.06)}
-.tl th{font-size:11px;color:#9090a0;font-weight:600;text-align:left;padding:10px 12px;background:#f8f9fb;border-bottom:1px solid #e8e9f0;text-transform:uppercase}
-.tl td{padding:10px 12px;font-size:12px;border-bottom:1px solid #f0f2f5;vertical-align:middle}
+.hdr{background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);padding:20px 40px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
+.hdr h1{font-size:22px;color:#fff}
+.hdr a{color:rgba(255,255,255,.85);font-size:13px}
+.hdr a:hover{color:#fff}
+.hdr .t{font-size:11px;color:rgba(255,255,255,.65)}
+.ct{max-width:1100px;margin:0 auto;padding:24px 32px 40px}
+.pk{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1.5px solid #e8e9f0;border-radius:25px;padding:10px 22px;font-size:13px;font-weight:700;color:#667eea;cursor:pointer;transition:all .2s;box-shadow:0 2px 8px rgba(0,0,0,.08)}
+.pk:hover{border-color:#667eea;transform:translateY(-1px)}
+.cb{margin-bottom:20px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.bc{background:#fff;border-radius:14px;padding:24px 28px;margin-bottom:18px;box-shadow:0 2px 8px rgba(0,0,0,.07)}
+.bh{margin-bottom:16px}
+.bt{font-size:16px;font-weight:700;color:#1a1a2e}
+.bm{font-size:12px;color:#999;margin-top:2px}
+.dg{margin-bottom:24px}
+.dl{font-size:14px;font-weight:700;color:#1a1a2e;padding:8px 0 8px;border-bottom:2px solid #667eea;margin-bottom:6px}
+.tl{width:100%;border-collapse:collapse;background:#fff;border-radius:10px;overflow:hidden;box-shadow:0 1px 4px rgba(0,0,0,.06)}
+.tl th{font-size:11px;color:#999;font-weight:600;text-align:left;padding:10px 14px;background:#f8f9fb;border-bottom:1px solid #e8e9f0;text-transform:uppercase;letter-spacing:.5px}
+.tl td{padding:11px 14px;font-size:13px;border-bottom:1px solid #f5f5f8;vertical-align:middle}
 .tl tr:last-child td{border-bottom:none}
 .tc{color:#667eea;font-weight:700;white-space:nowrap}
-.ti{color:#6b6b80;max-width:160px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.mt{display:inline-block;background:#f4f5f9;color:#9090a0;font-size:9px;padding:1px 5px;border-radius:6px;margin-right:2px}
-.bv{padding:5px 12px;background:#667eea;color:#fff;border:none;border-radius:8px;font-size:11px;font-weight:600;cursor:pointer}
+.ti{color:#777;max-width:160px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.mt{display:inline-block;background:#f4f5f9;color:#9090a0;font-size:10px;padding:1px 6px;border-radius:6px;margin-right:3px}
+.bv{padding:6px 14px;background:#667eea;color:#fff;border:none;border-radius:10px;font-size:12px;font-weight:600;cursor:pointer;transition:background .2s}
 .bv:hover{background:#764ba2}
-.empty{text-align:center;padding:40px;color:#9090a0;font-size:14px}
-.ov{position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.6);z-index:300;display:none;align-items:center;justify-content:center;padding:16px}
-.ov.on{display:flex}
-.ovbox{background:#fff;border-radius:16px;width:100%;max-width:680px;max-height:85vh;overflow-y:auto;box-shadow:0 24px 80px rgba(0,0,0,.25)}
-.ovhd{display:flex;justify-content:space-between;align-items:center;padding:16px 20px;border-bottom:1px solid #e8e9f0;position:sticky;top:0;background:#fff;border-radius:16px 16px 0 0}
-.ovtt{font-size:15px;font-weight:700;color:#1a1a2e}
-.ovcls{padding:6px 14px;background:#f4f5f9;border:none;border-radius:8px;font-size:12px;font-weight:600;cursor:pointer}
-.ovbd{padding:16px}
-.nl{list-style:none;background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,.06)}
-.ni{display:flex;gap:14px;padding:14px 16px;border-bottom:1px solid #f0f2f5;align-items:flex-start}
-.ni:last-child{border-bottom:none}
-.nb{width:26px;height:26px;background:linear-gradient(135deg,#667eea,#764ba2);color:#fff;border-radius:50%;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
+.empty{text-align:center;padding:40px;color:#aaa;font-size:14px}
+/* 弹窗 */
+.md{position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.55);z-index:500;display:none;align-items:center;justify-content:center;padding:20px}
+.md.on{display:flex}
+.mb{background:#fff;border-radius:18px;width:100%;max-width:680px;max-height:88vh;overflow-y:auto;box-shadow:0 24px 80px rgba(0,0,0,.2)}
+.mh{display:flex;justify-content:space-between;align-items:center;padding:18px 24px;border-bottom:1px solid #eee;position:sticky;top:0;background:#fff;border-radius:18px 18px 0 0;z-index:2}
+.mt2{font-size:16px;font-weight:700;color:#1a1a2e}
+.mc{border:none;background:#f4f5f9;color:#555;padding:7px 16px;border-radius:10px;font-size:13px;font-weight:600;cursor:pointer}
+.mc:hover{background:#e8e9f0}
+.mbd{padding:16px 20px 20px}
+.nl{list-style:none}
+.ni{display:flex;gap:14px;padding:16px 0;border-bottom:1px solid #f5f5f8;align-items:flex-start}
+.ni:last-child{border-bottom:none;padding-bottom:0}
+.ni:first-child{padding-top:0}
+.nn{width:28px;height:28px;background:linear-gradient(135deg,#667eea,#764ba2);color:#fff;border-radius:50%;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
 .nc{flex:1;min-width:0}
-.nm{margin-bottom:4px}
+.nm{margin-bottom:5px}
 .tag{display:inline-block;padding:1px 8px;border-radius:6px;font-size:10px;font-weight:700}
 .tagR{background:#fff1f0;color:#cf1322}
 .tagO{background:#fff7e6;color:#d46b08}
@@ -47,58 +56,102 @@ a{color:#667eea;text-decoration:none}
 .tagV{background:#f9f0ff;color:#722ed1}
 .tagG{background:#f6ffed;color:#389e0d}
 .tagGr{background:#f5f5f5;color:#595959}
-.nt{font-size:14px;font-weight:600;color:#1a1a2e;line-height:1.4;margin-bottom:3px}
-.nt a{color:inherit}
-.nd{font-size:12px;color:#6b6b80;line-height:1.5}
-.ns{font-size:11px;color:#9090a0;margin-top:4px}
+.nt{font-size:15px;font-weight:600;color:#1a1a2e;line-height:1.45;margin-bottom:4px}
+.nt a{color:inherit;text-decoration:none}
+.nt a:hover{color:#667eea}
+.nd{font-size:13px;color:#666;line-height:1.6;margin-bottom:5px}
+.ns{font-size:11px;color:#999}
 .nlk{color:#667eea;font-weight:600}
 </style>
 </head>
 <body>
 <div class="hdr">
   <h1>📁 历史存档</h1>
-  <p>跨境电商行业资讯 · 历史版本查询</p>
-</div>
-<div class="bar">
-  <a href="index.html">← 今日简报</a>
-  <a href="#" class="active">📁 全部历史</a>
-</div>
-<div class="main" id="dgList"><div class="dg"><div class="dl">2026-03-25 周二</div><table class="tl"><thead><tr><th>时间</th><th>条数</th><th>首条</th><th>标签</th><th></th></tr></thead><tbody><tr><td class="tc"><b>13:00</b></td><td class="ti">8条</td><td class="ti">上周（3月16日至22日）中国企业出海投资十大要闻概览—...</td><td><span class="mt">行业政策</span> <span class="mt">行业政策</span> <span class="mt">市场观察</span></td><td><button class="bv" onclick="loadSnap('2026-03-25','13')">查看</button></td></tr><tr><td class="tc"><b>12:00</b></td><td class="ti">8条</td><td class="ti">2026美国电商如何赢得新增长？答案就藏在这里 - in...</td><td><span class="mt">行业政策</span> <span class="mt">市场观察</span> <span class="mt">行业政策</span></td><td><button class="bv" onclick="loadSnap('2026-03-25','12')">查看</button></td></tr></tbody></table></div></div>
-
-<div class="ov" id="ov" onclick="if(event.target===this)this.classList.remove('on')">
-  <div class="ovbox">
-    <div class="ovhd">
-      <div class="ovtt" id="svT">--:--</div>
-      <button class="ovcls" onclick="document.getElementById('ov').classList.remove('on')">关闭</button>
-    </div>
-    <div class="ovbd"><div id="svB"></div></div>
+  <div>
+    <span class="t">🕒 北京时间</span>
+    <a href="index.html">← 今日简报</a>
   </div>
 </div>
 
-<script type="application/json" id="sd">{"2026-03-25": {"12": {"articles": [{"tag": "行业政策", "title": "2026美国电商如何赢得新增长？答案就藏在这里 - ingstart-全球公司成立与合规", "desc": "2026美国电商如何赢得新增长？答案就藏在这里 随着TikTok Shop在美国市场持续爆发，“兴趣电商+品牌", "date": "2026-03-25", "hour": "12", "url": "https://www.ingstart.com/blog/45558.html", "source": "www.ingstart.com", "is_new": true, "for_outer": true, "score": 5}, {"tag": "市场观察", "title": "2026全球电商市场洗牌，新兴平台崛起冲击亚马逊", "desc": "新兴电商平台用户增长迅猛，亚马逊份额面临分流。中小卖家开始多平台布局，降低单一平台依赖。", "url": "https://www.sohu.com/a/996154720_122656378", "source": "搜狐财经", "for_outer": true, "is_new": false, "hour": "12", "score": 5}, {"tag": "行业政策", "title": "亚马逊多账号关联检测升级，IP指纹成重点", "desc": "亚马逊加强多账号关联检测，浏览器指纹、IP地址、设备环境成主要检测维度。多账号卖家需提前做好防关联准备。", "url": "https://www.sohu.com/a/998377667_120987862", "source": "搜狐财经", "for_outer": true, "is_new": false, "hour": "12", "score": 2}, {"tag": "行业政策", "title": "2026美国电商如何赢得新增长？答案就藏在这里 - ingstart-全球公司成立与合规", "desc": "2026美国电商如何赢得新增长？答案就藏在这里 随着TikTok Shop在美国市场持续爆发，“兴趣电商+品牌", "date": "2026-03-25", "hour": "12", "url": "https://www.ingstart.com/blog/45558.html", "source": "www.ingstart.com", "is_new": true, "for_outer": true, "score": 5}, {"tag": "运营技巧", "title": "404,您访问的页面已经不存在!", "desc": "", "date": "2026-03-25", "hour": "12", "url": "https://www.sohu.com/a/998487508_122647688", "source": "www.sohu.com", "is_new": true, "for_outer": false, "score": 0}, {"tag": "市场观察", "title": "2026全球电商市场洗牌，新兴平台崛起冲击亚马逊", "desc": "新兴电商平台用户增长迅猛，亚马逊份额面临分流。中小卖家开始多平台布局，降低单一平台依赖。", "url": "https://www.sohu.com/a/996154720_122656378", "source": "搜狐财经", "for_outer": true, "is_new": false, "hour": "12", "score": 5}, {"tag": "行业政策", "title": "亚马逊多账号关联检测升级，IP指纹成重点", "desc": "亚马逊加强多账号关联检测，浏览器指纹、IP地址、设备环境成主要检测维度。多账号卖家需提前做好防关联准备。", "url": "https://www.sohu.com/a/998377667_120987862", "source": "搜狐财经", "for_outer": true, "is_new": false, "hour": "12", "score": 2}, {"tag": "行业政策", "title": "美国、土耳其相继加征关税，跨境卖家成本压力骤增", "desc": "美国、土耳其对多国商品加征关税，出口电商面临新一轮成本压力，需提前布局多平台分散风险。", "url": "https://www.jiemian.com/article/14129901.html", "source": "界面新闻", "for_outer": true, "is_new": false, "hour": "12", "score": 2}], "updated": "2026-03-25 12:40"}, "13": {"articles": [{"tag": "行业政策", "title": "上周（3月16日至22日）中国企业出海投资十大要闻概览——跨境合规圈 | 跨境合规圈ODI备案FDI备案安永国际-跨境合规圈-ODI备案FDI备案专业办理代办", "desc": "本报告追踪 2026年3月第三周 全球出海核心动态：涵盖字节跳动 60 亿美元出售沐瞳布局 AI、小米 87 亿美元 AI 投资计划、宁德时代匈牙利工厂投产等重磅新闻。深度分析中国电建、比亚迪等企业在“一带一路”沿线的产能与品牌出海路径，并为投资者提供 ODI 备案与跨境合规的实务闭环建议。", "date": "2026-03-25", "hour": "13", "url": "https://www.odibeian.cn/market-intelligence-china-outbound-investment-weekly-march-2026/", "source": "www.odibeian.cn", "is_new": true, "for_outer": true, "score": 3}, {"tag": "行业政策", "title": "美国重大清关规则出台！SAFE法案：跨境电商的“合规生死劫”，100%的中国跨境企业都要面对！", "desc": "", "date": "2026-03-25", "hour": "13", "url": "https://baijiahao.baidu.com/s?id=1859959027147065180", "source": "baijiahao.baidu.com", "is_new": true, "for_outer": true, "score": 0}, {"tag": "市场观察", "title": "2026全球电商市场洗牌，新兴平台崛起冲击亚马逊", "desc": "新兴电商平台用户增长迅猛，亚马逊份额面临分流。中小卖家开始多平台布局，降低单一平台依赖。", "url": "https://www.sohu.com/a/996154720_122656378", "source": "搜狐财经", "for_outer": true, "is_new": false, "hour": "13", "score": 5}, {"tag": "行业政策", "title": "上周（3月16日至22日）中国企业出海投资十大要闻概览——跨境合规圈 | 跨境合规圈ODI备案FDI备案安永国际-跨境合规圈-ODI备案FDI备案专业办理代办", "desc": "本报告追踪 2026年3月第三周 全球出海核心动态：涵盖字节跳动 60 亿美元出售沐瞳布局 AI、小米 87 亿美元 AI 投资计划、宁德时代匈牙利工厂投产等重磅新闻。深度分析中国电建、比亚迪等企业在“一带一路”沿线的产能与品牌出海路径，并为投资者提供 ODI 备案与跨境合规的实务闭环建议。", "date": "2026-03-25", "hour": "13", "url": "https://www.odibeian.cn/market-intelligence-china-outbound-investment-weekly-march-2026/", "source": "www.odibeian.cn", "is_new": true, "for_outer": true, "score": 3}, {"tag": "行业政策", "title": "美国重大清关规则出台！SAFE法案：跨境电商的“合规生死劫”，100%的中国跨境企业都要面对！", "desc": "", "date": "2026-03-25", "hour": "13", "url": "https://baijiahao.baidu.com/s?id=1859959027147065180", "source": "baijiahao.baidu.com", "is_new": true, "for_outer": true, "score": 0}, {"tag": "市场观察", "title": "2026全球电商市场洗牌，新兴平台崛起冲击亚马逊", "desc": "新兴电商平台用户增长迅猛，亚马逊份额面临分流。中小卖家开始多平台布局，降低单一平台依赖。", "url": "https://www.sohu.com/a/996154720_122656378", "source": "搜狐财经", "for_outer": true, "is_new": false, "hour": "13", "score": 5}, {"tag": "行业政策", "title": "亚马逊多账号关联检测升级，IP指纹成重点", "desc": "亚马逊加强多账号关联检测，浏览器指纹、IP地址、设备环境成主要检测维度。多账号卖家需提前做好防关联准备。", "url": "https://www.sohu.com/a/998377667_120987862", "source": "搜狐财经", "for_outer": true, "is_new": false, "hour": "13", "score": 2}, {"tag": "行业政策", "title": "美国、土耳其相继加征关税，跨境卖家成本压力骤增", "desc": "美国、土耳其对多国商品加征关税，出口电商面临新一轮成本压力，需提前布局多平台分散风险。", "url": "https://www.jiemian.com/article/14129901.html", "source": "界面新闻", "for_outer": true, "is_new": false, "hour": "13", "score": 2}], "updated": "2026-03-25 13:40"}}}</script>
+<div class="ct">
+  <div class="cb">
+    <a class="pk" href="index.html" style="color:#667eea">📰 今日简报</a>
+    <button class="pk" onclick="openImg()">🖼️ 简报图片</button>
+  </div>
+
+  <div class="bc">
+    <div class="bh">
+      <div class="bt">📁 全部历史记录</div>
+      <div class="bm">按日期分组，共保留7天</div>
+    </div>
+    <div id="dgWrap"><div class="dg"><div class="dl">2026-03-25 周二</div><table class="tl"><thead><tr><th>时间</th><th>条数</th><th>首条</th><th>标签</th><th></th></tr></thead><tbody><tr><td class="tc">13:00</td><td class="ti">8条</td><td class="ti">2026年TikTok电商全球市场格局总览_平台_Shop_机会...</td><td><span class="mt">市场观察</span> <span class="mt">市场观察</span> <span class="mt">行业政策</span> <span class="mt">市场观察</span></td><td><button class="bv" onclick="loadSnap('2026-03-25','13')">查看</button></td></tr><tr><td class="tc">12:00</td><td class="ti">8条</td><td class="ti">2026美国电商如何赢得新增长？答案就藏在这里 - ingsta...</td><td><span class="mt">行业政策</span> <span class="mt">市场观察</span> <span class="mt">行业政策</span> <span class="mt">行业政策</span></td><td><button class="bv" onclick="loadSnap('2026-03-25','12')">查看</button></td></tr></tbody></table></div></div>
+  </div>
+</div>
+
+<!-- 弹窗：查看快照 -->
+<div class="md" id="md">
+  <div class="mb">
+    <div class="mh">
+      <div class="mt2" id="mdT">--:--</div>
+      <button class="mc" onclick="closeMd()">关闭</button>
+    </div>
+    <div class="mbd" id="mdB"></div>
+  </div>
+</div>
+
+<!-- 弹窗：图片预览 -->
+<div class="md" id="mo" onclick="if(event.target===this)closeImg()">
+  <div class="mb" style="max-width:460px">
+    <div class="mh">
+      <div class="mt2">简报图片</div>
+      <button class="mc" onclick="closeImg()">关闭</button>
+    </div>
+    <div class="mbd" style="padding:12px;text-align:center">
+      <img src="https://dwightmulkin-beep.github.io/conan-daily-report/%E8%B5%84%E8%AE%AF/%E7%AE%80%E6%8A%A5.png" style="width:100%;border-radius:10px" alt="简报">
+      <div style="margin-top:14px">
+        <a class="pk" href="https://dwightmulkin-beep.github.io/conan-daily-report/%E8%B5%84%E8%AE%AF/%E7%AE%80%E6%8A%A5.png" download="行业简报.png" style="color:#f59e0b">⬇ 保存图片</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script type="application/json" id="sd">{"2026-03-25": {"12": {"articles": [{"tag": "行业政策", "title": "2026美国电商如何赢得新增长？答案就藏在这里 - ingstart-全球公司成立与合规", "desc": "2026美国电商如何赢得新增长？答案就藏在这里 随着TikTok Shop在美国市场持续爆发，“兴趣电商+品牌", "date": "2026-03-25", "hour": "12", "url": "https://www.ingstart.com/blog/45558.html", "source": "www.ingstart.com", "is_new": true, "for_outer": true, "score": 5}, {"tag": "市场观察", "title": "2026全球电商市场洗牌，新兴平台崛起冲击亚马逊", "desc": "新兴电商平台用户增长迅猛，亚马逊份额面临分流。中小卖家开始多平台布局，降低单一平台依赖。", "url": "https://www.sohu.com/a/996154720_122656378", "source": "搜狐财经", "for_outer": true, "is_new": false, "hour": "12", "score": 5}, {"tag": "行业政策", "title": "亚马逊多账号关联检测升级，IP指纹成重点", "desc": "亚马逊加强多账号关联检测，浏览器指纹、IP地址、设备环境成主要检测维度。多账号卖家需提前做好防关联准备。", "url": "https://www.sohu.com/a/998377667_120987862", "source": "搜狐财经", "for_outer": true, "is_new": false, "hour": "12", "score": 2}, {"tag": "行业政策", "title": "2026美国电商如何赢得新增长？答案就藏在这里 - ingstart-全球公司成立与合规", "desc": "2026美国电商如何赢得新增长？答案就藏在这里 随着TikTok Shop在美国市场持续爆发，“兴趣电商+品牌", "date": "2026-03-25", "hour": "12", "url": "https://www.ingstart.com/blog/45558.html", "source": "www.ingstart.com", "is_new": true, "for_outer": true, "score": 5}, {"tag": "运营技巧", "title": "404,您访问的页面已经不存在!", "desc": "", "date": "2026-03-25", "hour": "12", "url": "https://www.sohu.com/a/998487508_122647688", "source": "www.sohu.com", "is_new": true, "for_outer": false, "score": 0}, {"tag": "市场观察", "title": "2026全球电商市场洗牌，新兴平台崛起冲击亚马逊", "desc": "新兴电商平台用户增长迅猛，亚马逊份额面临分流。中小卖家开始多平台布局，降低单一平台依赖。", "url": "https://www.sohu.com/a/996154720_122656378", "source": "搜狐财经", "for_outer": true, "is_new": false, "hour": "12", "score": 5}, {"tag": "行业政策", "title": "亚马逊多账号关联检测升级，IP指纹成重点", "desc": "亚马逊加强多账号关联检测，浏览器指纹、IP地址、设备环境成主要检测维度。多账号卖家需提前做好防关联准备。", "url": "https://www.sohu.com/a/998377667_120987862", "source": "搜狐财经", "for_outer": true, "is_new": false, "hour": "12", "score": 2}, {"tag": "行业政策", "title": "美国、土耳其相继加征关税，跨境卖家成本压力骤增", "desc": "美国、土耳其对多国商品加征关税，出口电商面临新一轮成本压力，需提前布局多平台分散风险。", "url": "https://www.jiemian.com/article/14129901.html", "source": "界面新闻", "for_outer": true, "is_new": false, "hour": "12", "score": 2}], "updated": "2026-03-25 12:40"}, "13": {"articles": [{"tag": "市场观察", "title": "2026年TikTok电商全球市场格局总览_平台_Shop_机会", "desc": "达人生态成熟：头部达人Kohcun以210万粉丝实现3294万美元GMV，承担着品牌级信任背书角色直播转化率高：美妆类直播GMV占比高达**50.7%**，远超其他市场 品类机会：汽车及摩托车品类同比增…", "date": "2026-03-25", "hour": "13", "url": "https://www.sohu.com/a/997053709_122017109", "source": "www.sohu.com", "is_new": true, "for_outer": true, "score": 5}, {"tag": "市场观察", "title": "2026全球电商市场洗牌，新兴平台崛起冲击亚马逊", "desc": "新兴电商平台用户增长迅猛，亚马逊份额面临分流。中小卖家开始多平台布局，降低单一平台依赖。", "url": "https://www.sohu.com/a/996154720_122656378", "source": "搜狐财经", "for_outer": true, "is_new": false, "hour": "13", "score": 5}, {"tag": "行业政策", "title": "亚马逊多账号关联检测升级，IP指纹成重点", "desc": "亚马逊加强多账号关联检测，浏览器指纹、IP地址、设备环境成主要检测维度。多账号卖家需提前做好防关联准备。", "url": "https://www.sohu.com/a/998377667_120987862", "source": "搜狐财经", "for_outer": true, "is_new": false, "hour": "13", "score": 2}, {"tag": "市场观察", "title": "2026年TikTok电商全球市场格局总览_平台_Shop_机会", "desc": "达人生态成熟：头部达人Kohcun以210万粉丝实现3294万美元GMV，承担着品牌级信任背书角色直播转化率高：美妆类直播GMV占比高达**50.7%**，远超其他市场 品类机会：汽车及摩托车品类同比增…", "date": "2026-03-25", "hour": "13", "url": "https://www.sohu.com/a/997053709_122017109", "source": "www.sohu.com", "is_new": true, "for_outer": true, "score": 5}, {"tag": "市场观察", "title": "2026全球电商市场洗牌，新兴平台崛起冲击亚马逊", "desc": "新兴电商平台用户增长迅猛，亚马逊份额面临分流。中小卖家开始多平台布局，降低单一平台依赖。", "url": "https://www.sohu.com/a/996154720_122656378", "source": "搜狐财经", "for_outer": true, "is_new": false, "hour": "13", "score": 5}, {"tag": "行业政策", "title": "亚马逊多账号关联检测升级，IP指纹成重点", "desc": "亚马逊加强多账号关联检测，浏览器指纹、IP地址、设备环境成主要检测维度。多账号卖家需提前做好防关联准备。", "url": "https://www.sohu.com/a/998377667_120987862", "source": "搜狐财经", "for_outer": true, "is_new": false, "hour": "13", "score": 2}, {"tag": "行业政策", "title": "美国、土耳其相继加征关税，跨境卖家成本压力骤增", "desc": "美国、土耳其对多国商品加征关税，出口电商面临新一轮成本压力，需提前布局多平台分散风险。", "url": "https://www.jiemian.com/article/14129901.html", "source": "界面新闻", "for_outer": true, "is_new": false, "hour": "13", "score": 2}, {"tag": "平台动态", "title": "TikTok Shop全链路电商加速，本土化运营成核心竞争力", "desc": "TikTok Shop深化电商闭环，本土账号获更多流量扶持，IP和环境独立性需求爆发式增长。", "url": "https://www.shoplazza.cn/blog/tiktok-shop-policy-update", "source": "店小秘", "for_outer": true, "is_new": false, "hour": "13", "score": 2}], "updated": "2026-03-25 13:48"}}}</script>
 <script>
 var SD=JSON.parse(document.getElementById("sd").textContent||"{}");
-function loadSnap(ds,hr){
-  var snap=SD[ds]&&SD[ds][hr];
-  if(!snap){alert("数据不存在");return}
-  var arts=snap.articles||[];
-  document.getElementById("svT").textContent=ds+" "+hr+":00 ("+arts.length+"条)";
+
+function openImg(){document.getElementById('mo').classList.add('on');document.body.style.overflow='hidden'}
+function closeImg(){document.getElementById('mo').classList.remove('on');document.body.style.overflow=''}
+function closeMd(){document.getElementById('md').classList.remove('on');document.body.style.overflow=''}
+
+function snapHtml(arts){
   var h='<ul class="nl">';
   arts.forEach(function(a,i){
     var cls=a.tag==="\u884c\u4e1a\u653f\u7b56"?"tagR":a.tag==="\u5e02\u573a\u89c2\u5bdf"?"tagO":
            a.tag==="\u5e73\u53f0\u52a8\u6001"?"tagB":a.tag==="\u5de5\u5177\u8bc4\u6d4b"?"tagV":
            a.tag==="\u652f\u4ed8\u91d1\u878d"?"tagG":"tagGr";
-    h+='<li class="ni"><div class="nb">'+(i+1)+'</div><div class="nc">'+
+    h+='<li class="ni"><div class="nn">'+(i+1)+'</div><div class="nc">'+
       '<div class="nm"><span class="tag '+cls+'">'+a.tag+'</span></div>'+
       '<div class="nt"><a href="'+a.url+'" target="_blank">'+a.title+'</a></div>'+
       '<div class="nd">'+a.desc+'</div>'+
-      '<div class="ns">📌 <a href="'+a.url+'" target="_blank">'+a.source+'</a> <a class="nlk" href="'+a.url+'" target="_blank">→</a></div>'+
+      '<div class="ns">&#128214; <a href="'+a.url+'" target="_blank">'+a.source+'</a> <a class="nlk" href="'+a.url+'" target="_blank">&#8594;</a></div>'+
     '</div></li>';
   });
-  h+='</ul>';
-  document.getElementById("svB").innerHTML=h;
-  document.getElementById("ov").classList.add("on");
+  return h+'</ul>';
 }
+
+function loadSnap(ds,hr){
+  var snap=SD[ds]&&SD[ds][hr];
+  if(!snap){alert("\u6570\u636e\u4e0d\u5b58\u5728");return}
+  var arts=snap.articles||[];
+  document.getElementById('mdT').textContent=ds+' '+hr+':00 ('+arts.length+'\u6761)';
+  document.getElementById('mdB').innerHTML=snapHtml(arts);
+  document.getElementById('md').classList.add('on');
+  document.body.style.overflow='hidden';
+}
+
+document.addEventListener('keydown',function(e){
+  if(e.key==="Escape"){closeMd();closeImg()}
+});
 </script>
 </body>
 </html>
