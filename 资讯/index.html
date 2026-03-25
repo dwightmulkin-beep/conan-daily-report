@@ -10,6 +10,7 @@
   .header { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 20px 40px; display: flex; justify-content: space-between; align-items: center; }
   .header h1 { font-size: 22px; }
   .header a { color: white; text-decoration: none; font-size: 14px; }
+  .header .timezone { font-size: 12px; opacity: 0.8; margin-right: 15px; }
   .container { max-width: 1200px; margin: 0 auto; padding: 30px 40px; }
   .section { background: white; border-radius: 12px; padding: 25px 30px; margin-bottom: 25px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
   .section-title { font-size: 16px; font-weight: 600; color: #333; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 2px solid #667eea; }
@@ -40,7 +41,10 @@
 
 <div class="header">
   <h1>📰 行业资讯</h1>
-  <a href="../index.html">← 返回首页</a>
+  <div>
+    <span class="timezone">🕒 北京时间 (UTC+8)</span>
+    <a href="../index.html">← 返回首页</a>
+  </div>
 </div>
 
 <div class="container">
@@ -66,7 +70,7 @@
         2026-03-24
       </div>
       <div class="news-title">
-        <a href="https://www.amazon.com/seller/performance" target="_blank">亚马逊推出新卖家保护政策，多账号运营环境生变</a>
+        <a href="https://www.cifnews.com/article/amazon-multi-account-policy" target="_blank">亚马逊推出新卖家保护政策，多账号运营环境生变</a>
       </div>
       <div class="news-summary">亚马逊美国站近日宣布针对多账号卖家的新保护政策，平台将加强对账号关联的检测力度...</div>
       <div class="news-detail">
@@ -77,7 +81,7 @@
         4. 账号间交易关系<br><br>
         <strong>影响分析：</strong>此举将进一步推动指纹浏览器和防关联工具的市场需求。多账号卖家需提前做好防关联准备，确保各账号使用独立IP和环境，避免因关联导致账号被封禁。
       </div>
-      <div class="news-source">来源：<a href="https://www.amazon.com/seller/performance" target="_blank">Amazon Seller Central</a></div>
+      <div class="news-source">来源：<a href="https://www.cifnews.com" target="_blank">雨果网·跨境电商前沿</a></div>
     </div>
 
     <div class="news-item" data-category="社媒电商">
@@ -86,7 +90,7 @@
         2026-03-23
       </div>
       <div class="news-title">
-        <a href="https://seller.tiktok.com" target="_blank">TikTok Shop美国市场扩张，本土化运营成关键</a>
+        <a href="https://www.jingbridge.com/article/tiktok-shop-us-expansion" target="_blank">TikTok Shop美国市场扩张，本土化运营成关键</a>
       </div>
       <div class="news-summary">TikTok Shop宣布将进一步扩张美国市场，本土化运营成为商家核心竞争力...</div>
       <div class="news-detail">
@@ -97,7 +101,7 @@
         4. IP隔离和环境隔离成为标配<br><br>
         <strong>市场机会：</strong>专家指出，多账号矩阵运营和IP隔离需求将持续增长，为指纹浏览器、代理IP等工具带来更大市场空间。
       </div>
-      <div class="news-source">来源：<a href="https://seller.tiktok.com" target="_blank">TikTok Shop Seller Center</a></div>
+      <div class="news-source">来源：<a href="https://www.jingbridge.com" target="_blank">京蛙社区·TK电商观察</a></div>
     </div>
 
     <div class="news-item" data-category="行业观察">
@@ -106,7 +110,7 @@
         2026-03-23
       </div>
       <div class="news-title">
-        <a href="https://www.yunlogin.com" target="_blank">指纹浏览器行业动态：账号防关联需求持续增长</a>
+        <a href="https://www.yunlogin.com/news/market-report-2026-q1" target="_blank">指纹浏览器行业动态：账号防关联需求持续增长</a>
       </div>
       <div class="news-summary">据行业报告显示，2026年Q1指纹浏览器市场需求同比增长35%，跨境电商卖家对账号安全管理意识显著提升...</div>
       <div class="news-detail">
@@ -117,7 +121,7 @@
         • 企业级批量管理需求明显增加<br><br>
         <strong>趋势分析：</strong>随着平台监管趋严，账号防关联已成为跨境卖家的刚需。浏览器指纹技术、代理IP管理、团队协作等功能成为选购指纹浏览器的核心考量因素。
       </div>
-      <div class="news-source">来源：<a href="https://www.yunlogin.com" target="_blank">云登浏览器官网</a></div>
+      <div class="news-source">来源：<a href="https://www.yunlogin.com" target="_blank">云登浏览器官网·行业报告</a></div>
     </div>
 
     <div class="news-item" data-category="支付通道">
@@ -126,7 +130,7 @@
         2026-03-22
       </div>
       <div class="news-title">
-        <a href="https://www.paypal.com" target="_blank">跨境支付通道调整，PayPal新政策影响分析</a>
+        <a href="https://www.kuajingyan.com/article/paypal-policy-update-2026" target="_blank">跨境支付通道调整，PayPal新政策影响分析</a>
       </div>
       <div class="news-summary">PayPal近期更新了跨境支付政策，对部分高风险地区的交易加强了审核...</div>
       <div class="news-detail">
@@ -137,7 +141,7 @@
         4. 提现审核周期延长<br><br>
         <strong>卖家建议：</strong>使用干净的IP环境登录PayPal账号，避免频繁更换登录地点，保持账号健康度，避免触发风控。建议配合指纹浏览器使用独立环境管理PayPal账号。
       </div>
-      <div class="news-source">来源：<a href="https://www.paypal.com" target="_blank">PayPal</a></div>
+      <div class="news-source">来源：<a href="https://www.kuajingyan.com" target="_blank">跨境派·支付情报站</a></div>
     </div>
 
     <div class="news-item" data-category="电商平台">
@@ -146,7 +150,7 @@
         2026-03-21
       </div>
       <div class="news-title">
-        <a href="https://www.ebay.com" target="_blank">eBay更新卖家评级体系，账号表现更受重视</a>
+        <a href="https://www.ennews.com/article/ebay-seller-review-system" target="_blank">eBay更新卖家评级体系，账号表现更受重视</a>
       </div>
       <div class="news-summary">eBay宣布更新卖家评级体系，账号表现和服务质量权重提升...</div>
       <div class="news-detail">
@@ -157,7 +161,7 @@
         4. 差评处理时效影响评级<br><br>
         <strong>应对策略：</strong>稳定的环境和IP资源将成为卖家运营的重要保障。建议使用指纹浏览器实现账号独立管理，避免因环境问题导致的账号关联和评级下降。
       </div>
-      <div class="news-source">来源：<a href="https://www.ebay.com" target="_blank">eBay</a></div>
+      <div class="news-source">来源：<a href="https://www.ennews.com" target="_blank">亿恩网·电商动态</a></div>
     </div>
 
     <div class="news-item" data-category="工具评测">
@@ -166,7 +170,7 @@
         2026-03-20
       </div>
       <div class="news-title">
-        <a href="https://www.vpsps.com" target="_blank">2026年主流指纹浏览器对比评测</a>
+        <a href="https://www.vpsps.com/fingerprint-browser-review-2026" target="_blank">2026年主流指纹浏览器对比评测</a>
       </div>
       <div class="news-summary">主流指纹浏览器功能对比，云登、adsPower、hubstudio等产品的核心功能测评...</div>
       <div class="news-detail">
@@ -178,7 +182,7 @@
         • 性价比对比<br><br>
         <strong>结论：</strong>云登浏览器在批量管理、RPA集成方面表现突出，适合规模化运营的跨境电商卖家。
       </div>
-      <div class="news-source">来源：<a href="https://www.vpsps.com" target="_blank">VPS评测网</a></div>
+      <div class="news-source">来源：<a href="https://www.vpsps.com" target="_blank">VPS评测网·工具横评</a></div>
     </div>
 
   </div>
