@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Conan 日报 | 2026-03-25</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #f5f5f5; color: #1a1a1a; line-height: 1.7; padding: 24px; }
+  .container { max-width: 900px; margin: 0 auto; }
+  h1 { font-size: 22px; font-weight: 700; margin-bottom: 8px; color: #111; }
+  .date { color: #666; font-size: 13px; margin-bottom: 28px; }
+  h2 { font-size: 16px; font-weight: 600; margin: 28px 0 12px; padding-bottom: 6px; border-bottom: 2px solid #e8e8e8; }
+  h3 { font-size: 14px; font-weight: 600; margin: 16px 0 8px; color: #333; }
+  .tag { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 12px; font-weight: 500; }
+  .tag-red { background: #fff1f0; color: #cf1322; }
+  .tag-orange { background: #fff7e6; color: #d46b08; }
+  .tag-blue { background: #e6f7ff; color: #0958d9; }
+  .tag-green { background: #f6ffed; color: #389e0d; }
+  .tag-gray { background: #f5f5f5; color: #666; }
+  table { width: 100%%; border-collapse: collapse; margin: 8px 0 16px; font-size: 14px; }
+  th { background: #fafafa; text-align: left; padding: 8px 12px; border: 1px solid #e8e8e8; font-weight: 600; }
+  td { padding: 8px 12px; border: 1px solid #e8e8e8; vertical-align: top; }
+  ul { padding-left: 20px; margin: 6px 0; }
+  li { margin: 4px 0; }
+  .divider { border: none; border-top: 1px solid #e8e8e8; margin: 24px 0; }
+  .footer { text-align: center; color: #999; font-size: 12px; margin-top: 40px; padding-top: 16px; border-top: 1px solid #e8e8e8; }
+  .card { background: #fff; border-radius: 8px; padding: 20px; margin-bottom: 16px; box-shadow: 0 1px 3px rgba(0,0,0,0.06); }
+  .card h3 { margin-top: 0; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<h1>Conan 日报</h1>
+<div class="date">2026-03-25 · 更新于 19:00</div>
+
+<!-- 今日工作 -->
+<div class="card">
+<h2>📋 今日工作</h2>
+
+<h3>① 行业简报系统升级</h3>
+<ul>
+  <li>从 v5 升级到 FINAL 版本</li>
+  <li>解决 DuckDuckGo 无法抓取、Bing 结果混乱等问题</li>
+  <li>最终方案：跨境派 sitemap（主要来源）+ Google News 英文（兜底）</li>
+  <li>已建立每整点自动抓取 + GitHub Pages 展示</li>
+</ul>
+
+<h3>② 销售培训考核系统</h3>
+<ul>
+  <li>题库从 30 道扩充到 <strong>66 道</strong>（15 个分类）</li>
+  <li>按销售全流程 10 阶段分类</li>
+  <li>覆盖：产品知识、平台 IP 适配、收款流程、竞品对比、新人培训</li>
+</ul>
+
+<h3>③ G盘培训资料全量阅读</h3>
+<ul>
+  <li>读完所有 .md / .xlsx / .pdf 文件</li>
+  <li>新员工培训 PPT（13页）文字提取成功</li>
+  <li>建立销售全流程知识体系（10阶段框架）</li>
+  <li>整理平台×IP适配对照表（11个平台，40+场景）</li>
+  <li>竞品对比话术（vs 某鸟/某星际/比特）</li>
+</ul>
+
+<h3>④ 钉钉消息识别逻辑修复</h3>
+<ul>
+  <li>确认通过 peerid（私聊）或 senderId（群聊）匹配通讯录 UserID</li>
+  <li>sendername 只用于展示，不用于匹配</li>
+  <li>规则已写死进 SOUL.md</li>
+</ul>
+</div>
+
+<!-- 当前问题 -->
+<div class="card">
+<h2>⚠️ 当前问题</h2>
+
+<table>
+  <tr><th style="width:200px">问题</th><th>说明</th><th style="width:120px">状态</th></tr>
+  <tr><td>钉钉消息识别</td><td>peerid 匹配逻辑已修复，待实测验证</td><td><span class="tag tag-orange">调试中</span></td></tr>
+  <tr><td>Bing搜索质量</td><td>已改用跨境派sitemap为主要来源</td><td><span class="tag tag-green">已解决</span></td></tr>
+  <tr><td>CRM系统接入</td><td>数据需脱敏处理，蒋峰处理魔方问题，暂缓</td><td><span class="tag tag-red">暂缓</span></td></tr>
+  <tr><td>PPT图片内容</td><td>云登更新PPT为扫描件，无法自动提取</td><td><span class="tag tag-gray">进行中</span></td></tr>
+  <tr><td>考核系统闭环</td><td>错题本未与考核系统串联</td><td><span class="tag tag-orange">待做</span></td></tr>
+</table>
+</div>
+
+<!-- 明日计划 -->
+<div class="card">
+<h2>📅 明日计划</h2>
+
+<table>
+  <tr><th>优先级</th><th>事项</th><th>依赖</th></tr>
+  <tr><td><span class="tag tag-red">🔴 高</span></td><td>钉钉消息识别实测验证</td><td>梦露/林志远测试</td></tr>
+  <tr><td><span class="tag tag-red">🔴 高</span></td><td>CRM接入准备</td><td>等蒋峰处理完魔方</td></tr>
+  <tr><td><span class="tag tag-orange">🟡 中</span></td><td>题库扩充到100道+</td><td>继续读大文件</td></tr>
+  <tr><td><span class="tag tag-orange">🟡 中</span></td><td>培训课程体系化（新人3天路径）</td><td>题库完善后</td></tr>
+  <tr><td><span class="tag tag-blue">🟢 低</span></td><td>CRM改进建议方案</td><td>可独立做</td></tr>
+  <tr><td><span class="tag tag-blue">🟢 低</span></td><td>竞品话术文档化</td><td>可独立做</td></tr>
+</table>
+</div>
+
+<div class="footer">
+  Conan AI · 每日 18:00 自动更新
+</div>
+
+</div>
+</body>
+</html>
