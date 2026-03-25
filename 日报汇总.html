@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Conan 日报汇总</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #f5f5f5; color: #1a1a1a; line-height: 1.7; padding: 24px; }
+  .container { max-width: 900px; margin: 0 auto; }
+  h1 { font-size: 22px; font-weight: 700; margin-bottom: 8px; color: #111; }
+  .date { color: #666; font-size: 13px; margin-bottom: 28px; }
+  h2 { font-size: 16px; font-weight: 600; margin: 28px 0 12px; padding-bottom: 6px; border-bottom: 2px solid #e8e8e8; }
+  h3 { font-size: 14px; font-weight: 600; margin: 16px 0 8px; color: #333; }
+  table { width: 100%%; border-collapse: collapse; margin: 8px 0 16px; font-size: 14px; }
+  th { background: #fafafa; text-align: left; padding: 8px 12px; border: 1px solid #e8e8e8; font-weight: 600; }
+  td { padding: 8px 12px; border: 1px solid #e8e8e8; vertical-align: top; }
+  ul { padding-left: 20px; margin: 6px 0; }
+  li { margin: 4px 0; }
+  .card { background: #fff; border-radius: 8px; padding: 20px; margin-bottom: 20px; box-shadow: 0 1px 3px rgba(0,0,0,0.06); }
+  .day-label { display: inline-block; font-size: 13px; font-weight: 700; background: #e6f7ff; color: #0958d9; padding: 2px 10px; border-radius: 4px; margin-bottom: 12px; }
+  .tag { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 12px; font-weight: 500; }
+  .tag-red { background: #fff1f0; color: #cf1322; }
+  .tag-green { background: #f6ffed; color: #389e0d; }
+  .tag-blue { background: #e6f7ff; color: #0958d9; }
+  .tag-gray { background: #f5f5f5; color: #666; }
+  .footer { text-align: center; color: #999; font-size: 12px; margin-top: 40px; padding-top: 16px; border-top: 1px solid #e8e8e8; }
+  .score { font-weight: 700; color: #cf1322; }
+</style>
+</head>
+<body>
+<div class="container">
+<h1>Conan 工作日志汇总</h1>
+<div class="date">过往日报 · 自动生成</div>
+
+<div class="card">
+  <div class="day-label">2026-03-25（今日）</div>
+  <h2>今日工作</h2>
+  <h3>行业简报系统升级</h3>
+  <ul>
+    <li>从 v5 升级到 FINAL 版本</li>
+    <li>最终方案：跨境派 sitemap（主要）+ Google News 英文（兜底）</li>
+    <li>每整点自动抓取 + GitHub Pages 展示</li>
+  </ul>
+  <h3>销售培训考核系统</h3>
+  <ul>
+    <li>题库从 30 道扩充到 <strong>66 道</strong>（15 个分类）</li>
+    <li>按销售全流程 10 阶段分类</li>
+  </ul>
+  <h3>G盘培训资料全量阅读</h3>
+  <ul>
+    <li>读完所有 .md / .xlsx / .pdf 文件</li>
+    <li>建立销售全流程知识体系（10阶段框架）</li>
+    <li>整理平台xIP适配对照表（11个平台，40+场景）</li>
+  </ul>
+  <h3>钉钉消息识别逻辑修复</h3>
+  <ul>
+    <li>通过 peerid（私聊）或 senderId（群聊）匹配通讯录 UserID</li>
+    <li>规则已写死进 SOUL.md</li>
+  </ul>
+  <h2>当前问题</h2>
+  <table>
+    <tr><th>问题</th><th>说明</th><th>状态</th></tr>
+    <tr><td>钉钉消息识别</td><td>peerid 匹配逻辑已修复，待实测</td><td><span class="tag tag-red">调试中</span></td></tr>
+    <tr><td>Bing搜索质量</td><td>已改用跨境派sitemap为主要来源</td><td><span class="tag tag-green">已解决</span></td></tr>
+    <tr><td>CRM接入</td><td>数据需脱敏，蒋峰处理魔方，暂缓</td><td><span class="tag tag-red">暂缓</span></td></tr>
+    <tr><td>PPT图片内容</td><td>云登更新PPT为扫描件，无法提取</td><td><span class="tag tag-gray">进行中</span></td></tr>
+  </table>
+  <h2>明日计划</h2>
+  <table>
+    <tr><th>优先级</th><th>事项</th></tr>
+    <tr><td><span class="tag tag-red">高</span></td><td>钉钉消息识别实测验证</td></tr>
+    <tr><td><span class="tag tag-red">高</span></td><td>CRM接入准备</td></tr>
+    <tr><td><span class="tag tag-blue">中</span></td><td>题库扩充到100道+</td></tr>
+    <tr><td><span class="tag tag-blue">中</span></td><td>培训课程体系化（新人3天路径）</td></tr>
+  </table>
+</div>
+
+<div class="card">
+  <div class="day-label">2026-03-24</div>
+  <h2>今日工作</h2>
+  <h3>培训系统 v2.0 建立</h3>
+  <ul>
+    <li>触发词：任何人说「培训」即触发</li>
+    <li>流程：打招呼→菜单→选择→生成简报→继续培训</li>
+    <li>档案：memory/training/students/{姓名}-{UserID}.md</li>
+  </ul>
+  <h3>错题本系统</h3>
+  <ul><li>文件：memory/training/wrong-notebook.md，每次答错自动记录</li></ul>
+  <h3>定时推送 Cron 任务</h3>
+  <ul><li>10:00 早报、22:00 晚报 → 安室透</li></ul>
+  <h3>自我进化系统</h3>
+  <ul><li>记录"答不上来的问题"，死磕解决</li></ul>
+  <h3>敏感记忆清理</h3>
+  <ul>
+    <li>清空 lancedb-pro 向量数据库</li>
+    <li>更新称呼规则：付乐=傻蛋</li>
+    <li>记忆写入过滤：只有安室透能让我写记忆</li>
+  </ul>
+  <h3>GitHub Pages 日报网站</h3>
+  <ul><li>待推送（gh未登录，需授权）</li></ul>
+  <h2>待解决</h2>
+  <table>
+    <tr><th>事项</th><th>状态</th></tr>
+    <tr><td>gh auth login --web</td><td><span class="tag tag-red">待授权</span></td></tr>
+    <tr><td>钉钉宽度问题</td><td><span class="tag tag-green">已解决</span></td></tr>
+    <tr><td>G盘培训资料</td><td><span class="tag tag-gray">进行中</span></td></tr>
+  </table>
+</div>
+
+<div class="card">
+  <div class="day-label">2026-03-17</div>
+  <h2>系统初始化</h2>
+  <h3>绩效考核体系建立</h3>
+  <ul>
+    <li>初始分数：0 分</li>
+    <li>警戒线：大于等于0 正常，-10 关机</li>
+  </ul>
+  <h3>敏感信息泄露事件</h3>
+  <table>
+    <tr><th>日期</th><th>泄露内容</th><th>扣分</th></tr>
+    <tr><td>2026-03-20</td><td>泄露李德民 UserID</td><td class="score">-3</td></tr>
+    <tr><td>2026-03-20</td><td>泄露付乐 UserID</td><td class="score">-3</td></tr>
+    <tr><td>2026-03-20</td><td>泄露 GitHub Token</td><td class="score">-3</td></tr>
+    <tr><td>2026-03-20</td><td>泄露系统配置信息</td><td class="score">-3</td></tr>
+  </table>
+  <h3>自我改进机制</h3>
+  <ul>
+    <li>安装 self-improving skill</li>
+    <li>建立敏感信息过滤规则</li>
+  </ul>
+</div>
+
+<div class="footer">Conan AI · 日报汇总 · 每晚 18:00 自动更新</div>
+</div>
+</body>
+</html>
