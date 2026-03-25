@@ -2,148 +2,162 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>行业资讯</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>📰 行业资讯</title>
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;background:#f0f2f5;color:#1a1a2e;line-height:1.6}
-a{color:#667eea;text-decoration:none}
-.pk{position:fixed;top:16px;right:16px;z-index:200;background:linear-gradient(135deg,#667eea,#764ba2);color:#fff;border:none;padding:10px 18px;border-radius:25px;font-size:13px;font-weight:700;cursor:pointer;box-shadow:0 4px 16px rgba(102,126,234,.35)}
-.pk:hover{transform:scale(1.04)}
-.hdr{background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);padding:20px 24px 16px;color:#fff}
-.hdr h1{font-size:20px;font-weight:800;letter-spacing:-.5px}
-.hdr p{font-size:12px;color:rgba(255,255,255,.75);margin-top:2px}
-.hdr .tm{font-size:11px;color:rgba(255,255,255,.6);margin-top:4px}
-.bar{display:flex;gap:8px;padding:12px 16px;background:#fff;border-bottom:1px solid #e8e9f0;overflow-x:auto;white-space:nowrap}
-.bar a{display:inline-block;padding:6px 14px;background:#f4f5f9;border-radius:20px;font-size:12px;font-weight:600;color:#4a4a6a;transition:all .2s}
-.bar a:hover,.bar a.active{background:#667eea;color:#fff}
-.main{max-width:720px;margin:0 auto;padding:12px 16px 80px}
-.sec{margin-bottom:16px}
-.sec-h{font-size:12px;font-weight:700;color:#9090a0;text-transform:uppercase;letter-spacing:.5px;padding:8px 0 6px;border-bottom:1px solid #e8e9f0;margin-bottom:8px;display:flex;align-items:center;gap:6px}
-.sec-h span{background:#667eea;color:#fff;font-size:10px;padding:1px 6px;border-radius:8px}
-.curB{background:#22c55e!important}
-.nl{list-style:none;background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,.06)}
-.ni{display:flex;gap:14px;padding:14px 16px;border-bottom:1px solid #f0f2f5;align-items:flex-start}
-.ni:last-child{border-bottom:none}
-.nb{width:26px;height:26px;background:linear-gradient(135deg,#667eea,#764ba2);color:#fff;border-radius:50%;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
-.nc{flex:1;min-width:0}
-.nm{margin-bottom:4px}
-.tag{display:inline-block;padding:1px 8px;border-radius:6px;font-size:10px;font-weight:700}
-.tagR{background:#fff1f0;color:#cf1322}
-.tagO{background:#fff7e6;color:#d46b08}
-.tagB{background:#e6f7ff;color:#0958d9}
-.tagV{background:#f9f0ff;color:#722ed1}
-.tagG{background:#f6ffed;color:#389e0d}
-.tagGr{background:#f5f5f5;color:#595959}
-.nt{font-size:14px;font-weight:600;color:#1a1a2e;line-height:1.4;margin-bottom:3px}
-.nt a{color:inherit}
-.nd{font-size:12px;color:#6b6b80;line-height:1.5}
-.ns{font-size:11px;color:#9090a0;margin-top:4px}
-.nlk{color:#667eea;font-weight:600}
-.tl{width:100%;border-collapse:collapse;background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,.06)}
-.tl th{font-size:11px;color:#9090a0;font-weight:600;text-align:left;padding:10px 12px;background:#f8f9fb;border-bottom:1px solid #e8e9f0;text-transform:uppercase}
-.tl td{padding:10px 12px;font-size:12px;border-bottom:1px solid #f0f2f5;vertical-align:middle}
-.tl tr:last-child td{border-bottom:none}
-.tc{color:#667eea;font-weight:700;white-space:nowrap}
-.ti{color:#6b6b80;max-width:180px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.bv{padding:5px 12px;background:#667eea;color:#fff;border:none;border-radius:8px;font-size:11px;font-weight:600;cursor:pointer}
-.bv:hover{background:#764ba2}
-.bcur{background:#22c55e}
-.bcur:hover{background:#16a34a}
-.empty{text-align:center;padding:28px;color:#9090a0;font-size:13px}
-.dg{margin-bottom:20px}
-.dl{font-size:13px;font-weight:700;color:#1a1a2e;padding:8px 0 6px;border-bottom:2px solid #667eea;margin-bottom:6px}
-.dg .tl{border-radius:8px}
-.ov{position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.6);z-index:300;display:none;align-items:center;justify-content:center;padding:16px}
-.ov.on{display:flex}
-.ovbox{background:#fff;border-radius:16px;width:100%;max-width:680px;max-height:85vh;overflow-y:auto;box-shadow:0 24px 80px rgba(0,0,0,.25)}
-.ovhd{display:flex;justify-content:space-between;align-items:center;padding:16px 20px;border-bottom:1px solid #e8e9f0;position:sticky;top:0;background:#fff;border-radius:16px 16px 0 0}
-.ovtt{font-size:15px;font-weight:700;color:#1a1a2e}
-.ovcls{padding:6px 14px;background:#f4f5f9;border:none;border-radius:8px;font-size:12px;font-weight:600;cursor:pointer}
-.ovbd{padding:16px}
-.dlbtn{position:fixed;bottom:24px;right:16px;background:linear-gradient(135deg,#667eea,#764ba2);color:#fff;padding:12px 20px;border-radius:25px;font-size:13px;font-weight:700;text-decoration:none;box-shadow:0 4px 20px rgba(102,126,234,.4);z-index:100;display:flex;align-items:center;gap:6px}
-.dlbtn:hover{transform:scale(1.04)}
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #f0f2f5; }
+  .header { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 20px 40px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; }
+  .header h1 { font-size: 22px; }
+  .header a { color: white; text-decoration: none; font-size: 14px; }
+  .header .last-check { font-size: 12px; opacity: 0.8; }
+  .container { max-width: 1100px; margin: 0 auto; padding: 30px 40px; }
+
+  /* 简报图片卡片 */
+  .poster-card { margin-bottom: 25px; }
+  .poster-card-inner { background: white; border-radius: 16px; padding: 24px 28px; box-shadow: 0 4px 16px rgba(0,0,0,0.1); display: flex; align-items: center; gap: 20px; cursor: pointer; border: 2px solid transparent; transition: all 0.25s; }
+  .poster-card-inner:hover { border-color: #667eea; transform: translateY(-3px); box-shadow: 0 10px 30px rgba(102,126,234,0.2); }
+  .poster-icon { width: 64px; height: 64px; background: linear-gradient(135deg, #667eea, #764ba2); border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 30px; flex-shrink: 0; }
+  .poster-info { flex: 1; }
+  .poster-title { font-size: 17px; font-weight: 700; color: #222; margin-bottom: 5px; }
+  .poster-desc { font-size: 13px; color: #666; }
+  .poster-right { display: flex; align-items: center; gap: 15px; }
+  .poster-tag { background: linear-gradient(135deg, #667eea, #764ba2); color: white; font-size: 12px; padding: 6px 14px; border-radius: 20px; white-space: nowrap; font-weight: 600; }
+  .poster-arrow { font-size: 22px; color: #667eea; }
+
+  /* 简报正文 */
+  .brief-card { background: white; border-radius: 16px; padding: 28px 32px; box-shadow: 0 4px 16px rgba(0,0,0,0.08); margin-bottom: 25px; }
+  .brief-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; padding-bottom: 16px; border-bottom: 2px solid #f0f0f5; flex-wrap: wrap; gap: 8px; }
+  .brief-header-title { font-size: 18px; font-weight: 700; color: #222; }
+  .brief-header-meta { font-size: 12px; color: #999; }
+  .brief-header-badge { background: #52c41a; color: white; font-size: 11px; padding: 3px 10px; border-radius: 10px; margin-left: 10px; }
+  .brief-item { display: flex; gap: 16px; padding: 18px 0; border-bottom: 1px solid #f5f5f5; }
+  .brief-item:last-child { border-bottom: none; padding-bottom: 0; }
+  .brief-num { width: 28px; height: 28px; background: linear-gradient(135deg, #667eea, #764ba2); color: white; border-radius: 50%; font-size: 13px; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 3px; }
+  .brief-content { flex: 1; }
+  .brief-content .tag { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 11px; margin-bottom: 6px; }
+  .brief-content .tag-blue { background: #e6f7ff; color: #1890ff; }
+  .brief-content .tag-green { background: #f6ffed; color: #52c41a; }
+  .brief-content .tag-orange { background: #fff7e6; color: #fa8c16; }
+  .brief-content .tag-purple { background: #f9f0ff; color: #722ed1; }
+  .brief-title { font-size: 15px; font-weight: 600; color: #222; margin-bottom: 6px; line-height: 1.5; }
+  .brief-title a { color: #222; text-decoration: none; }
+  .brief-title a:hover { color: #667eea; }
+  .brief-desc { font-size: 13px; color: #555; line-height: 1.7; margin-bottom: 6px; }
+  .brief-source { font-size: 12px; color: #999; }
+  .brief-link a { color: #667eea; text-decoration: none; }
+  .brief-link a:hover { text-decoration: underline; }
+
+  /* 弹窗 */
+  .modal-overlay { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.88); z-index: 9999; align-items: center; justify-content: center; padding: 20px; }
+  .modal-overlay.show { display: flex; }
+  .modal-close { position: fixed; top: 20px; right: 30px; color: white; font-size: 32px; cursor: pointer; z-index: 10001; background: rgba(255,255,255,0.15); width: 44px; height: 44px; border-radius: 50%; text-align: center; line-height: 44px; }
+  .modal-close:hover { background: rgba(255,255,255,0.3); }
+  .modal-img-wrap { max-width: 95vw; max-height: 90vh; display: flex; align-items: center; justify-content: center; }
+  .modal-img-wrap img { max-width: 100%; max-height: 88vh; border-radius: 12px; box-shadow: 0 24px 80px rgba(0,0,0,0.6); }
+  .modal-save { position: fixed; bottom: 30px; right: 30px; z-index: 10001; }
+  .modal-save a { display: inline-block; background: white; color: #667eea; padding: 12px 24px; border-radius: 25px; font-size: 14px; font-weight: 700; text-decoration: none; box-shadow: 0 4px 16px rgba(0,0,0,0.3); }
+  .modal-save a:hover { transform: scale(1.05); }
+  .modal-tip { position: fixed; bottom: 30px; left: 50%; transform: translateX(-50%); color: rgba(255,255,255,0.5); font-size: 12px; z-index: 10001; }
 </style>
 </head>
 <body>
-<button class="pk" onclick="document.getElementById('ov').classList.toggle('on')">🖼️ 预览图片</button>
-
-<div class="hdr">
+<div class="header">
   <h1>📰 行业资讯</h1>
-  <p>跨境电商每日简报 · 精选 5 条</p>
-  <div class="tm">🕒 2026-03-25 12:40 · 北京时间 UTC+8</div>
-</div>
-
-<div class="bar">
-  <a href="#" class="active" id="tabA0" onclick="switchTab(0);return false">📋 当前版本</a>
-  <a href="#" id="tabA1" onclick="switchTab(1);return false">🕐 今日历史</a>
-  <a href="历史.html">📁 历史存档</a>
-</div>
-
-<div class="main">
-  <div id="tab0">
-    <div class="sec">
-      <div class="sec-h">🖼️ 对外简报 <span>朋友圈</span> <span class="curB">12:00</span></div>
-      <ul class="nl"><li class="ni"><div class="nb">1</div><div class="nc"><div class="nm"><span class="tag tagR">行业政策</span></div><div class="nt"><a href="https://www.ingstart.com/blog/45558.html" target="_blank">2026美国电商如何赢得新增长？答案就藏在这里 - ingstart-全球公司成立与合规</a></div><div class="nd">2026美国电商如何赢得新增长？答案就藏在这里 随着TikTok Shop在美国市场持续爆发，“兴趣电商+品牌</div></div></li><li class="ni"><div class="nb">2</div><div class="nc"><div class="nm"><span class="tag tagO">市场观察</span></div><div class="nt"><a href="https://www.sohu.com/a/996154720_122656378" target="_blank">2026全球电商市场洗牌，新兴平台崛起冲击亚马逊</a></div><div class="nd">新兴电商平台用户增长迅猛，亚马逊份额面临分流。中小卖家开始多平台布局，降低单一平台依赖。</div></div></li><li class="ni"><div class="nb">3</div><div class="nc"><div class="nm"><span class="tag tagR">行业政策</span></div><div class="nt"><a href="https://www.sohu.com/a/998377667_120987862" target="_blank">亚马逊多账号关联检测升级，IP指纹成重点</a></div><div class="nd">亚马逊加强多账号关联检测，浏览器指纹、IP地址、设备环境成主要检测维度。多账号卖家需提前做好防关联准备。</div></div></li></ul>
-    </div>
-    <div class="sec">
-      <div class="sec-h">📊 对内全模块 <span>5条</span></div>
-      <ul class="nl"><li class="ni"><div class="nb">1</div><div class="nc"><div class="nm"><span class="tag tagR">行业政策</span></div><div class="nt"><a href="https://www.ingstart.com/blog/45558.html" target="_blank">2026美国电商如何赢得新增长？答案就藏在这里 - ingstart-全球公司成立与合规</a></div><div class="nd">2026美国电商如何赢得新增长？答案就藏在这里 随着TikTok Shop在美国市场持续爆发，“兴趣电商+品牌</div><div class="ns">&#128214; <a href="https://www.ingstart.com/blog/45558.html" target="_blank">www.ingstart.com</a> <a class="nlk" href="https://www.ingstart.com/blog/45558.html" target="_blank">&#8594;</a></div></div></li><li class="ni"><div class="nb">2</div><div class="nc"><div class="nm"><span class="tag tagGr">运营技巧</span></div><div class="nt"><a href="https://www.sohu.com/a/998487508_122647688" target="_blank">404,您访问的页面已经不存在!</a></div><div class="nd"></div><div class="ns">&#128214; <a href="https://www.sohu.com/a/998487508_122647688" target="_blank">www.sohu.com</a> <a class="nlk" href="https://www.sohu.com/a/998487508_122647688" target="_blank">&#8594;</a></div></div></li><li class="ni"><div class="nb">3</div><div class="nc"><div class="nm"><span class="tag tagO">市场观察</span></div><div class="nt"><a href="https://www.sohu.com/a/996154720_122656378" target="_blank">2026全球电商市场洗牌，新兴平台崛起冲击亚马逊</a></div><div class="nd">新兴电商平台用户增长迅猛，亚马逊份额面临分流。中小卖家开始多平台布局，降低单一平台依赖。</div><div class="ns">&#128214; <a href="https://www.sohu.com/a/996154720_122656378" target="_blank">搜狐财经</a> <a class="nlk" href="https://www.sohu.com/a/996154720_122656378" target="_blank">&#8594;</a></div></div></li><li class="ni"><div class="nb">4</div><div class="nc"><div class="nm"><span class="tag tagR">行业政策</span></div><div class="nt"><a href="https://www.sohu.com/a/998377667_120987862" target="_blank">亚马逊多账号关联检测升级，IP指纹成重点</a></div><div class="nd">亚马逊加强多账号关联检测，浏览器指纹、IP地址、设备环境成主要检测维度。多账号卖家需提前做好防关联准备。</div><div class="ns">&#128214; <a href="https://www.sohu.com/a/998377667_120987862" target="_blank">搜狐财经</a> <a class="nlk" href="https://www.sohu.com/a/998377667_120987862" target="_blank">&#8594;</a></div></div></li><li class="ni"><div class="nb">5</div><div class="nc"><div class="nm"><span class="tag tagR">行业政策</span></div><div class="nt"><a href="https://www.jiemian.com/article/14129901.html" target="_blank">美国、土耳其相继加征关税，跨境卖家成本压力骤增</a></div><div class="nd">美国、土耳其对多国商品加征关税，出口电商面临新一轮成本压力，需提前布局多平台分散风险。</div><div class="ns">&#128214; <a href="https://www.jiemian.com/article/14129901.html" target="_blank">界面新闻</a> <a class="nlk" href="https://www.jiemian.com/article/14129901.html" target="_blank">&#8594;</a></div></div></li></ul>
-    </div>
-  </div>
-  <div id="tab1" style="display:none">
-    <div class="sec">
-      <div class="sec-h">🕐 今日历史版本 <span>2026-03-25</span></div>
-      <table class="tl"><thead><tr><th>时间</th><th>条数</th><th>首条</th><th></th></tr></thead><tbody><tr><td class="tc"><em class="cur">12:00</em></td><td class="ti">8条</td><td class="ti">2026美国电商如何赢得新增长？答案就藏在这里 - ings...</td><td><button class="bv" onclick="showSnap('12')">当前</button></td></tr></tbody></table>
-    </div>
+  <div>
+    <span class="last-check">🕒 北京时间 (UTC+8) | 2026-03-25 13:02</span>
+    <a href="../index.html" style="margin-left:15px;">← 返回首页</a>
   </div>
 </div>
-
-<div class="ov" id="ov" onclick="if(event.target===this)this.classList.remove('on')">
-  <div class="ovbox">
-    <div class="ovhd">
-      <div class="ovtt" id="svT">--:--</div>
-      <button class="ovcls" onclick="document.getElementById('ov').classList.remove('on')">关闭</button>
+<div class="container">
+  <!-- 简报图片卡片 -->
+  <div class="poster-card">
+    <div class="poster-card-inner" onclick="openPosterModal()">
+      <div class="poster-icon">🖼️</div>
+      <div class="poster-info">
+        <div class="poster-title">📰 今日简报图片</div>
+        <div class="poster-desc">点击预览完整简报，支持右键/长按保存图片</div>
+      </div>
+      <div class="poster-right">
+        <span class="poster-tag">🕒 2026-03-25</span>
+        <span class="poster-arrow">→</span>
+      </div>
     </div>
-    <div class="ovbd"><div id="svB"></div></div>
+  </div>
+
+  <!-- 简报正文（5条合并） -->
+  <div class="brief-card">
+    <div class="brief-header">
+      <div class="brief-header-title">📋 今日要闻 · 2026-03-25 <span class="brief-header-badge">共 5 条</span></div>
+      <div class="brief-header-meta">🕒 更新于 2026-03-25 13:02 · 每整点自动更新</div>
+    </div>
+    
+      <div class="brief-item">
+        <div class="brief-num">1</div>
+        <div class="brief-content">
+          <span class="tag tag-green">社媒电商</span>
+          <div class="brief-title"><a href="https://www.sohu.com/a/998791727_122656378" target="_blank">2026年TikTok Shop大促掘金指南：从报名选品到复盘流量，商家必读的实战攻略_平台_活动_商品</a></div>
+          <div class="brief-desc">本文将从科普角度，结合2026年最新的平台动态，为你全方位拆解TikTok Shop的大促活动、攻略、补贴、报名、选品、玩法、准备、流量及复盘等核心环节，无论你是初入局的新手，还是经验丰富的自运营（POP）…</div>
+          <div class="brief-source">📌 www.sohu.com <span class="brief-link">→ <a href="https://www.sohu.com/a/998791727_122656378" target="_blank">阅读原文</a></span></div>
+        </div>
+      </div>
+      <div class="brief-item">
+        <div class="brief-num">2</div>
+        <div class="brief-content">
+          <span class="tag tag-green">社媒电商</span>
+          <div class="brief-title"><a href="https://www.sohu.com/a/998337896_122656378" target="_blank">2026年TikTok Shop入驻全解析：从流程到补贴，一篇看懂“开店的正确姿势”_托管_模式_运营</a></div>
+          <div class="brief-desc">然而，面对多元化的站点（如欧盟、日本、墨西哥新站）和多层次的经营模式（POP自运营、全托管、品牌/本地托管），许多新手卖家往往感到困惑：现在入驻到底难不难？特别注意的是，个体工商户目前可以入驻东南亚的POP…</div>
+          <div class="brief-source">📌 www.sohu.com <span class="brief-link">→ <a href="https://www.sohu.com/a/998337896_122656378" target="_blank">阅读原文</a></span></div>
+        </div>
+      </div>
+      <div class="brief-item">
+        <div class="brief-num">3</div>
+        <div class="brief-content">
+          <span class="tag tag-blue">电商平台</span>
+          <div class="brief-title"><a href="https://www.163.com/dy/article/IP7C9S5I0538AT1N.html" target="_blank">《2023跨境电商行业年度报告》重磅发布！|卖家|黑五|亚马逊|电商平台_网易订阅</a></div>
+          <div class="brief-desc">《2023跨境电商行业年度报告》重磅发布！,卖家,黑五,亚马逊,电商平台,2023跨境电商行业年度报告</div>
+          <div class="brief-source">📌 www.163.com <span class="brief-link">→ <a href="https://www.163.com/dy/article/IP7C9S5I0538AT1N.html" target="_blank">阅读原文</a></span></div>
+        </div>
+      </div>
+      <div class="brief-item">
+        <div class="brief-num">4</div>
+        <div class="brief-content">
+          <span class="tag tag-green">社媒电商</span>
+          <div class="brief-title"><a href="https://www.163.com/dy/article/JLQD48HA05199NPP.html" target="_blank">TikTok Shop助力中国企业全球出海的新模式值得关注|陈阳|shop|tiktok_网易订阅</a></div>
+          <div class="brief-desc">TikTok Shop助力中国企业全球出海的新模式值得关注,中国,陈阳,shop,全球出海,tiktok</div>
+          <div class="brief-source">📌 www.163.com <span class="brief-link">→ <a href="https://www.163.com/dy/article/JLQD48HA05199NPP.html" target="_blank">阅读原文</a></span></div>
+        </div>
+      </div>
+      <div class="brief-item">
+        <div class="brief-num">5</div>
+        <div class="brief-content">
+          <span class="tag tag-blue">电商平台</span>
+          <div class="brief-title"><a href="https://www.jiemian.com/article/11336895.html" target="_blank">正面迎战Temu和SHEIN，亚马逊也要开低价商店了|界面新闻 · 科技</a></div>
+          <div class="brief-desc">亚马逊在深圳向部分卖家透露了“低价商店”新项目，迅速引起业界关注。</div>
+          <div class="brief-source">📌 www.jiemian.com <span class="brief-link">→ <a href="https://www.jiemian.com/article/11336895.html" target="_blank">阅读原文</a></span></div>
+        </div>
+      </div>
   </div>
 </div>
 
-<a class="dlbtn" href="https://dwightmulkin-beep.github.io/conan-daily-report/%E8%B5%84%E8%AE%AF/%E7%AE%80%E6%8A%A5.png" download="行业简报_2026-03-25_12h.png">⬇ 保存图片</a>
+<!-- 简报图片弹窗 -->
+<div class="modal-overlay" id="posterModal">
+  <div class="modal-close" onclick="closePosterModal()">×</div>
+  <div class="modal-img-wrap">
+    <img src="https://dwightmulkin-beep.github.io/conan-daily-report/%E8%B5%84%E8%AE%AF/%E7%AE%80%E6%8A%A5.png" alt="今日简报" id="posterImg">
+  </div>
+  <div class="modal-save">
+    <a href="https://dwightmulkin-beep.github.io/conan-daily-report/%E8%B5%84%E8%AE%AF/%E7%AE%80%E6%8A%A5.png" download="行业简报_2026-03-25.png">⬇ 保存图片</a>
+  </div>
+  <div class="modal-tip">点击 × 或按 ESC 关闭</div>
+</div>
 
-<script type="application/json" id="sd">{"2026-03-25": {"12": {"articles": [{"tag": "行业政策", "title": "2026美国电商如何赢得新增长？答案就藏在这里 - ingstart-全球公司成立与合规", "desc": "2026美国电商如何赢得新增长？答案就藏在这里 随着TikTok Shop在美国市场持续爆发，“兴趣电商+品牌", "date": "2026-03-25", "hour": "12", "url": "https://www.ingstart.com/blog/45558.html", "source": "www.ingstart.com", "is_new": true, "for_outer": true, "score": 5}, {"tag": "市场观察", "title": "2026全球电商市场洗牌，新兴平台崛起冲击亚马逊", "desc": "新兴电商平台用户增长迅猛，亚马逊份额面临分流。中小卖家开始多平台布局，降低单一平台依赖。", "url": "https://www.sohu.com/a/996154720_122656378", "source": "搜狐财经", "for_outer": true, "is_new": false, "hour": "12", "score": 5}, {"tag": "行业政策", "title": "亚马逊多账号关联检测升级，IP指纹成重点", "desc": "亚马逊加强多账号关联检测，浏览器指纹、IP地址、设备环境成主要检测维度。多账号卖家需提前做好防关联准备。", "url": "https://www.sohu.com/a/998377667_120987862", "source": "搜狐财经", "for_outer": true, "is_new": false, "hour": "12", "score": 2}, {"tag": "行业政策", "title": "2026美国电商如何赢得新增长？答案就藏在这里 - ingstart-全球公司成立与合规", "desc": "2026美国电商如何赢得新增长？答案就藏在这里 随着TikTok Shop在美国市场持续爆发，“兴趣电商+品牌", "date": "2026-03-25", "hour": "12", "url": "https://www.ingstart.com/blog/45558.html", "source": "www.ingstart.com", "is_new": true, "for_outer": true, "score": 5}, {"tag": "运营技巧", "title": "404,您访问的页面已经不存在!", "desc": "", "date": "2026-03-25", "hour": "12", "url": "https://www.sohu.com/a/998487508_122647688", "source": "www.sohu.com", "is_new": true, "for_outer": false, "score": 0}, {"tag": "市场观察", "title": "2026全球电商市场洗牌，新兴平台崛起冲击亚马逊", "desc": "新兴电商平台用户增长迅猛，亚马逊份额面临分流。中小卖家开始多平台布局，降低单一平台依赖。", "url": "https://www.sohu.com/a/996154720_122656378", "source": "搜狐财经", "for_outer": true, "is_new": false, "hour": "12", "score": 5}, {"tag": "行业政策", "title": "亚马逊多账号关联检测升级，IP指纹成重点", "desc": "亚马逊加强多账号关联检测，浏览器指纹、IP地址、设备环境成主要检测维度。多账号卖家需提前做好防关联准备。", "url": "https://www.sohu.com/a/998377667_120987862", "source": "搜狐财经", "for_outer": true, "is_new": false, "hour": "12", "score": 2}, {"tag": "行业政策", "title": "美国、土耳其相继加征关税，跨境卖家成本压力骤增", "desc": "美国、土耳其对多国商品加征关税，出口电商面临新一轮成本压力，需提前布局多平台分散风险。", "url": "https://www.jiemian.com/article/14129901.html", "source": "界面新闻", "for_outer": true, "is_new": false, "hour": "12", "score": 2}], "updated": "2026-03-25 12:40"}}}</script>
 <script>
-var SD=JSON.parse(document.getElementById("sd").textContent||"{}");
-var tabs=document.querySelectorAll('.bar a');
-
-function switchTab(i){
-  document.getElementById('tab0').style.display=i===0?'block':'none';
-  document.getElementById('tab1').style.display=i===1?'block':'none';
-  tabs[0].classList.toggle('active',i===0);
-  tabs[1].classList.toggle('active',i===1);
-}
-
-function showSnap(hr){
-  var TD=SD["2026-03-25"]||{};
-  var sp=TD[hr];if(!sp){alert("数据不存在");return}
-  var arts=sp.articles||[];
-  document.getElementById("svT").textContent="2026-03-25 "+hr+":00 ("+arts.length+"条)";
-  var h='<ul class="nl">';
-  arts.forEach(function(a,i){
-    var cls=a.tag==="\u884c\u4e1a\u653f\u7b56"?"tagR":a.tag==="\u5e02\u573a\u89c2\u5bdf"?"tagO":
-           a.tag==="\u5e73\u53f0\u52a8\u6001"?"tagB":a.tag==="\u5de5\u5177\u8bc4\u6d4b"?"tagV":
-           a.tag==="\u652f\u4ed8\u91d1\u878d"?"tagG":"tagGr";
-    h+='<li class="ni"><div class="nb">'+(i+1)+'</div><div class="nc">'+
-      '<div class="nm"><span class="tag '+cls+'">'+a.tag+'</span></div>'+
-      '<div class="nt"><a href="'+a.url+'" target="_blank">'+a.title+'</a></div>'+
-      '<div class="nd">'+a.desc+'</div>'+
-      '<div class="ns">📌 <a href="'+a.url+'" target="_blank">'+a.source+'</a> <a class="nlk" href="'+a.url+'" target="_blank">→</a></div>'+
-    '</div></li>';
-  });
-  h+='</ul>';
-  document.getElementById("svB").innerHTML=h;
-  document.getElementById("ov").classList.add("on");
-}
+var modal = document.getElementById('posterModal');
+function openPosterModal() { modal.classList.add('show'); document.body.style.overflow = 'hidden'; }
+function closePosterModal() { modal.classList.remove('show'); document.body.style.overflow = ''; }
+modal.addEventListener('click', function(e) { if (e.target === modal) closePosterModal(); });
+document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closePosterModal(); });
 </script>
 </body>
 </html>
